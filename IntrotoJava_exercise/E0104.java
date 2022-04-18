@@ -1,4 +1,4 @@
-package E01;
+
 
 public class E0104 {
 /*    int n1 = 1;
