@@ -20,7 +20,7 @@ public class E02L02 {
         */
         final double PI = 3.1415926; // declare a constant 
         System.out.println("Enter three numbers:");
-        double n1 = inp.nextDouble();
+        double n1 = inp.nextDouble(); // next.Double() is a method in Scanner class
         double n2 = inp.nextDouble();
         double n3 = inp.nextDouble();
         
@@ -31,3 +31,14 @@ public class E02L02 {
     }
     
 }
+
+/* basic 8 variable types called PRIMITIVES:
+    byte (number, 1 byte)           -2^7  to 2^7-1
+    short (number, 2 bytes)         -2^15 to 2^15-1
+    int (number, 4 bytes)           -2^31 to 2^31-1
+    long (number, 8 bytes)          -2^63 to 2^63-1
+    float (float, 4 bytes)
+    double (float, 8 bytes)
+    char (a character, 2 bytes)
+    boolean (T or F, 1 byte) 
+*/
