@@ -11,5 +11,7 @@ public class E02L05 {
     int remainMinute = minute%60;
     System.out.println("time is " + hour + " hours " + remainMinute + " minutes and " + remainSecond + " seconds");
     input.close();
-    }
+    //invoke power function
+    System.out.println(Math.pow(5, 3));
+}
 }
