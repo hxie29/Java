@@ -8,21 +8,16 @@ public class E03L01 {
         Scanner input = new Scanner(System.in);
         System.out.println("What is the sum of " + number1 + " , " + number2 + "?");
         double answer = input.nextDouble();
- /*       int answerInt = (int) answer;
-// this section is to detect non-integers, though a input double would also be processed as incorrect answer.
-        if (answerInt == answer){
-*/
-            if (answer == number1 + number2) {
-                System.out.println("Correct!");
+        
+        
+        if (answer == number1 + number2) {
+            System.out.println("Correct!");
             }
-            else {
-                System.out.println("Incorrect.");
-            }
-        }
         else {
-            System.out.println("Invalid input.");
+            System.out.println("Incorrect.");
+    
         }
-
+        
         input.close();
-//    }
+    }   
 }
