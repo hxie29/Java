@@ -47,6 +47,11 @@ public class E04L445 {
         String s3n3 = s1.trim();
         System.out.println(s3n3);
 
+        int x = s1.indexOf("e");
+        System.out.println("The index of the first e in s1 is " + x);
+        int y = s1.lastIndexOf("abc");
+        System.out.println("The index of the last abc in s1 is " + y);
+
         input.close();
 
     }
