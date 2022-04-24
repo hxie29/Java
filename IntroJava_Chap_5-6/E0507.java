@@ -1,4 +1,4 @@
-public class E0506 {
+public class E0507 {
     public static void main(String[] args) {
         double tuition = 10000;
         int year = 0;
