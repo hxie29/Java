@@ -10,7 +10,6 @@ public class E0529 {
         System.out.println("Enter the first day of the year (0~6 for Sunday to Saturday):");
         int janDay = input.nextInt();
 
-        int itemPerLine = 0;
         int monthFirstDay = janDay;
         int totalDayLastMonth = 0;
         String month = "";
