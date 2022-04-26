@@ -36,7 +36,7 @@ public class E0529 {
             monthFirstDay = (monthFirstDay + totalDayLastMonth) % 7;
 
             //print out title
-            System.out.printf("%25s %-4s \n", month, year);
+            System.out.printf("%25s %-4d \n", month, year);
             System.out.println("--------------------------------------------------------");
             System.out.printf("%7s%7s%7s%7s%7s%7s%7s\n", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
 
