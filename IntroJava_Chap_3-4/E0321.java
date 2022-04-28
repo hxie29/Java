@@ -1,13 +1,13 @@
+// Zeller’s congruence is an algorithm developed by Christian Zeller to calculate the day of the week
 import java.util.Scanner;
 
-public class E0322 {
+public class E0321 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
         // input value
         System.out.println("Please enter the year: ");
-        int year = input.nextInt() / 100;
-        int century = year % 100;
+        int year = input.nextInt();
         System.out.println("Please enter the month: ");
         int month = input.nextInt();
         System.out.println("Please enter the day of the month: ");
@@ -21,7 +21,7 @@ public class E0322 {
         }
 
         // calculate the day of the week
-        int h = (day + 26*(month + 1)/10 + 5*century /4 + 21*year / 4) % 7;
+        int h = (day + 26*(month + 1)/10 + 5* (year % 100) /4 + 21* (year /100) / 4) % 7;
         System.out.println(h);
 
         // print out result
