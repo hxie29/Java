@@ -15,12 +15,14 @@ public class E07L02 {
         // shuffle the deck, be careful not to have the same number twice in the deck!
         for (int i = 0; i < deck.length; i++) {
             int j = (int)(Math.random() * deck.length);
-            deck [i] = deck [j];
+            int temp = deck[i];
+            deck[i] = deck[j];
+            deck[j] = temp;
         }
 
         // draw four cards on the top and display result
         for (int i = 0; i < 4; i++) {
-            String suit = suits[deck [i] / 13 - 1];
+            String suit = suits[deck [i] / 13];
             String rank = ranks[deck [i] % 13];
             System.out.println("The card you draw is " + rank + " of " + suit);
         }
