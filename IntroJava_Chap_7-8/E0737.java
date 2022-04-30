@@ -50,7 +50,10 @@ public class E0737 {
     // for each lever down, the points are either -1 (left) or 1 (right)
     public static int getDirection() {
         int[] direction = {-1, 1};
-        return direction[(int)(Math.random() + 0.5)];
+        char[] leftRight = {'L', 'R'};
+        int index = (int)(Math.random() + 0.5);
+        System.out.print(leftRight[index]);
+        return direction[index];
     }
 
     // calculate points for one ball
@@ -59,6 +62,7 @@ public class E0737 {
         for (int i = 1; i <= list.length -1; i++) {
             point += getDirection();
         }
+        System.out.println();
         return point;
     }
 
