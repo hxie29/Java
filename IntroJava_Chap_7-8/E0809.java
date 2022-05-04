@@ -66,6 +66,7 @@ public class E0809 {
         }
         return board;
     }
+    
     //  Translate board score to symbols
     public static String[][] translate(int[][] board) {
         String[][] str = new String[board.length][board[0].length];
