@@ -28,22 +28,38 @@ public class E09L05 {
 (excluding 1.0). Another way to generate random numbers is to use the java.util.Random
 class, as shown in Figure 9.11, which can generate a random int, long, double, float, and
 boolean value. */
+/*     
         Random generator1 = new Random();
         System.out.println("From generator 1 (seed is current time):");
         for (int i =0; i < 10; i++) {
-            System.out.println(generator1.nextInt(1000) + " ");
+            System.out.print(generator1.nextInt(1000) + " ");
         }
-
+        
+        System.out.println();
         Random generator2 = new Random(3);
         System.out.println("From generator 2 (seed 3):");
         for (int i =0; i < 10; i++) {
-            System.out.println(generator2.nextInt(1000) + " ");
+            System.out.print(generator2.nextInt(1000) + " ");
         }
-
+        
+        System.out.println();
         Random generator3 = new Random(3);
         System.out.println("From generator 3 (seed 3):");
         for (int i =0; i < 10; i++) {
-            System.out.println(generator3.nextInt(1000) + " ");
+            System.out.print(generator3.nextInt(1000) + " ");
         }
+        System.out.println();
+        for (int i =0; i < 10; i++) {
+            System.out.print(generator3.nextDouble() + " ");
+        } 
+        */
+
+/* You can use the no-arg constructor in the Date class to create an instance for the current date
+and time, the getTime() method to return the elapsed time in milliseconds since January 1,
+1970, GMT, and the toString() method to return the date and time as a string. 
+*/
+        java.util.Date date = new java.util.Date();
+        System.out.println("The elapsed time since jan 1, 1970 is " + date.getTime() + " milliseconds.");
+        System.out.println(date.toString());
     }
 }
