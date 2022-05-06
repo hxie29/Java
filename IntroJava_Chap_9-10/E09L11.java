@@ -1,19 +1,33 @@
-/* Circle class with data encapsulation to protect client from accidentally modifying data*/
-
-public class E09L08 {
+// Array of objects
+public class E09L11 {
     public static void main(String[] args) {
-        Circle c1 = new Circle(5.0);
-        System.out.println("The area of the circle of radius " + c1.getRadius() + " is " + c1.getArea());
+       Circle[] circleArray = createCircles();
+       printCircleArray(circleArray);
 
-        c1.setRadius(c1.getRadius() * 1.1);
-        System.out.println("The circle's radius is modified to " + c1.getRadius());
+    }
 
-        System.out.println("Number of objects created: " + Circle.getNumberOfObjects());
+    public static Circle[] createCircles() {
+        Circle[] array = new Circle[5];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = new Circle((int)(Math.random() * 10));
+        }
+        return array;
+    }
 
-        Circle c2 = new Circle();
-        System.out.println("The second circle has a radius of " + c2.getRadius());
-        System.out.println("Number of objects created: " + Circle.getNumberOfObjects());
-        
+    public static void printCircleArray(Circle[] array) {
+        System.out.printf("%-30s%-15s\n", "Radius", "Area");
+        for (int i =0; i < array.length; i++) {
+            System.out.printf("%-30.2f%-15f\n", array[i].getRadius(), array[i].getArea());
+        }
+        System.out.printf("The total area of circles is %-10.2f\n", sum(array));
+    }
+
+    public static double sum(Circle[] array){
+        double sum = 0;
+        for (int i =0; i < array.length; i++) {
+            sum += array[i].getArea();
+        }
+        return sum;
     }
 }
 
@@ -54,5 +68,3 @@ class Circle {
         return radius * radius * Math.PI;
     }
 }
-
-

@@ -28,7 +28,7 @@ public class E09L05 {
 (excluding 1.0). Another way to generate random numbers is to use the java.util.Random
 class, as shown in Figure 9.11, which can generate a random int, long, double, float, and
 boolean value. */
-/*     
+     
         Random generator1 = new Random();
         System.out.println("From generator 1 (seed is current time):");
         for (int i =0; i < 10; i++) {
@@ -52,7 +52,7 @@ boolean value. */
         for (int i =0; i < 10; i++) {
             System.out.print(generator3.nextDouble() + " ");
         } 
-        */
+
 
 /* You can use the no-arg constructor in the Date class to create an instance for the current date
 and time, the getTime() method to return the elapsed time in milliseconds since January 1,

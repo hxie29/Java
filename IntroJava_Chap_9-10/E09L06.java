@@ -1,4 +1,3 @@
-import javax.crypto.Cipher;
 
 /* modify the Circle class by adding a static variable numberOfObjects to
 count the number of circle objects created. When the first object of this class is created,
@@ -22,22 +21,25 @@ class Circle {
     double radius;
     static int numberOfCircles;
 
-    //Constructor
+    //Constructor with no arguments
     Circle() {
         radius = 1;
         numberOfCircles++;
     }
-
+    
+    //Constructor with arguments
     Circle(double newRadius) {
         radius = newRadius;
         numberOfCircles++;
     }
 
     // Other methods
+    // static methods only invoke/access static method/data field
     static int getNumberOfCircles() {
         return numberOfCircles;
     }
 
+    // instance methods can invoke/access both static and instance method/data field
     double getArea() {
         return radius * radius * Math.PI;
     }
