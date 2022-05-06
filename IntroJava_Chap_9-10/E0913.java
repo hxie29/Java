@@ -24,8 +24,7 @@ import java.util.Scanner;
 public class E0913 {
     public static void main(String[] args) {
         double[][] array = createArray();
-        Location maxArray = new Location();
-        maxArray =  locateLargest(array);
+        Location maxArray = locateLargest(array);
         System.out.println("The location of the largest element is " + maxArray.maxValue 
         + " at (" + maxArray.row + ", " + maxArray.column +").");
 
@@ -49,21 +48,18 @@ public class E0913 {
 
     public static Location locateLargest(double[][] array){
         Location x = new Location();
-        double max = array[0][0];
-        int index1 = 0;
-        int index2 = 0;
+        x.maxValue = array[0][0];
+        x.row = 0;
+        x.column = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j =0; j < array[i].length; j++) {
-                if (array[i][j] > max) {
-                    index1 = i;
-                    index2 = j;
-                    max = array[i][j];
+                if (array[i][j] > x.maxValue) {
+                    x.row = i;
+                    x.column = j;
+                    x.maxValue = array[i][j];
                 }
             }
         }
-        x.maxValue = max;
-        x.row = index1;
-        x.column = index2;
         return x;
     }
 }
