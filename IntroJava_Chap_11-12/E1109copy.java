@@ -21,7 +21,7 @@ number of containers to pack the objects?
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class E1119_2 {
+public class E1119copy {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         int limit = 10;
