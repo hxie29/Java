@@ -2,7 +2,6 @@ package hellofx;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -12,8 +11,7 @@ public class E14L05 extends Application {
     @Override
     public void start(Stage primaryStage) {
         Circle circle = new Circle();
-        StackPane pane = new StackPane();
-        pane.getChildren().addAll(circle);
+        StackPane pane = new StackPane(circle);
         circle.centerXProperty().bind(pane.widthProperty().divide(2));
         circle.centerYProperty().bind(pane.heightProperty().divide(2));
         circle.setRadius(50);

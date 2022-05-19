@@ -3,14 +3,12 @@ package hellofx;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
-
-public class Main extends Application {
-
+public class E14L07 extends Application {
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
         Button ok = new Button("ok");
         StackPane pane = new StackPane(ok);
         ok.setStyle("-fx-border-color: blue; -fx-background-color: gray;");
@@ -19,10 +17,9 @@ public class Main extends Application {
         primaryStage.setTitle("Show circle");
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
-
+    }    
 
     public static void main(String[] args) {
-        launch(args);
+        Application.launch(args);
     }
 }
