@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class E14L01 extends Application {
+public class E14L02 extends Application {
     @Override
     public void start(Stage primaryStage) {
         Button btOK = new Button("OK");
@@ -13,6 +13,11 @@ public class E14L01 extends Application {
         primaryStage.setTitle("MyJavaFX");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        Stage stage = new Stage();
+        stage.setTitle("Second stage");
+        stage.setScene(new Scene(new Button("Click here"), 200, 200));
+        stage.show();
 
     }    
 
