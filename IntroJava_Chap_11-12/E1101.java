@@ -25,9 +25,9 @@ public class E1101 {
     public static void main(String[]args){
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the three sides of a triangle, the color, and filled status:");
-        double side1 = input.nextDouble();
-        double side2 = input.nextDouble();
-        double side3 = input.nextDouble();
+        double s1 = input.nextDouble();
+        double s2 = input.nextDouble();
+        double s3 = input.nextDouble();
         String color = input.next();
         boolean filled = input.nextBoolean();
 
