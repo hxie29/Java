@@ -53,7 +53,7 @@ public class E1304 {
         }
         for (int i = 1; i <= getTotalNumbersOfDaysThisMonth(calendar); i++) {
             System.out.printf("%7d", i);
-            // swith a line if item of the line is 7
+            // switch a line if item of the line is 7
             if ((i + getStartDay(calendar)) % 7 == 0) {
                 System.out.println();
             }

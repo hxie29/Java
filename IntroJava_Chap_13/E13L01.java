@@ -52,7 +52,7 @@ abstract class GeometricObject implements Comparable<GeometricObject>{
         return "created on " + dateCreated + "\ncolor: " + color + " and filled: " + filled;
     }
 
-    //Public abstrct methods does not have implementation, does not have a body, ends with;
+    //Public abstract methods does not have implementation, does not have a body, ends with;
     public abstract double getArea();
     public abstract double getPerimeter();
 

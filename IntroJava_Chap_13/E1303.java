@@ -12,15 +12,15 @@ public class E1303 {
         list.add(11);
         list.add(-5);
         list.add(3);
-        System.out.println(list.toString());
+        System.out.println(list);
 
         sort2(list);
-        System.out.println(list.toString());
+        System.out.println(list);
     }
 
     //Sort with int[] using Arrays.sort()
     public static void sort(ArrayList<Integer> list) {
-        if (list.size() == 0 || list == null) {
+        if (list.size() == 0) {
             System.out.println("The list is empty.");
         }
         else {
@@ -29,9 +29,9 @@ public class E1303 {
                 list2[i] = list.get(i);
             }
             Arrays.sort(list2);
-            list.clear();;
-            for (int i = 0; i < list2.length; i++) {
-                list.add(list2[i]);
+            list.clear();
+            for (int e: list2) {
+                list.add(e);
             }
         }
     }
@@ -42,11 +42,11 @@ public class E1303 {
         int minIndex;
 
         for (int i = 0; i < list.size() - 1; i++) {
-            min = list.get(i).intValue();
+            min = list.get(i);
             minIndex = i;
             for (int j = i+1; j < list.size(); j++) {
-                if (list.get(j).intValue() < min) {
-                    min = list.get(j).intValue();
+                if (list.get(j) < min) {
+                    min = list.get(j);
                     minIndex = j;
                 }
             }

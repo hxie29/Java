@@ -14,8 +14,7 @@ public class E14L01 extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-    }    
-
+    }
     public static void main(String[] args) {
         Application.launch(args);
     }

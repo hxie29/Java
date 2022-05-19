@@ -17,7 +17,7 @@ import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.File;
 
-public class E0735 {
+public class E1217 {
 
     public static void main(String[] args) throws Exception{
         File file = new File("hangman.txt");

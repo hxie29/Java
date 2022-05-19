@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-public class E1214 {
+public class E1216 {
     public static void main(String[] args) throws Exception{
         if (args.length != 3) {
             System.out.println("Usage: java E121.java filename oldString newString");
