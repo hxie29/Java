@@ -14,7 +14,6 @@ public class E14L19 extends Application {
     public void start(Stage primaryStage) {
         
 
-        // Using border pane along with group can make sure the contents are always centered when resizing the window
         Scene scene = new Scene(new MyPolygon(), 300,200);
         primaryStage.setTitle("Show Polygon");
         primaryStage.setScene(scene);
