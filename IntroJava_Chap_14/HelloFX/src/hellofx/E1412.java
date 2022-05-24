@@ -31,7 +31,7 @@ public class E1412 extends Application {
                                  new BarChart("Others", 26, Color.ORANGE));
 
         Scene scene = new Scene(pane, 600, 300);
-        primaryStage.setTitle("Smiley face");
+        primaryStage.setTitle("Bar Chart");
         primaryStage.setScene(scene);
         primaryStage.show();
 
