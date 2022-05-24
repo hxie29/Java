@@ -6,6 +6,54 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch E1429",
+            "request": "launch",
+            "mainClass": "hellofx.E1429",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1427",
+            "request": "launch",
+            "mainClass": "hellofx.E1427",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1428",
+            "request": "launch",
+            "mainClass": "hellofx.E1428",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1426",
+            "request": "launch",
+            "mainClass": "hellofx.E1426",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1425",
+            "request": "launch",
+            "mainClass": "hellofx.E1425",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1424",
+            "request": "launch",
+            "mainClass": "hellofx.E1424",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "Launch E1422",
             "request": "launch",
             "mainClass": "hellofx.E1422",
