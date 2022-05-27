@@ -4,3 +4,9 @@ E1510:
 E1520 
      Drag delayed;
      angle not calculated correctly
+E1521 
+     Similar to E1520, skipped;
+E1528
+     Fan not spinning, no java bug, some logic bug (can not find) {
+          problem is the fan is being repainted everytime the pane is resized (constantly)
+     }
