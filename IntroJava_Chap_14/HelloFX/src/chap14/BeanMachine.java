@@ -12,10 +12,12 @@ public class BeanMachine extends Pane {
     private int row = 7;
 
     public BeanMachine() {
+        paint();
     }
 
     public BeanMachine(int row) {
         this.row = row;
+        paint();
     }
 
     private void paint() {
@@ -53,11 +55,12 @@ public class BeanMachine extends Pane {
             y += vDis;
         }
 
-        for (int i = 0; i < circlePoints.size(); i+=2) {
+       /*  for (int i = 0; i < circlePoints.size(); i+=2) {
             Circle c = new Circle(circlePoints.get(i), circlePoints.get(i+1), radius);
                 c.setFill(Color.BLACK);
                 group.getChildren().add(c);
-        }
+        } */
+        
         for (int i = 0; i < linePoints.size(); i+=4) {
             Line l = new Line(linePoints.get(i), linePoints.get(i+1), linePoints.get(i + 2), linePoints.get(i + 3));
             l.setStroke(Color.BLACK);

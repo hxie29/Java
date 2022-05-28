@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch E1528",
+            "request": "launch",
+            "mainClass": "chap15.E1528",
+            "projectName": "IntroJava_Chap_14_b50e68d0"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1525",
+            "request": "launch",
+            "mainClass": "chap15.E1525",
+            "projectName": "IntroJava_Chap_14_b50e68d0"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
