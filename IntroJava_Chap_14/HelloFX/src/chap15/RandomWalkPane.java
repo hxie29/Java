@@ -16,37 +16,45 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 public class RandomWalkPane extends Pane{
-    private int row = 16;
-    private int column = 16;
+    private int row , column;
     private int unit = 50;
-    private int width = row * unit + 50;
-    private int height = column * unit + 50;
+    private int width, height;
     private int margin = 25;
     private Color gridColor = Color.LIGHTGRAY;
-    private int startX = margin + (column / 2) * unit;
-    private int startY = margin + (row /  2) * unit;
+    private int startX, startY;
     private int currentX, currentY, nextX, nextY;
-    private Circle startPoint = new Circle(startX, startY, 5);
 
-    private boolean[][] walkedPoints = new boolean[row + 1][column + 1];
-    private int startRow = row / 2;
-    private int startColumn = column / 2;
-    private int currentRow;
-    private int currentColumn;
+    private boolean[][] walkedPoints;
+    private int startRow, startColumn, currentRow, currentColumn;
     private ArrayList<Line> walkedLines = new ArrayList<>();
     private boolean[] triedPath = new boolean[4]; // {UP, DOWN, LEFT, RIGHT}
 
     public RandomWalkPane() {
-        setMinHeight(height);
-        setMinWidth(width);
-        getGrid();
+        this(16,16);
+
     }
 
     public RandomWalkPane(int row, int column) {
         this.row = row;
         this.column = column;
+        walkedPoints = new boolean[row + 1][column + 1];
+
+        width = row * unit + 50;
+        height = column * unit + 50;
         setMinHeight(height);
         setMinWidth(width);
+        setMinHeight(height);
+        setMinWidth(width);
+        
+        startX = margin + (column / 2) * unit;
+        startY = margin + (row /  2) * unit;
+        currentX = startX;
+        currentY = startY;
+        startRow = row / 2;
+        startColumn = column / 2;
+
+        walkedPoints[startRow][startColumn] = true;
+        
         getGrid();
     }
 
@@ -72,28 +80,24 @@ public class RandomWalkPane extends Pane{
             l.setStrokeWidth(1);
             getChildren().add(l);
         }
+        Circle startPoint = new Circle(startX, startY, 10);
         startPoint.setFill(Color.RED);
         getChildren().add(startPoint);
     }
     
-    public void walk() {
-        walkedPoints[startRow][startColumn] = true;
-        currentX = startX;
-        currentY = startY;
-        currentRow = startRow;
-        currentColumn = startColumn;
-  
-        do {
+    public int walk() {
+        while (!atBorder()) {
             int direction = (int) (Math.random() * 4); // {UP, DOWN, LEFT, RIGHT}
             if (!checkPoint(direction)) {
                 drawStep(direction);
             }
             else {
                 triedPath[direction] = true;
+                if (exhaustedPath()) break;
             }
-            // loop condition is the 4 direction path has not been exhaused && the walker is not at the border;
-        } while (!exhaustedPath() && !atBorder());
-
+        } 
+        if (atBorder()) return 0;
+        else return 1;
     }
     
     private boolean exhaustedPath() {
@@ -170,17 +174,20 @@ public class RandomWalkPane extends Pane{
         getChildren().removeAll(walkedLines);
         walkedLines.clear();
 
-        for (int i =0; i < walkedPoints.length; i++) {
+        for (int i = 0; i < walkedPoints.length; i++) {
             for (int j = 0; j < walkedPoints[i].length; j++) {
                 walkedPoints[i][j] = false;
             }
         }
-        System.out.println("Rest walkedPoints to all false");
-        walkedPoints[startRow][startColumn] = true;
         for (int i =0; i < triedPath.length; i++) {
-                triedPath[i] = false;
+            triedPath[i] = false;
         }
-
+        
+        walkedPoints[startRow][startColumn] = true;
+        currentX = startX;
+        currentY = startY;
+        currentRow = startRow;
+        currentColumn = startColumn;
     }
 
     @Override

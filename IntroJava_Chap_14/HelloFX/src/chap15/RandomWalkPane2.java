@@ -15,7 +15,10 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
-import javafx.scene.text.Text;
+import javafx.animation.Timeline;
+import javafx.animation.KeyFrame;
+import javafx.util.Duration;
+
 public class RandomWalkPane2 extends Pane{
     private int row = 16;
     private int column = 16;
@@ -28,7 +31,7 @@ public class RandomWalkPane2 extends Pane{
     private int startY = margin + (row /  2) * unit;
     private int currentX, currentY, nextX, nextY;
     private Circle startPoint = new Circle(startX, startY, 5);
-    Text text = new Text(width/2 - 100, height /2, "End. Please reset and start again.");
+    Timeline animate = new Timeline(new KeyFrame(Duration.seconds(0.3), e -> nextStep()));
 
     private boolean[][] walkedPoints = new boolean[row + 1][column + 1];
     private int startRow = row / 2;
@@ -42,6 +45,7 @@ public class RandomWalkPane2 extends Pane{
         setMinHeight(height);
         setMinWidth(width);
         getGrid();
+        animate.setCycleCount(Timeline.INDEFINITE);
     }
 
     public RandomWalkPane2(int row, int column) {
@@ -50,6 +54,7 @@ public class RandomWalkPane2 extends Pane{
         setMinHeight(height);
         setMinWidth(width);
         getGrid();
+        animate.setCycleCount(Timeline.INDEFINITE);
     }
 
     public void setUnitSize(int unit) {
@@ -78,23 +83,34 @@ public class RandomWalkPane2 extends Pane{
         getChildren().add(startPoint);
     }
 
+    public void walk() {
+        reset();
+        animate.play();
+    }
+
+    public void pause() {
+        animate.pause();
+    }
+
+    public void resume() {
+        animate.play();
+    }
+    
     public void nextStep() {
-        if (!exhaustedPath() && !atBorder()) {
+        boolean takeStep = false;
+        while (!takeStep && !exhaustedPath() && !endGame()) {
             int direction = (int) (Math.random() * 4); // {UP, DOWN, LEFT, RIGHT}
             if (!checkPoint(direction)) {
                 drawStep(direction);
+                takeStep = true;
             }
             else {
                 triedPath[direction] = true;
             }
-            // loop condition is the 4 direction path has not been exhaused && the walker is not at the border;
         }
-        else {
-            if (!getChildren().contains(text)) getChildren().add(text);
-        }
-    }
-    
-    private boolean exhaustedPath() {
+    }  
+
+    public boolean exhaustedPath() {
         for (boolean a: triedPath) {
             if (!a) return false;
         }
@@ -109,7 +125,7 @@ public class RandomWalkPane2 extends Pane{
         else return walkedPoints[currentRow][currentColumn +1];
     }
 
-    private boolean atBorder() {
+    public boolean endGame() {
         return (currentColumn == 0 || currentRow == 0 || currentColumn == column || currentRow == row);
     }
 
@@ -166,11 +182,10 @@ public class RandomWalkPane2 extends Pane{
 
     public void reset() {
         //Clean all the lines
-        getChildren().remove(text);
         getChildren().removeAll(walkedLines);
         walkedLines.clear();
 
-        for (int i =0; i < walkedPoints.length; i++) {
+        for (int i = 0; i < walkedPoints.length; i++) {
             for (int j = 0; j < walkedPoints[i].length; j++) {
                 walkedPoints[i][j] = false;
             }

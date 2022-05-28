@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch E1536",
+            "request": "launch",
+            "mainClass": "chap15.E1536",
+            "projectName": "HelloFX_b156a2c5"
+        },
+        {
+            "type": "java",
             "name": "Launch E1535",
             "request": "launch",
             "mainClass": "chap15.E1535",
