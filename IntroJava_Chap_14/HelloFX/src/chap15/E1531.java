@@ -29,17 +29,23 @@ public class E1531 extends Application {
         arc.setStroke(Color.TRANSPARENT);
         arc.setType(ArcType.OPEN);
         arc.setFill(Color.TRANSPARENT);
-        Circle hook = new Circle(arc.getCenterX(), 0,5);
+        Circle hook = new Circle(arc.getCenterX(),50,5);
         hook.setFill(Color.BLACK);
         Line rope = new Line(hook.getCenterX(), hook.getCenterY(), 0, 0);
         rope.setStroke(Color.BLACK);
+        rope.setStrokeWidth(2);
         Circle c = new Circle(10);
         c.setFill(Color.RED);
-        rope.endXProperty().bind(c.centerXProperty());
-        rope.endYProperty().bind(c.centerYProperty());
+        /* 
+        public final DoubleProperty translateXProperty() Defines the x coordinate of the translation that is added to this Node's transform.
+        The node's final translation will be computed as layoutX + translateX, where layoutX establishes the node's stable position and translateX optionally makes dynamic adjustments to that position.
+        This variable can be used to alter the location of a node without disturbing its layoutBounds, which makes it useful for animating a node's location.
+         */
+        rope.endXProperty().bind(c.translateXProperty().add(c.centerXProperty()));
+        rope.endYProperty().bind(c.translateYProperty().add(c.centerYProperty()));
 
+        
         pane.getChildren().addAll(arc,rope,c,hook);
-
         //Create path transition 
         PathTransition path = new PathTransition();
         path.setDuration(Duration.millis(4000));

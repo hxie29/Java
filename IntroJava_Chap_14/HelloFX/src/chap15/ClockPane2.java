@@ -17,9 +17,13 @@ public class ClockPane2 extends Pane{
     private int hour;
     private int minute;
     private int second;
+    private double height = 800;
+    private double width = 800;
     Timeline animate = new Timeline(new KeyFrame(Duration.seconds(1), e -> this.setCurrentTiime()));
 
     public ClockPane2() {
+        setMinHeight(height);
+        setMinWidth(width);
         setCurrentTiime();
         animate.setAutoReverse(false);
         animate.setCycleCount(Timeline.INDEFINITE);
@@ -27,6 +31,8 @@ public class ClockPane2 extends Pane{
     }
 
     public ClockPane2(int hour, int minute, int second) {
+        setMinHeight(height);
+        setMinWidth(width);
         setHour(hour);
         setMinute(minute);
         setSeconds(second);
