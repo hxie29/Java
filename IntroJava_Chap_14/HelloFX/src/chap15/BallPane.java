@@ -6,6 +6,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
+import javafx.beans.property.DoubleProperty;
 
 public class BallPane extends Pane {
     public final double radius = 50;
@@ -27,6 +28,10 @@ public class BallPane extends Pane {
 
     public void pause() {
         animation.pause();
+    }
+
+    public DoubleProperty getRateProperty() {
+        return animation.rateProperty();
     }
 
     public void increaseSpeed() {
