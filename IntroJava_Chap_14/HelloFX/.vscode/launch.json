@@ -6,6 +6,134 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch E1616",
+            "request": "launch",
+            "mainClass": "chap16.E1616",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1615",
+            "request": "launch",
+            "mainClass": "chap16.E1615",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1614",
+            "request": "launch",
+            "mainClass": "chap16.E1614",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1613",
+            "request": "launch",
+            "mainClass": "chap16.E1613",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1612",
+            "request": "launch",
+            "mainClass": "chap16.E1612",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1611",
+            "request": "launch",
+            "mainClass": "chap16.E1611",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1610",
+            "request": "launch",
+            "mainClass": "chap16.E1610",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1609",
+            "request": "launch",
+            "mainClass": "chap16.E1609",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1608",
+            "request": "launch",
+            "mainClass": "chap16.E1608",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1607",
+            "request": "launch",
+            "mainClass": "chap16.E1607",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1606",
+            "request": "launch",
+            "mainClass": "chap16.E1606",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1605",
+            "request": "launch",
+            "mainClass": "chap16.E1605",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1604",
+            "request": "launch",
+            "mainClass": "chap16.E1604",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1603",
+            "request": "launch",
+            "mainClass": "chap16.E1603",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1602",
+            "request": "launch",
+            "mainClass": "chap16.E1602",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1601",
+            "request": "launch",
+            "mainClass": "chap16.E1601",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "Launch E16L14",
             "request": "launch",
             "mainClass": "chap16.E16L14",
