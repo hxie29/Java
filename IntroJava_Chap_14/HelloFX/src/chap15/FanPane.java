@@ -1,5 +1,6 @@
 package chap15;
 
+import javafx.beans.property.DoubleProperty;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.ArcType;
@@ -46,6 +47,10 @@ public class FanPane extends Pane {
 
     public void setSpeed(int n) {
         change = n;
+    }
+
+    public void setSpeed(DoubleProperty n) {
+        change = n.doubleValue();
     }
 
     public void changeDirection() {

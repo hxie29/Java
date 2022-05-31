@@ -48,7 +48,7 @@ public class E1615 extends Application {
         tf.setOnAction(e -> update());
 
         Scene scene = new Scene(pane, 450, 200);
-        primaryStage.setTitle("TextArea Demo");
+        primaryStage.setTitle("Content display demo");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

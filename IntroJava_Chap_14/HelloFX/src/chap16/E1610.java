@@ -58,7 +58,7 @@ public class E1610 extends Application {
         });
 
         Scene scene = new Scene(pane, 450, 200);
-        primaryStage.setTitle("TextArea Demo");
+        primaryStage.setTitle("Text viwer");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

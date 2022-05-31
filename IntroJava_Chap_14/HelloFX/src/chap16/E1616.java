@@ -46,7 +46,7 @@ public class E1616 extends Application {
         list.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> text.setText("Selected items: "+getText()));
 
         Scene scene = new Scene(pane, 450, 200);
-        primaryStage.setTitle("TextArea Demo");
+        primaryStage.setTitle("ListView demo");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

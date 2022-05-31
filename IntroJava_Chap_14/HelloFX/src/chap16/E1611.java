@@ -52,7 +52,7 @@ public class E1611 extends Application {
         });
 
         Scene scene = new Scene(pane, 450, 200);
-        primaryStage.setTitle("TextArea Demo");
+        primaryStage.setTitle("Histogram demo");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

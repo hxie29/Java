@@ -61,7 +61,7 @@ public class E1614 extends Application {
         cbFontSize.setOnAction(e -> update());
 
         Scene scene = new Scene(pane, 450, 200);
-        primaryStage.setTitle("TextArea Demo");
+        primaryStage.setTitle("Font demo");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
