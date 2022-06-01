@@ -6,11 +6,19 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch E1625",
+            "request": "launch",
+            "mainClass": "chap16.E1625",
+            "projectName": "HelloFX_b156a2c5",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml,javafx.media"
+        },
+        {
+            "type": "java",
             "name": "Launch E1621",
             "request": "launch",
             "mainClass": "chap16.E1621",
             "projectName": "HelloFX_b156a2c5",
-            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml,javafx.media"
         },
         {
             "type": "java",
@@ -66,7 +74,7 @@
             "request": "launch",
             "mainClass": "chap16.E1614",
             "projectName": "HelloFX_b156a2c5",
-            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml,javafx.web,javafx.graphics,javafx.media"
         },
         {
             "type": "java",
