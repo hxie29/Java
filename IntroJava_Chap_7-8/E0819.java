@@ -9,7 +9,7 @@ if the array contains four consecutive numbers with the same value. Otherwise,
 the program displays false.*/
 
 import java.util.Scanner;
-public interface E0819 {
+public class E0819 {
 
     public static void main(String[] args) {
         int[][] m = readMatrix();
