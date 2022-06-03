@@ -6,6 +6,207 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch E1721",
+            "request": "launch",
+            "mainClass": "E1721",
+            "projectName": "BinaryIO_bd7cb2c3",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1720",
+            "request": "launch",
+            "mainClass": "E1720",
+            "projectName": "BinaryIO_bd7cb2c3",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1719",
+            "request": "launch",
+            "mainClass": "E1719",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1718",
+            "request": "launch",
+            "mainClass": "E1718",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1717",
+            "request": "launch",
+            "mainClass": "E1717",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1716",
+            "request": "launch",
+            "mainClass": "E1716",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1715",
+            "request": "launch",
+            "mainClass": "E1715",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1714",
+            "request": "launch",
+            "mainClass": "E1714",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1712",
+            "request": "launch",
+            "mainClass": "E1712",
+            "projectName": "BinaryIO_bd7cb2c3",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1711",
+            "request": "launch",
+            "mainClass": "E1711",
+            "projectName": "BinaryIO_bd7cb2c3",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1710",
+            "request": "launch",
+            "mainClass": "E1710",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1709",
+            "request": "launch",
+            "mainClass": "E1709",
+            "projectName": "BinaryIO_bd7cb2c3",
+            "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1708",
+            "request": "launch",
+            "mainClass": "E1708",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1707",
+            "request": "launch",
+            "mainClass": "E1707",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1706",
+            "request": "launch",
+            "mainClass": "E1706",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1705",
+            "request": "launch",
+            "mainClass": "E1705",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1704",
+            "request": "launch",
+            "mainClass": "E1704",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1703",
+            "request": "launch",
+            "mainClass": "E1703",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1702",
+            "request": "launch",
+            "mainClass": "E1702",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E1701",
+            "request": "launch",
+            "mainClass": "E1701",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E17L08",
+            "request": "launch",
+            "mainClass": "E17L08",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E17L07",
+            "request": "launch",
+            "mainClass": "E17L07",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E17L05",
+            "request": "launch",
+            "mainClass": "E17L05",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E17L04",
+            "request": "launch",
+            "mainClass": "E17L04",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E17L03",
+            "request": "launch",
+            "mainClass": "E17L03",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E17L02",
+            "request": "launch",
+            "mainClass": "E17L02",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
+            "name": "Launch E17L01",
+            "request": "launch",
+            "mainClass": "E17L01",
+            "projectName": "BinaryIO_bd7cb2c3"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}",
@@ -18,7 +219,6 @@
             "mainClass": "App",
             "projectName": "BinaryIO_bd7cb2c3",
             "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
-
         },
         {
             "type": "java",
@@ -27,7 +227,6 @@
             "mainClass": "Main",
             "projectName": "BinaryIO_bd7cb2c3",
             "vmArgs": "--module-path /Library/Java/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
-
         }
     ]
 }
