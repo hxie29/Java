@@ -18,13 +18,13 @@ import javafx.scene.text.Text;
 
 public class E1721 extends Application{
     private String filename;
-    private TextField tfName = new TextField();
-    private TextArea ta = new TextArea();
-    private Button btSave = new Button("Save");
-    private StringBuilder content = new StringBuilder();
+    private final TextField tfName = new TextField();
+    private final TextArea ta = new TextArea();
+    private final Button btSave = new Button("Save");
+    private final StringBuilder content = new StringBuilder();
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) {
         BorderPane pane = new BorderPane();
         
         HBox inputBox = new HBox(10);
@@ -50,15 +50,11 @@ public class E1721 extends Application{
     private void read(){
         filename = tfName.getText();
         content.delete(0, content.length());
-        try (BufferedInputStream input = new BufferedInputStream (new FileInputStream(new File(filename)))) {
+        try (BufferedInputStream input = new BufferedInputStream (new FileInputStream(filename))) {
             int r;
             while ((r = input.read()) != -1) {
                 content.append(Integer.toHexString(r));
             }
-        } 
-
-        catch(FileNotFoundException ex) {
-            ex.printStackTrace();
         }
 
         catch(IOException ex) {
@@ -71,16 +67,12 @@ public class E1721 extends Application{
     private void save(){
         String content = ta.getText();
         int value;
-        try (BufferedOutputStream out = new BufferedOutputStream (new FileOutputStream(new File(filename)))) {
+        try (BufferedOutputStream out = new BufferedOutputStream (new FileOutputStream(filename))) {
             for (int index = 0; index < content.length(); index +=2) {
                 String subString = content.substring(index, index+2);
                 value = Integer.parseInt(subString, 16);
                 out.write(value);
             }
-        }
-
-        catch(FileNotFoundException ex) {
-            ex.printStackTrace();
         }
 
         catch(IOException ex) {

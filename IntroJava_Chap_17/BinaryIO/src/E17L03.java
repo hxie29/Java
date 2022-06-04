@@ -22,19 +22,18 @@ import java.io.*;
 public class E17L03 {
     public static void main(String[] args) throws IOException {
         try {
-            try (DataOutputStream output = new DataOutputStream(new BufferedOutputStream (new FileOutputStream("test.dat")));) {
+            try (DataOutputStream output = new DataOutputStream(new BufferedOutputStream (new FileOutputStream("test.dat")))) {
                 output.writeDouble(85.5);
                 output.writeDouble(185.5);
                 output.writeDouble(105.25);
             }
     
-            try (DataInputStream input = new DataInputStream(new BufferedInputStream (new FileInputStream("test.dat")));) {
+            try (DataInputStream input = new DataInputStream(new BufferedInputStream (new FileInputStream("test.dat")))) {
                while (true) {
                    System.out.println(input.readDouble());
                }
             }
         }
-
         catch (EOFException ex) {
             System.out.println("Done.");
         }

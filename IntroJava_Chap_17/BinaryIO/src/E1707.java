@@ -14,8 +14,8 @@ public class E1707 {
         }        
 
         try (ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("E17_07.dat", false))) {
-            for (int i = 0; i < loans.length; i++) {
-                output.writeObject(loans[i]);
+            for (Loan loan: loans) {
+                output.writeObject(loan);
             }
         }
 

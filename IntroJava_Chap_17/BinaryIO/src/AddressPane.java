@@ -7,8 +7,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import java.io.*;
 
-public class AdressPane extends BorderPane {
-    private RandomAccessFile raf;
+public class AddressPane extends BorderPane {
+    private final RandomAccessFile raf;
 
     private final int NAME_L = 32;
     private final int STREET_L = 32;
@@ -16,30 +16,24 @@ public class AdressPane extends BorderPane {
     private final int STATE_L = 2;
     private final int ZIP_L = 5;
 
-    private byte[] name = new byte[NAME_L];
-    private byte[] street = new byte[STREET_L];
-    private byte[] city = new byte[CITY_L];
-    private byte[] state = new byte[STATE_L];
-    private byte[] zip = new byte[ZIP_L];
+    private final byte[] name = new byte[NAME_L];
+    private final byte[] street = new byte[STREET_L];
+    private final byte[] city = new byte[CITY_L];
+    private final byte[] state = new byte[STATE_L];
+    private final byte[] zip = new byte[ZIP_L];
 
-    private int unit = NAME_L + STREET_L + CITY_L + STATE_L + ZIP_L;
+    private final int UNIT = NAME_L + STREET_L + CITY_L + STATE_L + ZIP_L;
     private long index = 0;
 
-    private TextField tfName = new TextField();
-    private TextField tfStreet = new TextField();
-    private TextField tfState = new TextField();
-    private TextField tfCity = new TextField();
-    private TextField tfZip = new TextField();
-
-    private Button btAdd = new Button("Add");
-    private Button btFirst = new Button("First");
-    private Button btNext = new Button("Next");
-    private Button btPrevious = new Button("Previous");
-    private Button btLast = new Button("Last");
-    private Button btUpdate = new Button("Update");
+    private final TextField tfName = new TextField();
+    private final TextField tfStreet = new TextField();
+    private final TextField tfState = new TextField();
+    private final TextField tfCity = new TextField();
+    private final TextField tfZip = new TextField();
 
 
-    public AdressPane(File file) throws FileNotFoundException {
+
+    public AddressPane(File file) throws FileNotFoundException {
         raf = new RandomAccessFile(file, "rw");
 
         HBox row1 = new HBox(10);
@@ -61,6 +55,12 @@ public class AdressPane extends BorderPane {
         row2.getChildren().addAll(new Text("Street"), tfStreet);
         row3.getChildren().addAll(new Text("City"), tfCity, new Text("State"), tfState, new Text("Zip"), tfZip);
 
+        Button btAdd = new Button("Add");
+        Button btFirst = new Button("First");
+        Button btNext = new Button("Next");
+        Button btPrevious = new Button("Previous");
+        Button btLast = new Button("Last");
+        Button btUpdate = new Button("Update");
         controlPanel.getChildren().addAll(btAdd, btFirst, btNext, btPrevious, btLast, btUpdate);
         setBottom(controlPanel);
         setCenter(contentPanel);
@@ -69,7 +69,7 @@ public class AdressPane extends BorderPane {
 
         display();
 
-        btAdd.setOnAction(e -> addAdress());
+        btAdd.setOnAction(e -> addAddress());
 
         btFirst.setOnAction(e -> first());
 
@@ -79,12 +79,12 @@ public class AdressPane extends BorderPane {
 
         btLast.setOnAction(e -> last());
 
-        btUpdate.setOnAction(e -> updateAdress());
+        btUpdate.setOnAction(e -> updateAddress());
     }
 
     private void display(){
         try {
-            raf.seek(index * unit);
+            raf.seek(index * UNIT);
 
             raf.read(name);
             tfName.setText(new String(name));
@@ -102,23 +102,29 @@ public class AdressPane extends BorderPane {
             tfZip.setText(new String(zip));
         }
 
-        catch(IOException ex) {}
+        catch(IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
-    private void addAdress() {
+    private void addAddress() {
         try {
             raf.seek(raf.length());
             readTextFields();
         }
-        catch (IOException ex) {}
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
-    private void updateAdress() {
+    private void updateAddress() {
         try {
-            raf.seek(index * unit);
+            raf.seek(index * UNIT);
             readTextFields();
         }
-        catch (IOException ex) {}
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     private void readTextFields() throws IOException{
@@ -136,9 +142,11 @@ public class AdressPane extends BorderPane {
 
     private void next() {
         try {
-            if (index * unit < raf.length()) index++;
+            if (index * UNIT < raf.length()) index++;
         }
-        catch(IOException ex) {}
+        catch(IOException ex) {
+            ex.printStackTrace();
+        }
         display();
     }
 
@@ -151,10 +159,12 @@ public class AdressPane extends BorderPane {
 
     private void last() {
         try{
-            raf.seek((long)(raf.length()) - unit);
+            raf.seek(raf.length() - UNIT);
             display();
         }
-        catch (IOException ex) {}
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     private byte[] convertLength(byte[] origin, int n) {

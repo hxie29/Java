@@ -27,14 +27,14 @@ public class E1704 {
         } */
        
         try (BufferedReader input = new BufferedReader(new FileReader("README.md"));
-             DataOutputStream output = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("E17_04out.bin")));) {
-            String line = "";
-            int filesize = 0;
+             DataOutputStream output = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("E17_04out.bin")))) {
+            String line;
+            int fileSize = 0;
             while ((line = input.readLine()) != null) {
-                filesize += line.length();
+                fileSize += line.length();
                 output.writeUTF(line);
             }
-            System.out.println("File size " + filesize);
+            System.out.println("File size " + fileSize);
             System.out.println(output.size() + " bytes copied");
         }
     }

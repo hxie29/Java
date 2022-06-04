@@ -7,7 +7,7 @@ need to process primitive numeric types, use DataInputStream and DataOutputStrea
 to filter bytes.
 */
 
-/* DataInputStream reads bytes from the stream and converts them into appropriate primitivetype
+/* DataInputStream reads bytes from the stream and converts them into appropriate primitive type
 values or strings. DataOutputStream converts primitive-type values or strings into bytes
 and outputs the bytes to the stream.
 DataInputStream extends FilterInputStream and implements the DataInput interface,
@@ -54,7 +54,7 @@ import java.io.*;
 
 public class E17L02 {
     public static void main(String[] args) throws IOException {
-        try (DataOutputStream output = new DataOutputStream(new FileOutputStream("temp.dat"));) {
+        try (DataOutputStream output = new DataOutputStream(new FileOutputStream("temp.dat"))) {
             output.writeUTF("John");
             output.writeDouble(85.5);
             output.writeUTF("Jim");
@@ -63,7 +63,7 @@ public class E17L02 {
             output.writeDouble(105.25);
         }
 
-        try (DataInputStream input = new DataInputStream(new FileInputStream("temp.dat"));) {
+        try (DataInputStream input = new DataInputStream(new FileInputStream("temp.dat"))) {
             System.out.println(input.readUTF() + " " + input.readDouble());
             System.out.println(input.readUTF() + " " + input.readDouble());
             System.out.println(input.readUTF() + " " + input.readDouble());

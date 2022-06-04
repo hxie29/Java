@@ -1,16 +1,16 @@
 import java.io.Serializable;
 
-public class AdressBook implements Serializable {
+public class AddressBook implements Serializable {
     private String name = "";
     private String street = "";
     private String city = "";
     private String state = "";
     private String zip = "";
 
-    public AdressBook() {
+    public AddressBook() {
     }
 
-    public AdressBook(String name, String street, String city, String state, String zip) {
+    public AddressBook(String name, String street, String city, String state, String zip) {
         this.name = name;
         this.street = street;
         this.city = city;

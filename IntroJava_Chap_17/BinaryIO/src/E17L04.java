@@ -8,7 +8,7 @@ stream to read bytes from the source file, and an output stream to send bytes to
 regardless of the file’s contents. The source file and the target file are specified from the command
 line. Create an InputFileStream for the source file, and an OutputFileStream
 for the target file. Use the read() method to read a byte from the input stream and then use
-the write(b) method to write the byte to the output stream. Use BufferedInputStream
+write(b) method to write the byte to the output stream. Use BufferedInputStream
 and BufferedOutputStream to improve the performance. Listing 17.4 gives the solution
 to the problem.
 */
@@ -47,7 +47,7 @@ public class E17L04 {
         } 
        
         try (BufferedInputStream input = new BufferedInputStream(new FileInputStream(source));
-                BufferedOutputStream output = new BufferedOutputStream(new FileOutputStream(target));) {
+                BufferedOutputStream output = new BufferedOutputStream(new FileOutputStream(target))) {
             int r, numberOfBytesCopied = 0;
             while ((r = input.read()) != -1) {
                 output.write((byte) r);

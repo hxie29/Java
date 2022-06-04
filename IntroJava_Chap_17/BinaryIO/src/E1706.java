@@ -23,8 +23,8 @@ public class E1706 {
         try (ObjectInputStream input = new ObjectInputStream(new FileInputStream("E17_06.dat"))) {
             //need to cast object into specific class
             Loan[] newLoans = (Loan[])(input.readObject());
-            for (int i = 0; i < newLoans.length; i++)
-                System.out.println(newLoans[i].toString()); 
+            for (Loan loan: newLoans)
+                System.out.println(loan.toString());
         }
     }  
 }

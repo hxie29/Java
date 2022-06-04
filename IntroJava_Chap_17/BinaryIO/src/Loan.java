@@ -5,7 +5,7 @@ public class Loan implements Serializable {
     private double annualInterestRate;
     private int numberOfYears;
     private double loanAmount;
-    private java.util.Date loanDate;
+    private final java.util.Date loanDate;
 
     /** Default constructor */
     public Loan() {
@@ -28,7 +28,7 @@ public class Loan implements Serializable {
         return annualInterestRate;
     }
 
-    /** Set an new annualInterestRate */
+    /** Set a new annualInterestRate */
     public void setAnnualInterestRate(double annualInterestRate) throws IllegalArgumentException{
         if (annualInterestRate <= 0) throw new IllegalArgumentException("Interest rates cannot be less or equal to zero.");
         this.annualInterestRate = annualInterestRate;
@@ -59,15 +59,13 @@ public class Loan implements Serializable {
     /** Find monthly payment */
     public double getMonthlyPayment() {
         double monthlyInterestRate = annualInterestRate / 1200;
-        double monthlyPayment = loanAmount * monthlyInterestRate / (1 -
+        return loanAmount * monthlyInterestRate / (1 -
             (1 / Math.pow(1 + monthlyInterestRate, numberOfYears * 12)));
-        return monthlyPayment;
     }
 
     /** Find total payment */
     public double getTotalPayment() {
-        double totalPayment = getMonthlyPayment() * numberOfYears * 12;
-        return totalPayment;
+        return getMonthlyPayment() * numberOfYears * 12;
     }
     
     /** Return loan date */

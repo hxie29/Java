@@ -18,13 +18,13 @@ import javafx.scene.text.Text;
 public class E1711 extends Application{
     private String filename;
     private int numberOfPieces;
-    private TextField tfName = new TextField();
-    private TextField tfNumber = new TextField();
-    private Button btStart = new Button("Start");
+    private final TextField tfName = new TextField();
+    private final TextField tfNumber = new TextField();
+    private final Button btStart = new Button("Start");
     Text reminder = new Text("If the base file is named temp.txt with three pieces, \nthe three smaller files are temp_1.txt, temp_2.txt, and temp_3.txt");
 
     @Override
-    public void start(Stage primaryStage) throws IOException  {
+    public void start(Stage primaryStage) {
         BorderPane pane = new BorderPane();
         pane.setTop(reminder);
         GridPane grid = new GridPane();
@@ -54,7 +54,7 @@ public class E1711 extends Application{
                 long individualSize = raf.length() / numberOfPieces + 1;
 
                 for (int i = 0; i < numberOfPieces; i++) {
-                    File newFile = new File(filename.substring(0, dotIndex) + "_" + (i+1) + filename.substring(dotIndex, filename.length()));
+                    File newFile = new File(filename.substring(0, dotIndex) + "_" + (i+1) + filename.substring(dotIndex));
                     try (BufferedOutputStream output = new BufferedOutputStream(new FileOutputStream(newFile))) {
                         for (int j = 0; j < individualSize; j++)
                             output.write(raf.read());
@@ -64,7 +64,9 @@ public class E1711 extends Application{
                     }
                 }
             }
-            catch(IOException ex) {}
+            catch(IOException ex) {
+                ex.printStackTrace();
+            }
         });
 
     }

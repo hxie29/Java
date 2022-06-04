@@ -9,9 +9,9 @@ representation.
 import java.io.*;
 
 public class E1718 {
-    public static void main(String[] agrs) throws FileNotFoundException, IOException{
+    public static void main(String[] agrs) throws IOException{
 
-        try (BufferedInputStream input = new BufferedInputStream (new FileInputStream(new File("test.txt")))) {
+        try (BufferedInputStream input = new BufferedInputStream (new FileInputStream("test.txt"))) {
             int r;
             while ((r = input.read()) != -1) {
                 System.out.println(getBits(r));
@@ -21,12 +21,12 @@ public class E1718 {
     }
 
     public static String getBits(int value) {
-        String byteString = "";
+        StringBuilder byteString = new StringBuilder();
 
         for (int i = 7; i >= 0; i--)
-            byteString += ((value >> i) & 1);
+            byteString.append((value >> i) & 1);
 
-        return byteString;
+        return byteString.toString();
     }
 
 }

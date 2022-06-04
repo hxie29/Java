@@ -12,7 +12,7 @@ import java.io.*;
 
 public class E17L08 {
     public static void main(String[] args) throws IOException {
-        // create a random access file
+        // create random access file
         try (RandomAccessFile inout = new RandomAccessFile("inout.dat", "rw")) {
             //clear the file to destroy the old contents if exists
             inout.setLength(0);

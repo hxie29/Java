@@ -21,7 +21,7 @@ public class E1705 {
             int[] newNumbers = (int[]) (input.readObject());
             for (int number: newNumbers) System.out.print(number + " ");
             System.out.println();
-            System.out.println((Date)(input.readObject()) + " " + (double)input.readDouble()); 
+            System.out.println((input.readObject()) + " " + input.readDouble());
         }
     }  
 }
