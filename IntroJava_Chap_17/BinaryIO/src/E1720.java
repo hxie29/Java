@@ -1,4 +1,4 @@
-/* (Binary editor) Write a GUI application that lets the user to enter file name in
+/* (Binary editor) Write a GUI application that lets the user enter file name in
 the text field and press the Enter key to display its binary representation in a text
 area. The user can also modify the binary code and save it back to the file, as
 shown in Figure 17.23a.
@@ -80,7 +80,7 @@ public class E1720 extends Application{
         }
     }
 
-    public static String getBits(int value) {
+    private String getBits(int value) {
         StringBuilder byteString = new StringBuilder();
 
         for (int i = 7; i >= 0; i--)

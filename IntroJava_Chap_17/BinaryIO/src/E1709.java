@@ -16,7 +16,7 @@ public class E1709 extends Application{
 
         File file = new File("E17_09.dat");
 
-        AdressPane pane = new AdressPane(file);
+        AddressPane pane = new AddressPane(file);
         primaryStage.setScene(new Scene(pane));
         primaryStage.setTitle("Address Book");
         primaryStage.show();
