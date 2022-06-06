@@ -1,34 +1,29 @@
 //Recursive binary search
 package com.example.recursion;
 
+import static java.util.Arrays.sort;
+
 public class E18L06 {
     public static void main(String[] args) {
-        double[] list = {10.2, 34.4, 5.1, 8.4, 12.3};
+        int[] list = {3,5,7,1,51,52,67,36};
         sort(list);
-        for (double e: list) {
-            System.out.print(e + " ");
-        }
+        System.out.println(recursiveBinarySearch(list, 51));
     }
-    private static void sort(double[] list) {
-        sort(list, 0, list.length -1);
-    }
+   public static int recursiveBinarySearch(int[] list, int key) {
+        return recursiveBinarySearch(list, key, 0, list.length -1);
+   }
 
-    private static void sort(double[] list, int low, int high) {
-        if (low < high) {
-            int indexOfMin = low;
-            double min = list[low];
-            for (int i = low + 1; i <= high; i++) {
-                if (list[i] < min) {
-                    indexOfMin = i;
-                    min = list[i];
-                }
-            }
-            if (indexOfMin != low) {
-                list[indexOfMin] = list[low];
-                list[low] = min;
-            }
-            sort(list, low + 1, high - 1);
-        }
-    }
+   public static int recursiveBinarySearch(int[] list, int key, int low, int high) {
+        if (low > high)
+            return -1;
 
+        int mid = (low + high) / 2;
+
+        if (key < list[mid])
+            return recursiveBinarySearch(list, key, low, mid-1);
+        else if (key == list[mid])
+            return mid;
+        else
+            return recursiveBinarySearch(list, key, mid+1, high);
+   }
 }
