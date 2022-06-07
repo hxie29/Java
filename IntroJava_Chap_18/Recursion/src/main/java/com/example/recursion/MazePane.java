@@ -6,7 +6,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 public class MazePane extends GridPane {
@@ -27,10 +26,7 @@ public class MazePane extends GridPane {
     }
     public boolean findPath() {
         ArrayList<int[]> path = new ArrayList<>();
-        boolean result = findPath(0,0, path);
-        //Color the cells after result
-        colorCells();
-        return result;
+        return findPath(0,0, path);
     }
 
     private boolean findPath(int i, int j, ArrayList<int[]> path) {
@@ -40,6 +36,7 @@ public class MazePane extends GridPane {
             //Check if destination is reached
             if (i == 8 && j == 8) {
                 result = path;
+                colorCells(Color.RED);
                 return true;
             }
             else {
@@ -47,7 +44,6 @@ public class MazePane extends GridPane {
                 ArrayList<int[]> newPath = new ArrayList<>(path);
                 // going down
                 boolean returnValue = findPath(i+1, j, path);
-
                 // going right
                 if (!returnValue) {
                     returnValue = findPath(i,j+1, newPath);
@@ -65,15 +61,9 @@ public class MazePane extends GridPane {
         return false;
     }
 
-    private void colorCells() {
+    private void colorCells(Color color) {
         for (int[] i: result) {
-            cells[i[0]][i[1]].setFill(Color.RED);
-        }
-    }
-
-    private void decolorCells() {
-        for (int[] i: result) {
-            cells[i[0]][i[1]].setFill(Color.TRANSPARENT);
+            cells[i[0]][i[1]].setFill(color);
         }
     }
 
@@ -87,12 +77,12 @@ public class MazePane extends GridPane {
                 matrix[i][j] = 0;
             }
         }
-        decolorCells();
+        colorCells(Color.TRANSPARENT);
         result.clear();
         generateBlock();
     }
     private void generateBlock() {
-        for (int n = 0; n < 15; n++){
+        for (int n = 0; n < 20; n++){
             int i = (int)(Math.random() * 9);
             int j = (int)(Math.random() * 9);
             if (isValid(i, j) && (i + j < 16) && (i + j > 0)) {
