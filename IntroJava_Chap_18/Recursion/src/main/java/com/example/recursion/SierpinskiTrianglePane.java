@@ -13,7 +13,18 @@ public class SierpinskiTrianglePane extends Pane {
 
     public SierpinskiTrianglePane(int order) {
         this.order = order;
+        setHeight(400);
+        setWidth(400);
         paint();
+    }
+
+    public void increaseOrder() {
+        setOrder(order +1);
+    }
+
+    public void decreaseOrder() {
+        if (order > 0)
+            setOrder(order -1);
     }
     public void setOrder(int order) {
         this.order = order;
