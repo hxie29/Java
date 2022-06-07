@@ -5,8 +5,6 @@ every square of the chessboard from any other square using this pattern? Write a
 recursive program that is able to show this.*/
 package com.example.recursion;
 
-import java.util.Arrays;
-
 public class E1824 {
     private static int x;
     private static int y;
@@ -22,10 +20,14 @@ public class E1824 {
 
     public static void solve() {
         //If all squares has visits, then goal achieved, print the matrix showing each square's visits
-        if (finished())
-            for (int[] rows: matrix) {
-                System.out.println(Arrays.toString(rows));
+        if (finished()) {
+            for (int[] ints : matrix) {
+                for (int anInt : ints) {
+                    System.out.print(anInt + " ");
+                }
+                System.out.println();
             }
+        }
         // if not, then generate a valid move, register the visit, and solve recursively
         else {
             generateMove();

@@ -6,9 +6,12 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 public class MazePane extends GridPane {
     private final int[][] matrix = new int[9][9];
+    private ArrayList<int[]> result = new ArrayList<>();
     private final StackPane[][] cellPanes = new StackPane[9][9];
     private final Rectangle[][] cells = new Rectangle[9][9];
     public MazePane() {
@@ -22,43 +25,56 @@ public class MazePane extends GridPane {
         }
         generateBlock();
     }
-
     public boolean findPath() {
-        return findPath(0,0);
+        ArrayList<int[]> path = new ArrayList<>();
+        boolean result = findPath(0,0, path);
+        //Color the cells after result
+        colorCells();
+        return result;
     }
-    public boolean findPath(int i, int j) {
 
+    private boolean findPath(int i, int j, ArrayList<int[]> path) {
         if (isValid(i,j)) {
+            // add location to path
+            path.add(new int[]{i, j});
             //Check if destination is reached
             if (i == 8 && j == 8) {
-                cells[i][j].setFill(Color.RED);
+                result = path;
                 return true;
             }
+            else {
+                // Back up a pth in case going down doesn't work
+                ArrayList<int[]> newPath = new ArrayList<>(path);
+                // going down
+                boolean returnValue = findPath(i+1, j, path);
 
-            // going up
-            boolean returnValue = findPath(i - 1, j);
-
-            // going right
-            if (!returnValue)
-                returnValue = findPath(i, j+1);
-
-            // going down
-            if (!returnValue)
-                returnValue = findPath(i +1, j);
-
-            // going left
-            if (!returnValue)
-                returnValue = findPath(i, j-1);
-
-            return returnValue;
+                // going right
+                if (!returnValue) {
+                    returnValue = findPath(i,j+1, newPath);
+                }
+                return returnValue;
+            }
         }
         return false;
     }
+
     private boolean isValid(int i, int j) {
-        if (i >= 0 && i < matrix.length && j >= 0 && j < matrix[0].length) {
-           return (matrix[i][j] != 1);
-        }
+        if (i >= 0 && i < 9 && j >= 0 && j < 9) {
+                return matrix[i][j] == 0;
+            }
         return false;
+    }
+
+    private void colorCells() {
+        for (int[] i: result) {
+            cells[i[0]][i[1]].setFill(Color.RED);
+        }
+    }
+
+    private void decolorCells() {
+        for (int[] i: result) {
+            cells[i[0]][i[1]].setFill(Color.TRANSPARENT);
+        }
     }
 
     public void reset() {
@@ -68,19 +84,18 @@ public class MazePane extends GridPane {
                 if (matrix[i][j] == 1) {
                     cellPanes[i][j].getChildren().removeIf(l -> l instanceof Line);
                 }
-                else {
-                    cells[i][j].setFill(Color.TRANSPARENT);
-                }
                 matrix[i][j] = 0;
             }
         }
+        decolorCells();
+        result.clear();
         generateBlock();
     }
     private void generateBlock() {
         for (int n = 0; n < 15; n++){
             int i = (int)(Math.random() * 9);
             int j = (int)(Math.random() * 9);
-            if ((i + j != 0) && (i + j != 16)) {
+            if (isValid(i, j) && (i + j < 16) && (i + j > 0)) {
                 matrix[i][j] = 1;
                 cellPanes[i][j].getChildren().addAll(new Line(0,0,50,50), new Line(0,50,50,0));
             }
@@ -99,5 +114,4 @@ public class MazePane extends GridPane {
             }
         }
     }
-
 }

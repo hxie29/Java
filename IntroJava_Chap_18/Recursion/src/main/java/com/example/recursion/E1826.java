@@ -43,7 +43,10 @@ public class E1826 extends Application {
             else
                 result.setText("Path not found.");
         });
-        btClear.setOnAction(e -> maze.reset());
+        btClear.setOnAction(e -> {
+            maze.reset();
+            result.setText("Click find path");
+        });
 
         Scene scene = new Scene(pane, 550,600);
         primaryStage.setTitle("Find path in maze");
