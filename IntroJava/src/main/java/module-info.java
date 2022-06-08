@@ -5,6 +5,6 @@ module exercise.introjava {
     requires org.controlsfx.controls;
     requires java.desktop;
 
-    opens C14_JavaFX to javafx.fxml;
-    exports C14_JavaFX;
+    opens c14_JavaFX to javafx.fxml;
+    exports c14_JavaFX;
 }
