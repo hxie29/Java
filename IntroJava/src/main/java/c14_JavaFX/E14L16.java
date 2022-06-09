@@ -1,5 +1,5 @@
 
-package chap14;
+package c14_JavaFX;
 
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -29,7 +29,7 @@ public class E14L16 extends Application {
                                     
         for (int i = 0; i < 4; i++) {
             Rectangle r = new Rectangle(100,50,100,30);
-            r.setRotate(i * 360 / 8);
+            r.setRotate(i * 360.0 / 8);
             r.setStroke(Color.color(Math.random(), Math.random(), Math.random(), Math.random()));
             r.setFill(Color.WHITE);
             group.getChildren().add(r);

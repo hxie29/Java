@@ -4,7 +4,7 @@ using the arrow keys. The line starts from (100, 100) in the pane and draws
 toward east, north, west, or south when the right-arrow key, up-arrow key, leftarrow
 key, or down-arrow key is pressed, as shown in Figure 15.28b.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

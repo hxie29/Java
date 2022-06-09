@@ -1,4 +1,4 @@
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -12,13 +12,13 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SelectionMode;
 
 public class E16L09 extends Application {
-    private String[] flagTtitles = {"Canada", "China", "Denmark", "France"};
-    private ImageView[] flagImage = {new ImageView("https://icons.iconarchive.com/icons/wikipedia/flags/256/CA-Canada-Flag-icon.png"),
+    private final String[] flagTtitles = {"Canada", "China", "Denmark", "France"};
+    private final ImageView[] flagImage = {new ImageView("https://icons.iconarchive.com/icons/wikipedia/flags/256/CA-Canada-Flag-icon.png"),
                                      new ImageView("https://cdn.iconscout.com/icon/premium/png-256-thumb/china-51-571573.png"),
                                      new ImageView("https://cdn.britannica.com/07/8007-004-8CF0B1A9/Flag-Denmark.jpg"),
                                      new ImageView ("https://icons.iconarchive.com/icons/wikipedia/flags/256/FR-France-Flag-icon.png")};
 
-    private String[] flagDescription = new String[4];
+    private final String[] flagDescription = new String[4];
 
     @Override
     public void start(Stage primaryStage) {

@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -17,9 +17,9 @@ public class ClockPane2 extends Pane{
     private int hour;
     private int minute;
     private int second;
-    private double height = 800;
-    private double width = 800;
-    Timeline animate = new Timeline(new KeyFrame(Duration.seconds(1), e -> this.setCurrentTiime()));
+    private final double height = 800;
+    private final double width = 800;
+    final Timeline animate = new Timeline(new KeyFrame(Duration.seconds(1), e -> this.setCurrentTiime()));
 
     public ClockPane2() {
         setMinHeight(height);

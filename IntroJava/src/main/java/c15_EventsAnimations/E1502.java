@@ -2,7 +2,7 @@
 (Rotate a Ellipse) Write a program that rotates a Ellipse when the Rotate
 button is clicked, as shown in Figure 15.26b.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

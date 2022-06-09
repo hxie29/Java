@@ -1,4 +1,4 @@
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.application.Application;
 import javafx.geometry.Orientation;

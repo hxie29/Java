@@ -1,11 +1,9 @@
-/* 
+package c16_UIMultimedia;/*
 (Set clock time) Write a program that displays a clock and sets the time with the
 input from three text fields, as shown in Figure 16.38b. Use the ClockPane in
 Listing 14.21. Resize the clock to the center of the pane.
  */
-package chap16;
-
-import chap14.ClockPane;
+import c14_JavaFX.ClockPane;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -17,7 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.geometry.Insets;
 
 public class E1607 extends Application {
-    private ClockPane clock = new ClockPane();
+    private final ClockPane clock = new ClockPane();
     
     @Override
     public void start(Stage primaryStage) {

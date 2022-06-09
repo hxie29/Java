@@ -1,4 +1,4 @@
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.image.ImageView;
 import javafx.application.Application;

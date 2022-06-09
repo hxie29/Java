@@ -74,8 +74,8 @@ public class E1219 {
         }
 
         try (PrintWriter output = new PrintWriter(file)) {
-            for (int i = 0; i < list.size(); i++) {
-                output.println(list.get(i));
+            for (String s : list) {
+                output.println(s);
             }
         }
 
@@ -93,8 +93,8 @@ public class E1219 {
         list.add("" + index + " " + book);
 
         try (PrintWriter output = new PrintWriter(bookFile)) {
-            for (int i = 0; i < list.size(); i++) {
-                output.println(list.get(i));
+            for (String s : list) {
+                output.println(s);
             }
         }
         System.out.println("Book " + book + " added to Books.txt");

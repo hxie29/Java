@@ -2,7 +2,7 @@
 (Move a circle using keys) Write a program that moves a circle up, down, left,
 or right using the arrow keys.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

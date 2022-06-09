@@ -3,11 +3,11 @@
 to select the color for a text, as shown in Figure 16.43b. Four horizontal scroll
 bars are used for selecting the colors: red, green, blue, and opacity percentages.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import chap15.FanPane;
+import c15_EventsAnimations.FanPane;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -20,7 +20,7 @@ import javafx.scene.control.Button;
 
 
 public class E1618 extends Application {
-    private FanPane fan = new FanPane();
+    private final FanPane fan = new FanPane();
 
     @Override
     public void start(Stage primaryStage) {

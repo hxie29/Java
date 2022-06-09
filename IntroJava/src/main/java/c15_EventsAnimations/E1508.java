@@ -4,7 +4,7 @@ mouse position when the mouse button is clicked (see Figure 15.28a), and the
 other displays the mouse position when the mouse button is pressed and ceases
 to display it when the mouse button is released.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

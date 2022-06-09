@@ -14,7 +14,6 @@ words stored in a text file named hangman.txt. Words are delimited by spaces.
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-import java.io.PrintWriter;
 import java.io.File;
 
 public class E1217 {
@@ -63,21 +62,20 @@ public class E1217 {
         System.out.print("Guess, enter a letter in word ");
         printChar(list);
         System.out.print(" > ");
-        char letter = input.next().charAt(0);
         //input.close();
-        return letter;
+        return input.next().charAt(0);
     }
     // print char array
     public static void printChar(char[] list) {
-        for (int i = 0; i < list.length; i++) {
-            System.out.print(list[i]);
+        for (char c : list) {
+            System.out.print(c);
         }
     }
 
     // print int array
     public static void printInt(int[] list) {
-        for (int i = 0; i < list.length; i++) {
-            System.out.print(list[i]);
+        for (int j : list) {
+            System.out.print(j);
         }
         System.out.println();
     }
@@ -121,11 +119,11 @@ public class E1217 {
 
     // parse the string into an array
     public static String createString(char[] list) {
-        String str = "";
-        for (int i = 0; i < list.length; i++ ) {
-            str += list[i];
+        StringBuilder str = new StringBuilder();
+        for (char c : list) {
+            str.append(c);
         }
-        return str;
+        return str.toString();
     }
 
     // linear search function returning matching key's index number in the array

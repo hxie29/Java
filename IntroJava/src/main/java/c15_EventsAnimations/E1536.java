@@ -12,7 +12,7 @@ For a lattice of size 80, the probability of dead-end paths is 99.5%
 }
 */
 
-package chap15;
+package c15_EventsAnimations;
 
 public class E1536 {
     public static void main(String[] args ){

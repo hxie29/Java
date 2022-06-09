@@ -5,7 +5,7 @@ previous or next month. Display the dates in the current month in black and
 display the dates in the previous month and next month in gray, as shown in
 Figure 16.48.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -17,10 +17,10 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 
 public class E1629 extends Application {
-    private CalendarPane calendar = new CalendarPane();
-    private HBox controlPanel = new HBox(10);
-    private Button btPrior = new Button("Prior");
-    private Button btNext = new Button("Next");
+    private final CalendarPane calendar = new CalendarPane();
+    private final HBox controlPanel = new HBox(10);
+    private final Button btPrior = new Button("Prior");
+    private final Button btNext = new Button("Next");
 
     
     @Override

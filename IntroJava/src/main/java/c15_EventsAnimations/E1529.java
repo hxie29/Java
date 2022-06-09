@@ -7,7 +7,7 @@ in Figure 15.36b. Also let the user pause/resume the animation with a button
 press/release and increase/decrease the car speed by pressing the up and down
 arrow keys.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

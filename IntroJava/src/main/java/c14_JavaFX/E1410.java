@@ -7,7 +7,7 @@ The solution posted on the website enables the cylinder to resize horizontally.
 Can you revise it to resize vertically as well?
 */
 
-package chap14;
+package c14_JavaFX;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

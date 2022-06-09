@@ -5,7 +5,7 @@ as shown in Figure 16.45d. The remaining seconds are redisplayed
 every second. When the seconds are expired, the program starts to play music
 continuously.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -23,7 +23,7 @@ import javafx.scene.media.Media; */
 
 
 public class E1621 extends Application {
-   private TextField text = new TextField();
+   private final TextField text = new TextField();
    private int number = 0 ;
    final String url = "song.mp3";
    

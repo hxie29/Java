@@ -1,4 +1,4 @@
-package chap16;
+package c16_UIMultimedia;
 
 
 import javafx.application.Application;
@@ -14,8 +14,8 @@ import javafx.scene.paint.Color;
 
 public class E16L13 extends Application {
     private char whoseTurn = 'X';
-    private Cell[][] cells = new Cell[3][3];
-    private Label lbStatus = new Label("X's turn to play");
+    private final Cell[][] cells = new Cell[3][3];
+    private final Label lbStatus = new Label("X's turn to play");
 
     @Override
     public void start(Stage primaryStage) {
@@ -50,8 +50,8 @@ public class E16L13 extends Application {
     }
 
     public boolean isWon(char token) {
-        for (int i = 0; i < cells.length; i++) {
-            if (cells[i][0].getToken() == token && cells[i][1].getToken() == token && cells[i][2].getToken() == token) return true;
+        for (Cell[] cell : cells) {
+            if (cell[0].getToken() == token && cell[1].getToken() == token && cell[2].getToken() == token) return true;
         }
 
         for (int j = 0; j < cells[0].length; j++) {
@@ -59,9 +59,7 @@ public class E16L13 extends Application {
         }
 
         if (cells[0][0].getToken() == token && cells[1][1].getToken() == token  && cells[2][2].getToken() == token) return true;
-        if (cells[0][2].getToken() == token && cells[1][1].getToken() == token  && cells[2][0].getToken() == token) return true;
-
-        return false;
+        return cells[0][2].getToken() == token && cells[1][1].getToken() == token && cells[2][0].getToken() == token;
     }
 
     public class Cell extends Pane {

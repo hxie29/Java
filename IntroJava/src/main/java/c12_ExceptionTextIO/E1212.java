@@ -6,9 +6,9 @@ converts it to the end-of-line brace style in (b).
 
 Your program can be invoked from the command line with the Java source-code
 file as the argument. It converts the Java source code to a new format. For example,
-the following command converts the Java source-code file Test.java to
+the following command converts the Java source-code file Turtle.java to
 the end-of-line brace style.
-java Exercise12_12 Test.java
+java Exercise12_12 Turtle.java
 
 */
 
@@ -31,24 +31,24 @@ public class E1212 {
 
         ArrayList<String> text = new ArrayList<>();
         Scanner input = new Scanner(file);
-        String s0 = input.nextLine();
+        StringBuilder s0 = new StringBuilder(input.nextLine());
         while (input.hasNextLine()) {
             String s1 = input.nextLine();
             if (s1.endsWith("{")) {
-                s0 += "{";
-                text.add(s0);
-                s0 = input.nextLine();
+                s0.append("{");
+                text.add(s0.toString());
+                s0 = new StringBuilder(input.nextLine());
             }
             else {
-                text.add(s0);
-                s0 = s1;
+                text.add(s0.toString());
+                s0 = new StringBuilder(s1);
             }
         }
-        text.add(s0);
+        text.add(s0.toString());
 
         try (PrintWriter output = new PrintWriter(file)) {
-            for (int i = 0; i < text.size(); i++) {
-                output.println(text.get(i));
+            for (String s : text) {
+                output.println(s);
             }
         }
 

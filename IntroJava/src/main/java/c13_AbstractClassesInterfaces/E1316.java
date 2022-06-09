@@ -1,3 +1,5 @@
+package c13_AbstractClassesInterfaces;
+
 /*
 (Create a rational-number calculator) Write a program similar to Listing 7.9,
 Calculator.java. Instead of using integers, use rationals, as shown in Figure 13.10.
@@ -17,27 +19,28 @@ public class E1316 {
             System.exit(1);
             }
             
-            String s1= args[0].split("[/]")[0];
+            String s1= args[0].split("/")[0];
             checkDigit(s1);
-            String s2= args[0].split("[/]")[1];
+            String s2= args[0].split("/")[1];
             checkDigit(s2); 
-            String s3= args[2].split("[/]")[0];
+            String s3= args[2].split("/")[0];
             checkDigit(s3);
-            String s4= args[2].split("[/]")[1];
+            String s4= args[2].split("/")[1];
             checkDigit(s4);
 
-            Rational r1 = new Rational(Integer.parseInt(s1), Integer.parseInt(s2));
-            Rational r2 = new Rational(Integer.parseInt(s3), Integer.parseInt(s4));
-            
-            Rational result = new Rational();
-            switch (args[1].charAt(0)) {
-                case '+': result = r1.add(r2); break;
-                case '-': result = r1.subtract(r2); break;
-                case '.': result = r1.multiply(r2); break;
-                case '/': result = r1.divide(r2);
-            }
-            
-                System.out.println(args[0] + ' ' + args[1] + ' ' + args[2] + " = " + result.toString());
+            Rational2 r1 = new Rational2(Integer.parseInt(s1), Integer.parseInt(s2));
+            Rational2 r2 = new Rational2(Integer.parseInt(s3), Integer.parseInt(s4));
+
+        new Rational2();
+        Rational2 result = switch (args[1].charAt(0)) {
+            case '+' -> r1.add(r2);
+            case '-' -> r1.subtract(r2);
+            case '.' -> r1.multiply(r2);
+            case '/' -> r1.divide(r2);
+            default -> new Rational2();
+        };
+
+        System.out.println(args[0] + ' ' + args[1] + ' ' + args[2] + " = " + result.toString());
     }
     
     public static void checkDigit(String s) {
@@ -50,99 +53,3 @@ public class E1316 {
     }
 }
 
-class Rational extends Number implements Comparable<Rational> {
-    private long[] r = new long[2];
-
-    //Constructor
-    public Rational() {
-        this (0,1);
-    }
-
-    public Rational (long numerator, long denominator) throws IllegalArgumentException {
-        if (denominator == 0) 
-            throw new IllegalArgumentException("Denominator cannot be zero.");
-        else {
-            int gcd = gcd(numerator, denominator);
-            r[0] = ((denominator > 0) ? 1 : -1 ) * numerator / gcd;
-            r[1] = Math.absExact(denominator) / gcd;
-        }
-    }
-
-    private static int gcd(long n1, long n2) {
-        int gcd = 1;
-        for (int k = 1; k <= n1 && k <= n2 ; k++) {
-            if ( (n1 % k == 0) && (n2 % k == 0) ) {
-                gcd = k;
-            }
-        }
-        return gcd;
-    }
-
-    public long getNumerator() {
-        return r[0];
-    }
-
-    public long getDenominator(){
-        return r[1];
-    }
-
-    public Rational add(Rational a) {
-        long numerator = a.getDenominator() * getNumerator() + a.getNumerator() * getDenominator();
-        long denominator = a.getDenominator() * getDenominator();
-        return new Rational(numerator, denominator);
-    }
-
-    public Rational subtract(Rational a) {
-        long numerator = a.getDenominator() * getNumerator() - a.getNumerator() * getDenominator();
-        long denominator = a.getDenominator() * getDenominator();
-        return new Rational(numerator, denominator);
-    }
-
-    public Rational multiply(Rational a) {
-        long numerator = a.getNumerator() * getNumerator();
-        long denominator = a.getDenominator() * getDenominator();
-        return new Rational(numerator, denominator);
-    }
-
-    public Rational divide(Rational a) {
-        long numerator = getNumerator() * a.getDenominator();
-        long denominator = getDenominator() * a.getNumerator();
-        return new Rational(numerator, denominator);
-    }
-
-    @Override
-    public String toString() {
-        if (r[0] == 0 || r[1] == 1) return r[0] + "";
-        else return r[0] + "/" + r[1]; 
-    }
-
-    @Override
-    public int compareTo(Rational a) {
-        return (this.subtract(a).getNumerator() > 0) ? 1 : ((this.subtract(a).getNumerator() < 0 ) ? -1 :0); 
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        return this.subtract((Rational) o).getNumerator() == 0;
-    }
-
-    @Override
-    public int intValue() {
-        return (int)doubleValue();
-    }
-
-    @Override
-    public double doubleValue() {
-        return r[0] * 1.0 / r[1];
-    }
-
-    @Override 
-    public float floatValue() {
-        return (float)doubleValue();
-    }
-
-    @Override
-    public long longValue() {
-        return (long)doubleValue();
-    }
-}

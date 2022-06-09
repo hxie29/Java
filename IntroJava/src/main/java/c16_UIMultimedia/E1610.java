@@ -3,7 +3,7 @@
 in Figure 16.40a. The user enters a file name in a text field and clicks the View
 button; the file is then displayed in a text area.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -19,9 +19,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class E1610 extends Application {
-    private TextArea ta = new TextArea();
-    private TextField tfInput = new TextField();
-    private StringBuilder text = new StringBuilder("Enter a file path...");
+    private final TextArea ta = new TextArea();
+    private final TextField tfInput = new TextField();
+    private final StringBuilder text = new StringBuilder("Enter a file path...");
 
     @Override
     public void start(Stage primaryStage) {
@@ -45,7 +45,7 @@ public class E1610 extends Application {
             if (file.exists()) {
                 try (Scanner input = new Scanner(file)) {
                     while (input.hasNext()) {
-                        text.append(input.nextLine() + "\n");
+                        text.append(input.nextLine()).append("\n");
                     }
                 }
                 catch (Exception ex) {

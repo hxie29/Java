@@ -1,8 +1,8 @@
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import chap14.ClockPane;
+import c14_JavaFX.ClockPane;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;

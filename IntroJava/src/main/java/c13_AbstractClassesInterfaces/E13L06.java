@@ -1,3 +1,5 @@
+package c13_AbstractClassesInterfaces;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -30,7 +32,7 @@ public class E13L06 {
         System.out.println("Hour of the day: " + calendar.get(Calendar.HOUR_OF_DAY));
         System.out.println("Second: " + calendar.get(Calendar.SECOND));
 
-        Calendar calendar2 = new GregorianCalendar(1997, 11, 25);
+        Calendar calendar2 = new GregorianCalendar(1997, Calendar.DECEMBER, 25);
         String[] day = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
         System.out.println("December 25, 1997 is a " + day[calendar2.get(Calendar.DAY_OF_WEEK) - 1]);
     }

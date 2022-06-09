@@ -8,7 +8,6 @@ the average salary for assistant professors, associate professors, full professo
 and faculty, respectively.
 */
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Scanner;
 public class E1225 {
     public static void main(String[] args) throws Exception {

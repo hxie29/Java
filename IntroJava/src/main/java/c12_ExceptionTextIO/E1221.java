@@ -49,7 +49,7 @@ public class E1221 {
                 }
             }
         }
-        System.out.println(list.toString());
+        System.out.println(list);
 
         userInput.close();
     }
@@ -64,9 +64,9 @@ public class E1221 {
             }
         }
 
-        for (int i = 0; i < list.size(); i++) {
+        for (String s : list) {
             index++;
-            if (line.equals(list.get(i))) {
+            if (line.equals(s)) {
                 return index;
             }
         }

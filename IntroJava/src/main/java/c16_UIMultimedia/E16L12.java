@@ -1,6 +1,6 @@
-package chap16;
+package c16_UIMultimedia;
 
-import chap15.BallPane;
+import c15_EventsAnimations.BallPane;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.ScrollBar;
 
 public class E16L12 extends Application {
-    private BallPane ballPane = new BallPane();
+    private final BallPane ballPane = new BallPane();
 
     @Override
     public void start(Stage primaryStage) {

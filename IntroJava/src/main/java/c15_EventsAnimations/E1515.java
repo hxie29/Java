@@ -5,7 +5,7 @@ user left-clicks the mouse (primary button), a point is created and displayed
 at the mouse point. The user can remove a point by pointing to it and rightclicking
 the mouse (secondary button).
  */
-package chap15;
+package c15_EventsAnimations;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;

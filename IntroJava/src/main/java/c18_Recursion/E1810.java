@@ -5,7 +5,7 @@ public static int count(String str, char a)
 For example, count("Welcome", 'e') returns 2. Write a test program that
 prompts the user to enter a string and a character, and displays the number of
 occurrences for the character in the string.*/
-package com.example.recursion;
+package c18_Recursion;
 
 public class E1810 {
     public static void main(String[] args) {

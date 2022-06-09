@@ -4,7 +4,7 @@ properties of a text area. The program uses a check box to indicate whether the
 text is wrapped onto next line, as shown in Figure 16.41a.
 counts.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -17,7 +17,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.Scene;
 
 public class E1612 extends Application {
-    private TextArea ta = new TextArea();
+    private final TextArea ta = new TextArea();
 
     @Override
     public void start(Stage primaryStage) {
@@ -33,15 +33,9 @@ public class E1612 extends Application {
 
         pane.getChildren().addAll(view, inputBox);
 
-        chkEditable.setOnAction(e -> {
-            if (chkEditable.isSelected()) ta.setEditable(true);
-            else ta.setEditable(false);
-        });
+        chkEditable.setOnAction(e -> ta.setEditable(chkEditable.isSelected()));
 
-        chkWrap.setOnAction(e -> {
-            if (chkWrap.isSelected()) ta.setWrapText(true);
-            else ta.setWrapText(false);
-        });
+        chkWrap.setOnAction(e -> ta.setWrapText(chkWrap.isSelected()));
 
         Scene scene = new Scene(pane, 450, 200);
         primaryStage.setTitle("TextArea Demo");

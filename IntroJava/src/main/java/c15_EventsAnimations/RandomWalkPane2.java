@@ -8,9 +8,11 @@ point on the boundary, as shown in Figure 15.39a, or ends at a dead-end point
 (i.e., surrounded by four points that have already been visited), as shown in
 Figure 15.39b. Assume the size of the lattice is 16 by 16.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -23,23 +25,23 @@ public class RandomWalkPane2 extends Pane{
     private int row = 16;
     private int column = 16;
     private int unit = 50;
-    private int width = row * unit + 50;
-    private int height = column * unit + 50;
-    private int margin = 25;
+    private final int width = row * unit + 50;
+    private final int height = column * unit + 50;
+    private final int margin = 25;
     private Color gridColor = Color.LIGHTGRAY;
-    private int startX = margin + (column / 2) * unit;
-    private int startY = margin + (row /  2) * unit;
+    private final int startX = margin + (column / 2) * unit;
+    private final int startY = margin + (row /  2) * unit;
     private int currentX, currentY, nextX, nextY;
-    private Circle startPoint = new Circle(startX, startY, 5);
-    Timeline animate = new Timeline(new KeyFrame(Duration.seconds(0.3), e -> nextStep()));
+    private final Circle startPoint = new Circle(startX, startY, 5);
+    final Timeline animate = new Timeline(new KeyFrame(Duration.seconds(0.3), e -> nextStep()));
 
-    private boolean[][] walkedPoints = new boolean[row + 1][column + 1];
-    private int startRow = row / 2;
-    private int startColumn = column / 2;
+    private final boolean[][] walkedPoints = new boolean[row + 1][column + 1];
+    private final int startRow = row / 2;
+    private final int startColumn = column / 2;
     private int currentRow = startRow;
     private int currentColumn = startColumn;
-    private ArrayList<Line> walkedLines = new ArrayList<>();
-    private boolean[] triedPath = new boolean[4]; // {UP, DOWN, LEFT, RIGHT}
+    private final ArrayList<Line> walkedLines = new ArrayList<>();
+    private final boolean[] triedPath = new boolean[4]; // {UP, DOWN, LEFT, RIGHT}
 
     public RandomWalkPane2() {
         setMinHeight(height);
@@ -131,36 +133,29 @@ public class RandomWalkPane2 extends Pane{
 
     private void drawStep(int direction) {
         switch (direction) {
-            case 0: {
+            case 0 -> {
                 // walk up
                 currentRow--;
                 nextX = currentX;
                 nextY = currentY - unit;
-                break;
             }
-    
-            case 1: {
+            case 1 -> {
                 // walk down
                 currentRow++;
                 nextX = currentX;
                 nextY = currentY + unit;
-                break;
             }
-    
-            case 2: {
+            case 2 -> {
                 // walk left
                 currentColumn--;
                 nextX = currentX - unit;
                 nextY = currentY;
-                break;
             }
-    
-            case 3: {
+            case 3 -> {
                 //walk right
                 currentColumn++;
                 nextX = currentX + unit;
                 nextY = currentY;
-                break;
             }
         }
 
@@ -175,9 +170,7 @@ public class RandomWalkPane2 extends Pane{
         currentX = nextX;
         currentY = nextY;
 
-        for (int i =0; i < triedPath.length; i++) {
-            triedPath[i] = false;
-        }
+        Arrays.fill(triedPath, false);
     }
 
     public void reset() {
@@ -185,14 +178,10 @@ public class RandomWalkPane2 extends Pane{
         getChildren().removeAll(walkedLines);
         walkedLines.clear();
 
-        for (int i = 0; i < walkedPoints.length; i++) {
-            for (int j = 0; j < walkedPoints[i].length; j++) {
-                walkedPoints[i][j] = false;
-            }
+        for (boolean[] walkedPoint : walkedPoints) {
+            Arrays.fill(walkedPoint, false);
         }
-        for (int i =0; i < triedPath.length; i++) {
-            triedPath[i] = false;
-        }
+        Arrays.fill(triedPath, false);
         
         walkedPoints[startRow][startColumn] = true;
         currentX = startX;

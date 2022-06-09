@@ -1,4 +1,5 @@
-package c12_ExceptionTextIO;/*
+package c12_ExceptionTextIO;
+/*
 For an application program to read data from a URL, you first need to create a URL object using
 the java.net.URL class with this constructor:
 public URL(String spec) throws MalformedURLException

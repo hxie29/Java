@@ -3,7 +3,7 @@ a piece in this game, can move only in an L-shaped pattern, that is, two squares
 sideways and then one up or two squares up and one sideways. Can a knight access
 every square of the chessboard from any other square using this pattern? Write a
 recursive program that is able to show this.*/
-package com.example.recursion;
+package c18_Recursion;
 
 public class E1824 {
     private static int x;

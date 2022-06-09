@@ -20,18 +20,18 @@ f12, and so on.
 Hint: To do this, you will have to use
 java.io.File.
 */
-package com.example.recursion;
+package c18_Recursion;
 
 import java.io.File;
 import java.io.IOException;
 
 public class E1829 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String directory = "/Users/halda/Desktop/piano score";
         printDir(new File(directory), 0);
     }
 
-    public static void printDir(File file, int layer) {
+    public static void printDir(File file, int layer){
         for (int i = 1; i < layer; i++) {
             System.out.print("\t");
         }

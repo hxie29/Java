@@ -8,7 +8,7 @@ in the other fields and convert them accordingly. (Hint: Use the Integer
 .toHexString(decimal) and Integer.toBinaryString(decimal) to
 obtain a hex number or a binary number from a decimal.)
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;

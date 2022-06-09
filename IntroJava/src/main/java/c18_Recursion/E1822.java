@@ -3,7 +3,7 @@ a hex number as a string. The method header is
 public static String dec2Hex(int value)
 Write a test program that prompts the user to enter a decimal number and displays
 its hex equivalent.*/
-package com.example.recursion;
+package c18_Recursion;
 
 public class E1822 {
     public static void main(String[] args) {

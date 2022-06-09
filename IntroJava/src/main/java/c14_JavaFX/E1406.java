@@ -4,7 +4,7 @@ in which each white and black cell is a Rectangle with a fill color black or
 white, as shown in Figure 14.44c.
 */
 
-package chap14;
+package c14_JavaFX;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

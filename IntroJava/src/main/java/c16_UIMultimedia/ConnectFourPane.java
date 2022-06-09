@@ -1,4 +1,4 @@
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
@@ -12,27 +12,25 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.Pane;
 
 public class ConnectFourPane extends BorderPane{
-    private int row = 6;
-    private int column = 7;
-    private int radius = 30;
-    private int distance = 75;
+    private final int row = 6;
+    private final int column = 7;
     private int currentRow = 0, currentColumn = 0;
-    private int[][] scores = new int[row][column];
-    private HBox controlPanel = new HBox(10);
-    private Button btRestart = new Button("Restart");
-    private Text reminder = new Text("Red's turn");
+    private final int[][] scores = new int[row][column];
+    private final Text reminder = new Text("Red's turn");
     private int status = 0;
-    private Circle[][] disks = new Circle[row][column];
-    private Pane grid = new Pane();
+    private final Circle[][] disks = new Circle[row][column];
 
     public ConnectFourPane() {
         setTop(reminder);
+        HBox controlPanel = new HBox(10);
         setBottom(controlPanel);
+        Pane grid = new Pane();
         setCenter(grid);
         BorderPane.setAlignment(reminder, Pos.CENTER);
         BorderPane.setAlignment(grid, Pos.CENTER);
         BorderPane.setAlignment(controlPanel, Pos.CENTER);
 
+        Button btRestart = new Button("Restart");
         controlPanel.getChildren().add(btRestart);
         controlPanel.setAlignment(Pos.CENTER);
         btRestart.setOnAction(e -> restart());
@@ -42,6 +40,8 @@ public class ConnectFourPane extends BorderPane{
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
                 scores[i][j] = 0;
+                int distance = 75;
+                int radius = 30;
                 disks[i][j] = new Circle((j+1) * distance, (i+1) * distance, radius);
                 disks[i][j].setFill(Color.WHITE);
                 disks[i][j].setStroke(Color.BLACK);
@@ -85,8 +85,7 @@ public class ConnectFourPane extends BorderPane{
 
     private boolean validCell() {
         if (currentRow == row - 1) return true;
-        else if (scores[currentRow + 1][currentColumn] != 0) return true;
-        else return false;
+        else return scores[currentRow + 1][currentColumn] != 0;
     }
 
     private void checkStatus() {

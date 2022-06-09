@@ -4,7 +4,7 @@ Figure 14.44a. Set a random color and opacity for each text and set the font of
 each text to Times Roman, bold, italic, and 24 pixels.
  */
 
-package chap14;
+package c14_JavaFX;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

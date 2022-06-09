@@ -1,4 +1,4 @@
-/* Filter streams are streams that filter bytes for some purpose. The basic byte input stream
+package c17_BinaryIO;/* Filter streams are streams that filter bytes for some purpose. The basic byte input stream
 provides a read method that can be used only for reading bytes. If you want to read integers,
 doubles, or strings, you need a filter class to wrap the byte input stream. Using a filter class
 enables you to read integers, doubles, and strings instead of bytes and characters. Filter-

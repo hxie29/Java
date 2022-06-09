@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
@@ -10,19 +10,19 @@ import javafx.animation.KeyFrame;
 import javafx.util.Duration;
 
 public class CarPane extends Pane {
-    private double height = 50;
-    private double width = 500;
-    private double baseX = 0;
-    private double baseY = height;
+    private final double height = 50;
+    private final double width = 500;
+    private final double baseX = 0;
+    private final double baseY = height;
     private int step = 5;
 
-    private Circle wheelLeft = new Circle(5);
-    private Circle wheelRight = new Circle(5);
-    private Rectangle body = new Rectangle(50,10);
-    private Polygon head = new Polygon();
+    private final Circle wheelLeft = new Circle(5);
+    private final Circle wheelRight = new Circle(5);
+    private final Rectangle body = new Rectangle(50,10);
+    private final Polygon head = new Polygon();
     private Double[] points;
 
-    private Timeline animate = new Timeline(new KeyFrame(Duration.millis(20), e -> move(step)));
+    private final Timeline animate = new Timeline(new KeyFrame(Duration.millis(20), e -> move(step)));
 
     public CarPane() {
         setMinHeight(height);

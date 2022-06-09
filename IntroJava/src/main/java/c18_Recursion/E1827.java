@@ -9,7 +9,7 @@ equilateral triangle with the middle line segment as the base to create a
 Koch fractal of order 1, as shown in Figure 18.14b.
 3. Repeat Step 2 to create a Koch fractal of order 2, 3, . . . , and so on, as shown
 in Figures 18.14c and d.*/
-package com.example.recursion;
+package c18_Recursion;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;

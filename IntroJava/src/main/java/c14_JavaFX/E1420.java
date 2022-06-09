@@ -7,7 +7,7 @@ Write a test program that randomly draws an arrow line, as shown in Figure 14.49
 }
 */
 
-package chap14;
+package c14_JavaFX;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

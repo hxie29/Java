@@ -6,7 +6,7 @@ displayed in the Fahrenheit text field. Likewise, if you enter a value in the Fa
 text field and press the Enter key, the corresponding Celsius measurement
 is displayed in the Celsius text field.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;

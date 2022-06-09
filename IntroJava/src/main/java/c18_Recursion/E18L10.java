@@ -1,5 +1,5 @@
 //Compute factorial with TAIL recursive
-package com.example.recursion;
+package c18_Recursion;
 
 import java.util.Scanner;
 

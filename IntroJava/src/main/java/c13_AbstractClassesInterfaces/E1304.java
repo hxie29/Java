@@ -1,4 +1,4 @@
-/*
+package c13_AbstractClassesInterfaces;/*
 (Display calendars) Rewrite the PrintCalendar class in Listing 6.12 to display
 a calendar for a specified month using the Calendar and GregorianCalendar
 classes. Your program receives the month and year from the command line. For
@@ -10,8 +10,8 @@ the current month.
 */
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Scanner;
 
+@SuppressWarnings("MagicConstant")
 public class E1304 {
     public static void main(String[] args) {
         if (args.length != 2) {

@@ -7,7 +7,7 @@ Node’s contains method to test whether a point is inside a node.)
 }
 */
 
-package chap14;
+package c14_JavaFX;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,9 +39,9 @@ public class E1425 extends Application {
         Arrays.sort(angle);
 
         ArrayList<Double> list = new ArrayList<>();
-        for (int i = 0; i < angle.length; i++) {
-            list.add(Math.cos(angle[i]) * c1.getRadius());
-            list.add(Math.sin(angle[i]) * c1.getRadius());
+        for (double v : angle) {
+            list.add(Math.cos(v) * c1.getRadius());
+            list.add(Math.sin(v) * c1.getRadius());
         }
 
         Polygon polygon = new Polygon();

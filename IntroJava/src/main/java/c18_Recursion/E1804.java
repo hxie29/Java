@@ -3,7 +3,7 @@ repetition. A recursive definition of C(n, p) is C(n, 0) = C(n, n) = 1, otherwis
 C(n, p) = C(n - 1, p) + C(n - 1, p - 1).
 Write a method public static long C(long n, long p) that computes
 and returns C(n, p).*/
-package com.example.recursion;
+package c18_Recursion;
 
 public class E1804 {
     public static void main(String[] args) {

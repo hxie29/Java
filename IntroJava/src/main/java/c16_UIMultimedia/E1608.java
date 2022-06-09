@@ -5,7 +5,7 @@ intersect, as shown in Figure 16.39a. Enable the user to point the mouse inside 
 circle and drag it. As the circle is being dragged, the circle’s center coordinates
 in the text fields are updated.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
@@ -23,12 +23,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
 public class E1608 extends Application {
-    private Text text = new Text();
-    private Circle c1 = new Circle();
-    private Circle c2 = new Circle();
-    private InputPaneCircle c1Info = new InputPaneCircle(1);
-    private InputPaneCircle c2Info = new InputPaneCircle(2);
-    private Pane figure = new Pane();
+    private final Text text = new Text();
+    private final Circle c1 = new Circle();
+    private final Circle c2 = new Circle();
+    private final InputPaneCircle c1Info = new InputPaneCircle(1);
+    private final InputPaneCircle c2Info = new InputPaneCircle(2);
+    private final Pane figure = new Pane();
 
     @Override
     public void start(Stage primaryStage) {
@@ -95,10 +95,10 @@ public class E1608 extends Application {
 }
 
 class InputPaneCircle extends VBox{
-    private Label title = new Label();
-    private TextField tfCenterX = new TextField("0");
-    private TextField tfCenterY = new TextField("0");
-    private TextField tfRadius = new TextField("0");
+    private final Label title = new Label();
+    private final TextField tfCenterX = new TextField("0");
+    private final TextField tfCenterY = new TextField("0");
+    private final TextField tfRadius = new TextField("0");
     private double centerX = 0, centerY = 0, radius = 0;
 
     public InputPaneCircle() {

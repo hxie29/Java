@@ -1,4 +1,4 @@
-/* (BitOutputStream) Implement a class named BitOutputStream, as shown
+package c17_BinaryIO;/* (BitOutputStream) Implement a class named BitOutputStream, as shown
 in Figure 17.22, for writing bits to an output stream. The writeBit
 (char bit) method stores the bit in a byte variable. When you create a
 BitOutputStream, the byte is empty. After invoking writeBit('1'), the

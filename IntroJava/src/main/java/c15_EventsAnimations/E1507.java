@@ -3,7 +3,7 @@
 as red when the mouse button is pressed and as blue when the mouse button
 is released.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

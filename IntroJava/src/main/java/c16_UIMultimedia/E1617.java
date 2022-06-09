@@ -3,7 +3,7 @@
 to select the color for a text, as shown in Figure 16.43b. Four horizontal scroll
 bars are used for selecting the colors: red, green, blue, and opacity percentages.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -18,8 +18,8 @@ import javafx.scene.control.Label;
 
 
 public class E1617 extends Application {
-    private Slider[] sliders = new Slider[4];
-    private Text text = new Text("Show color");
+    private final Slider[] sliders = new Slider[4];
+    private final Text text = new Text("Show color");
 
     @Override
     public void start(Stage primaryStage) {

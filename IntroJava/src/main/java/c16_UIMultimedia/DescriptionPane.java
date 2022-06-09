@@ -1,4 +1,4 @@
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.ContentDisplay;
@@ -10,8 +10,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Font;
 
 public class DescriptionPane extends BorderPane {
-    private Label lbTitle = new Label();
-    private TextArea taDescription = new TextArea();
+    private final Label lbTitle = new Label();
+    private final TextArea taDescription = new TextArea();
 
     public DescriptionPane() {
         lbTitle.setContentDisplay(ContentDisplay.TOP);

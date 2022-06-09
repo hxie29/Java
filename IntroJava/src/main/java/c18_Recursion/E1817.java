@@ -1,6 +1,6 @@
 /*Write a recursive method that finds the kth-smallest value of a given array. Use
 the method pos of Programming Exercise 18.16.*/
-package com.example.recursion;
+package c18_Recursion;
 
 import java.util.Arrays;
 

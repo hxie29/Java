@@ -1,4 +1,4 @@
-/* 
+package c17_BinaryIO;/*
  FileInputStream/FileOutputStream are for reading/writing bytes from/to files.
 All the methods in these classes are inherited from InputStream and OutputStream.
 FileInputStream/FileOutputStream do not introduce new methods. To construct a

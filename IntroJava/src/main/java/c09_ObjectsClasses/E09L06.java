@@ -11,6 +11,6 @@ public class E09L06 {
         Circle circle2 = new Circle(2);
         System.out.println("Circle 1's area is " + circle1.getArea());
         System.out.println("Circle 2's area is " + circle2.getArea());
-        System.out.println("Total number of circles created: " + Circle.getNumberOfCircles());
+        System.out.println("Total number of circles created: " + Circle.getNumberOfObjects());
     }
 }

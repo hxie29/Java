@@ -8,12 +8,9 @@ Enter the limits: 0 1000
 Enter the array size: 10
 Enter the limits: 0 9
 [0, 0, 3, 3, 4, 6, 6, 8, 8, 9]*/
-package com.example.recursion;
+package c18_Recursion;
 
 import java.util.Arrays;
-import java.util.Scanner;
-
-import static java.util.Arrays.sort;
 
 public class E1813 {
     public static void main(String[] args) {

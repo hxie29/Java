@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

@@ -10,11 +10,10 @@ Year Rank 1 Rank 2 Rank 3 Rank 4 Rank 5 Rank 1 Rank 2 Rank 3 Rank 4 Rank 5
 */
 
 import java.io.File;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class E1231 {
+public class E1232 {
     public static void main(String[] args) throws Exception {
         
         System.out.println("-----------------------------------------------------------------------------------");
@@ -41,12 +40,12 @@ public class E1231 {
             }
             
             System.out.printf("%-8d", year);
-    
-            for (int i = 0; i < list.size(); i++) {
-                System.out.printf("%-12s", list.get(i)[3]);
+
+            for (String[] value : list) {
+                System.out.printf("%-12s", value[3]);
             }
-            for (int i = 0; i < list.size(); i++) {
-                System.out.printf("%-12s", list.get(i)[1]);
+            for (String[] strings : list) {
+                System.out.printf("%-12s", strings[1]);
             }
             System.out.println();
         }

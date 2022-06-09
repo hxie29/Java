@@ -1,10 +1,10 @@
-package chap15;
+package c15_EventsAnimations;
 
 public class Loan {
         private double annualInterestRate;
         private int numberOfYears;
         private double loanAmount;
-        private java.util.Date loanDate;
+        private final java.util.Date loanDate;
     
         /** Default constructor */
         public Loan() {
@@ -57,15 +57,13 @@ public class Loan {
         /** Find monthly payment */
         public double getMonthlyPayment() {
             double monthlyInterestRate = annualInterestRate / 1200;
-            double monthlyPayment = loanAmount * monthlyInterestRate / (1 -
+            return loanAmount * monthlyInterestRate / (1 -
                 (1 / Math.pow(1 + monthlyInterestRate, numberOfYears * 12)));
-            return monthlyPayment;
         }
     
         /** Find total payment */
         public double getTotalPayment() {
-            double totalPayment = getMonthlyPayment() * numberOfYears * 12;
-            return totalPayment;
+            return getMonthlyPayment() * numberOfYears * 12;
         }
         
         /** Return loan date */

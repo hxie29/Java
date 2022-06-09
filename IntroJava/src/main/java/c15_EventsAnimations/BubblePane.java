@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 //Used in E1517 and E1515
 import javafx.scene.layout.Pane;
@@ -9,7 +9,7 @@ import javafx.scene.Node;
 import javafx.collections.ObservableList;
 
 public class BubblePane extends Pane {
-    private double radius = 10;
+    private final double radius = 10;
 
     public BubblePane() {
     }

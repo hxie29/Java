@@ -3,7 +3,7 @@ definition. It is not because the method is recursive but because it has not
 been well-written. It is quite easy to verify that there is another recurrent definition
 of C(n, p), which is C(n, 0) = C(n, n) = 1, otherwise C(n, p) = C(n, p - 1) *
 (n - p + 1) /p. Keeping this in mind, write the previous method.*/
-package com.example.recursion;
+package c18_Recursion;
 
 public class E1805 {
     public static void main(String[] args) {

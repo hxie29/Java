@@ -15,7 +15,7 @@ it with new s1 and s2. The base case is that s2 is empty and prints s1 to the
 console.
 Write a test program that prompts the user to enter a string and displays all its
 permutations.*/
-package com.example.recursion;
+package c18_Recursion;
 
 public class E1825 {
     private static int call = 0;

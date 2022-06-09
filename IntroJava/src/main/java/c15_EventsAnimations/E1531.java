@@ -4,7 +4,7 @@ as shown in Figure 15.37. Press the up arrow key to increase the speed, and the
 down arrow key to decrease it. Press the S key to stop animation of and the R
 key to resume it.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;

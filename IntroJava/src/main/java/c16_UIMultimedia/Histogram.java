@@ -1,4 +1,4 @@
-package chap16;
+package c16_UIMultimedia;
 
 import java.util.Scanner;
 import javafx.scene.shape.Rectangle;
@@ -13,19 +13,18 @@ import java.io.File;
 
 public class Histogram extends Pane {
     private int[] count = new int[26];
-    private double width = 1500;
-    private double height = 1500;
-    private double barWidth = 50;
-    private Rectangle[] bars = new Rectangle[26];
-    private File file;
-    private GridPane pane = new GridPane();
+    private final double height = 1500;
+    private final Rectangle[] bars = new Rectangle[26];
+    private final GridPane pane = new GridPane();
     private String filename = "";
     
     public Histogram() {
         pane.setHgap(10);
         setHeight(height);
+        double width = 1500;
         setWidth(width);
         for (int i = 0; i < 26; i++) {
+            double barWidth = 50;
             bars[i] = new Rectangle(1, barWidth);
             bars[i].setStroke(Color.BLACK);
         }
@@ -47,7 +46,7 @@ public class Histogram extends Pane {
     }
 
     private void count(String filename) {
-        file = new File(filename);
+        File file = new File(filename);
 
         if (file.exists()) {
             try (Scanner input = new Scanner(file)) {

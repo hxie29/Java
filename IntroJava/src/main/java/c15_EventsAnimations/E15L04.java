@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -32,30 +32,30 @@ public class E15L04 extends Application {
         pane.setBottom(box);
         BorderPane.setAlignment(box, Pos.CENTER);
         
-        up.setOnAction(new EventHandler<ActionEvent>() {
+        up.setOnAction(new EventHandler<>() {
             @Override
             public void handle(ActionEvent e) {
                 text.setY(text.getY() > 10 ? text.getY() - 5 : 10);
             }
         });
 
-        down.setOnAction(new EventHandler<ActionEvent>() {
+        down.setOnAction(new EventHandler<>() {
             @Override
-            public void handle (ActionEvent e) {
-                text.setY(text.getY() < pane.getHeight() ? text.getY()+ 5 : 0);
+            public void handle(ActionEvent e) {
+                text.setY(text.getY() < pane.getHeight() ? text.getY() + 5 : 0);
             }
         });
         
-        left.setOnAction(new EventHandler<ActionEvent>() {
+        left.setOnAction(new EventHandler<>() {
             @Override
-            public void handle (ActionEvent e) {
+            public void handle(ActionEvent e) {
                 text.setX(text.getX() > 5 ? text.getX() - 5 : 0);
             }
         });
 
-        right.setOnAction(new EventHandler<ActionEvent>() {
+        right.setOnAction(new EventHandler<>() {
             @Override
-            public void handle (ActionEvent e) {
+            public void handle(ActionEvent e) {
                 text.setX(text.getX() < pane.getWidth() - 10 ? text.getX() + 5 : pane.getWidth() - 10);
             }
         });

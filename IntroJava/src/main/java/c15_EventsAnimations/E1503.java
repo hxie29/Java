@@ -4,7 +4,7 @@ You should define a pane class for displaying the ball and provide the methods
 for moving the Rectangle left, right, up, and down, as shown in Figure 15.26c.
 Check the boundary to prevent the ball from moving out of sight completely.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

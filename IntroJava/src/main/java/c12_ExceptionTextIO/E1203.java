@@ -12,7 +12,7 @@ int[] dom = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 */
 import java.util.InputMismatchException;
 import java.util.Scanner;
-public class E1202 {
+public class E1203 {
     public static void main(String[] args) {
         String[] months = {"January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"};
         int[] dom = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};

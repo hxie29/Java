@@ -1,4 +1,6 @@
-package c12_ExceptionTextIO;//Quotient method with Exception
+package c12_ExceptionTextIO;
+
+//Quotient method with Exception
 import java.util.Scanner;
 public class E12L04 {
     public static void main(String[] args){

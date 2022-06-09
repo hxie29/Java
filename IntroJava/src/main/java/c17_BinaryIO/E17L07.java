@@ -1,4 +1,4 @@
-/* The Serializable interface is a marker interface. Since it has no methods, you don’t need
+package c17_BinaryIO;/* The Serializable interface is a marker interface. Since it has no methods, you don’t need
 to add additional code in your class that implements Serializable. Implementing this interface
 enables the Java serialization mechanism to automate the process of storing objects and arrays.
 To appreciate this automation feature, consider what you otherwise need to do in order to

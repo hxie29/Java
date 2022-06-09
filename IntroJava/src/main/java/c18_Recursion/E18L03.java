@@ -1,5 +1,5 @@
 //Recursive palindrome
-package com.example.recursion;
+package c18_Recursion;
 
 public class E18L03 {
     public static void main(String[] args) {

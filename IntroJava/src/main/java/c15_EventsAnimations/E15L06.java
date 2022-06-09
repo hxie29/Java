@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.geometry.HPos;
@@ -11,12 +11,12 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class E15L06 extends Application {
-    private TextField tfAnnualInterestRate = new TextField();
-    private TextField tfNumberOfYears = new TextField();
-    private TextField tfLoanAmount = new TextField();
-    private TextField tfMonthlyPayment = new TextField();
-    private TextField tfTotalPayment = new TextField();
-    private Button calculate = new Button("Calculate");
+    private final TextField tfAnnualInterestRate = new TextField();
+    private final TextField tfNumberOfYears = new TextField();
+    private final TextField tfLoanAmount = new TextField();
+    private final TextField tfMonthlyPayment = new TextField();
+    private final TextField tfTotalPayment = new TextField();
+    private final Button calculate = new Button("Calculate");
 
     @Override
     public void start(Stage primaryStage) {

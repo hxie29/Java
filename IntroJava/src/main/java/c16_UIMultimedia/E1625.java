@@ -2,11 +2,11 @@
 (Racing cars) Write a program that simulates four cars racing, as shown in
 Figure 16.47b. You can set the speed for each car, with a maximum of 100.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import chap15.CarPane;
+import c15_EventsAnimations.CarPane;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
@@ -17,15 +17,15 @@ import javafx.scene.control.TextField;
 
 
 public class E1625 extends Application {
-    private CarPane car1 = new CarPane();
-    private CarPane car2 = new CarPane();
-    private CarPane car3 = new CarPane();
-    private CarPane car4 = new CarPane();
+    private final CarPane car1 = new CarPane();
+    private final CarPane car2 = new CarPane();
+    private final CarPane car3 = new CarPane();
+    private final CarPane car4 = new CarPane();
 
-    private TextField tf1 = new TextField();
-    private TextField tf2 = new TextField();
-    private TextField tf3 = new TextField();
-    private TextField tf4 = new TextField();
+    private final TextField tf1 = new TextField();
+    private final TextField tf2 = new TextField();
+    private final TextField tf3 = new TextField();
+    private final TextField tf4 = new TextField();
     
     @Override
     public void start(Stage primaryStage) {

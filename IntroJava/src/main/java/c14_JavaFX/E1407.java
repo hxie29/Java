@@ -5,7 +5,7 @@ Display each number centered in a text field. Use TextField’s setText
 method to set value 0 or 1 as a string.
 */
 
-package chap14;
+package c14_JavaFX;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

@@ -6,7 +6,7 @@ shown in Figure 16.42a. The available font names can be obtained using Font
 .getFontNames(). The combo box for the font size is initialized with numbers
 from 1 to 100.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -23,9 +23,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContentDisplay;
 
 public class E1616 extends Application {
-    private ComboBox<String> cbSelectionMode = new ComboBox<>();
-    private ListView<String> list = new ListView<>();
-    private Text text = new Text("Selected items:");
+    private final ComboBox<String> cbSelectionMode = new ComboBox<>();
+    private final ListView<String> list = new ListView<>();
+    private final Text text = new Text("Selected items:");
 
     @Override
     public void start(Stage primaryStage) {
@@ -59,8 +59,8 @@ public class E1616 extends Application {
     private String getText() {
         StringBuilder selection = new StringBuilder();
         ObservableList<String> list2 = list.getSelectionModel().getSelectedItems();
-        for (int i = 0; i < list2.size(); i++) {
-            selection.append(list2.get(i) + "; ");
+        for (String s : list2) {
+            selection.append(s).append("; ");
         }
         return selection.toString();
     }

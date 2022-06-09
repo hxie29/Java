@@ -3,7 +3,7 @@
 with two rows and two columns, as shown in Figure 14.45b.
 */
 
-package chap14;
+package c14_JavaFX;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -30,7 +30,7 @@ public class E1409 extends Application {
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
                 StackPane taichi = new StackPane(getCircle());
-                getArc(taichi);;
+                getArc(taichi);
                 pane.add(taichi, i, j);
             }
         }

@@ -3,7 +3,7 @@ into a binary number as a string. The method header is
 public static String dec2Bin(int value)
 Write a test program that prompts the user to enter a decimal number and displays
 its binary equivalent.*/
-package com.example.recursion;
+package c18_Recursion;
 
 public class E1821 {
     public static void main(String[] args) {

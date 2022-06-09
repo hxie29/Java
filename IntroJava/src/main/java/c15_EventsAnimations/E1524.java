@@ -3,7 +3,7 @@
 swing, as shown in Figure 15.33. Press/release the mouse to pause/resume the
 animation.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;

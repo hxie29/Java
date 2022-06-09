@@ -30,8 +30,8 @@ public class BeanMachine extends Pane {
         Group group = new Group();
 
         //Draw all the circles and lines connected to circles at the last row
-        double x = centerX;
-        double y = centerY - (row + 1) / 2 * vDis;
+        double x;
+        double y = centerY - (row + 1) / 2.0 * vDis;
 
         //First find all the points for circles and lines connected to circles
         ArrayList<Double> circlePoints = new ArrayList<>();

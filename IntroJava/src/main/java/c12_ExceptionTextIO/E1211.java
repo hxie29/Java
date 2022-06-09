@@ -35,12 +35,12 @@ public class E1211 {
             String s2 = s1.replaceAll(key, "");
             text.add(s2);
         }
-        System.out.println(text.toString());
+        System.out.println(text);
 
         try (PrintWriter output = new PrintWriter(file)) {
-           for (int i = 0; i < text.size(); i++ ) {
-               output.println(text.get(i));
-           }
+            for (String s : text) {
+                output.println(s);
+            }
         }
 
         input.close();

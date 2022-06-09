@@ -3,7 +3,7 @@ Cosine pane used in E1524
 }
 */
 
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
@@ -15,8 +15,7 @@ import javafx.collections.ObservableList;
 
 
 public class CosineGraphPane extends Pane {
-    private double scaleFactor = 50;
-    private Polyline cosineLine = new Polyline();
+    private final Polyline cosineLine = new Polyline();
 
     public CosineGraphPane() {
 
@@ -27,7 +26,7 @@ public class CosineGraphPane extends Pane {
     }
 
     private void paint() {
-        scaleFactor = getWidth() / 8 / Math.PI;
+        double scaleFactor = getWidth() / 8 / Math.PI;
 
         Group group = new Group();
 
@@ -60,7 +59,7 @@ public class CosineGraphPane extends Pane {
         group.getChildren().addAll(axisX,axisY, arrowX, arrowY, tX, tY);
         double originX = axisY.getEndX();
         double originY = axisX.getEndY();
-        Text p1 = new Text(originX - Math.PI * 2 * scaleFactor , originY + 20, "-2\u03c0");
+        Text p1 = new Text(originX - Math.PI * 2 * scaleFactor, originY + 20, "-2\u03c0");
         Text p2 = new Text(originX - Math.PI * scaleFactor, originY + 20, "-\u03c0");
         Text p3 = new Text(originX -10 , originY + 20, "0");
         Text p4 = new Text(originX + Math.PI * scaleFactor, originY + 20, "\u03c0");

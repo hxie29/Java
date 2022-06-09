@@ -6,7 +6,7 @@ Start and Stop buttons, as shown in Figure 15.38a.
 }
 */
 
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

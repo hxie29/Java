@@ -1,16 +1,16 @@
-package com.example.recursion;
-
+package c18_Recursion;
+import edu.princeton.cs.introcs.StdDraw;
 import java.awt.*;
-import stdlib.StdDraw;
+
 public class Turtle {
     private double x, y;     // turtle is at (x, y)
     private double angle;    // facing this many degrees counterclockwise from the x-axis
 
-    // start at (x, y), facing angle degrees counterclockwise from the x-axis
-    public Turtle(double x, double y, double angle) {
-       this.x = x;
-       this.y = y;
-       this.angle = angle;
+    // start at (x0, y0), facing a0 degrees counterclockwise from the x-axis
+    public Turtle(double x0, double y0, double a0) {
+        x = x0;
+        y = y0;
+        angle = a0;
     }
 
     // rotate orientation delta degrees counterclockwise
@@ -58,7 +58,22 @@ public class Turtle {
         StdDraw.setYscale(min, max);
     }
 
+
+    // sample client for testing
+    public static void main(String[] args) {
+        StdDraw.enableDoubleBuffering();
+        double x0 = 0.5;
+        double y0 = 0.0;
+        double a0 = 60.0;
+        double step = Math.sqrt(3)/2;
+        Turtle turtle = new Turtle(x0, y0, a0);
+        turtle.goForward(step);
+        turtle.turnLeft(120.0);
+        turtle.goForward(step);
+        turtle.turnLeft(120.0);
+        turtle.goForward(step);
+        turtle.turnLeft(120.0);
+        turtle.show();
+    }
+
 }
-
-
-

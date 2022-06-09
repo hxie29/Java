@@ -22,7 +22,6 @@ Javier is ranked #190 in year 2010
 */
 
 import java.io.File;
-import java.net.URL;
 import java.util.Scanner;
 
 public class E1231 {

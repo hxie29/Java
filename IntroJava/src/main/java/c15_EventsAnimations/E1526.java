@@ -2,7 +2,7 @@
 (Change opacity) Rewrite Programming Exercise 15.24 so the ball’s opacity is
 changed as it swings.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.PathTransition;

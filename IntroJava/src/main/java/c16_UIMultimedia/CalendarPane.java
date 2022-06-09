@@ -5,7 +5,7 @@ previous or next month. Display the dates in the current month in black and
 display the dates in the previous month and next month in gray, as shown in
 Figure 16.48. 
  */
-package chap16;
+package c16_UIMultimedia;
 
 import java.util.GregorianCalendar;
 
@@ -22,14 +22,13 @@ import java.util.Calendar;
 public class CalendarPane extends BorderPane {
     private int year;
     private int month;
-    private Calendar calendar = new GregorianCalendar();
-    private Calendar calenderLastMonth = new GregorianCalendar();
+    private final Calendar calendar = new GregorianCalendar();
+    private final Calendar calenderLastMonth = new GregorianCalendar();
     private final String[] monthName = {"January", "Feburary", "March", "April", "May", "June", "July", 
                                     "August", "September", "October", "November", "December"};
     private final String[] weekdayName = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-    private Text title = new Text();
-    private GridPane grid = new GridPane();
-    private final int daysOfWeek = 7;
+    private final Text title = new Text();
+    private final GridPane grid = new GridPane();
 
     public CalendarPane() {
         setTop(title);
@@ -83,6 +82,7 @@ public class CalendarPane extends BorderPane {
         grid.getChildren().clear();
 
         //Add days
+        int daysOfWeek = 7;
         for (int i = 0; i < daysOfWeek; i++) {
             grid.add(new Text(weekdayName[i]), i, 0);
         }
@@ -93,10 +93,9 @@ public class CalendarPane extends BorderPane {
         //Find total days of this month
         int totalNumberOfDaysThisMonth = calendar.getActualMaximum(Calendar.DATE);
         //Find total days of last month
-        int totalNumberOfDaysLastMonth = calenderLastMonth.getActualMaximum(Calendar.DATE);
 
         //Print previous month days in grey
-        int currentDay = totalNumberOfDaysLastMonth;
+        int currentDay = calenderLastMonth.getActualMaximum(Calendar.DATE);
         for (int i = currentColumn - 1; i >= 0; i--) {
             Text tCurrentDay = new Text(currentDay + "");
             tCurrentDay.setFill(Color.LIGHTGRAY);

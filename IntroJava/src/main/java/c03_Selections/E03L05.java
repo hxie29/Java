@@ -31,7 +31,7 @@ public class E03L05 {
             }
             default:{
                 System.out.println("Error: invalid status");
-                system.exit(1);
+                System.exit(1);
             }
         }
             System.out.println("Tax is " + (int)(tax * 100)/100.0);

@@ -5,7 +5,7 @@ Define a custom exception called HexFormatException. Implement the hex2Dec
 method to throw a HexFormatException if the string is not a hex string.
 */
 import java.util.Scanner;
-public class E1206 {
+public class E1208 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
@@ -48,8 +48,3 @@ public class E1206 {
     
 }
 
-class HexFormatException extends Exception {
-    public HexFormatException(){
-        super("The string is not a hex string.");
-    }
-}

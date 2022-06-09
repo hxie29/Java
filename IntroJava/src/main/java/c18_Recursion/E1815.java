@@ -2,7 +2,7 @@
 18.10 using a helper method to pass the substring high index to the method.
 The helper method header is
 public static int count(String str, char a, int high)*/
-package com.example.recursion;
+package c18_Recursion;
 
 public class E1815 {
     public static void main(String[] args) {

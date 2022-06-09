@@ -1,4 +1,4 @@
-/* java Copy source target
+package c17_BinaryIO;/* java Copy source target
 The program copies the source file to the target file and displays the number of bytes in the file.
 The program should alert the user if the source file does not exist or if the target file already
 exists.

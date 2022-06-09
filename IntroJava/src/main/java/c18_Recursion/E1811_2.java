@@ -8,7 +8,7 @@ Enter the array size : 3
 [3, 1, 2]
 [3, 2, 1]
 */
-package com.example.recursion;
+package c18_Recursion;
 
 import java.util.ArrayList;
 import java.util.Scanner;

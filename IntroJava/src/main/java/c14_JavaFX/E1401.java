@@ -1,7 +1,7 @@
 /* (Display images) Write a program that displays four images in a grid pane, as
 shown in Figure 14.43a. */
 
-package chap14;
+package c14_JavaFX;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

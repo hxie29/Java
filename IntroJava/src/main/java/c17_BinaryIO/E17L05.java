@@ -1,4 +1,4 @@
-/* Since ObjectInputStream/ObjectOutputStream contains all the functions of DataInputStream/DataOutputStream,
+package c17_BinaryIO;/* Since ObjectInputStream/ObjectOutputStream contains all the functions of DataInputStream/DataOutputStream,
 you can replace DataInputStream/DataOutputStream completely with ObjectInput Stream/ObjectOutputStream.
 
 You can wrap an ObjectInputStream/ObjectOutputStream on any InputStream/

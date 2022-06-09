@@ -26,7 +26,7 @@ Drop a yellow disk at column (0–6): 6
 The yellow player won 
 
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.application.Application;
 import javafx.stage.Stage;

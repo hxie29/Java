@@ -2,7 +2,6 @@ package c12_ExceptionTextIO;//File and PrintWriter class
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
 
 public class E12L13 {
     public static void main(String[] args) throws IOException{

@@ -3,7 +3,7 @@ the user use the +/- buttons, primary/secondary mouse buttons, and UP/
 DOWN arrow keys to increase or decrease the current order by 1, as shown
 in Figure 18.12a. The initial order is 0. If the current order is 0, the Decrease
 button is ignored.*/
-package com.example.recursion;
+package c18_Recursion;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;

@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -7,7 +7,7 @@ import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 public class E15L18 extends Application {
-    BallPane ball = new BallPane();
+    final BallPane ball = new BallPane();
 
     @Override
     public void start(Stage primaryStage) { 

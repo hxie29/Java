@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-public class E1214 {
+public class E1215 {
     public static void main(String[] args) throws Exception{
         if (args.length != 2) {
             System.out.println("Usage: java E1215.java line filename");
@@ -35,7 +35,7 @@ public class E1214 {
             }
         }
 
-        System.out.println(list.toString());
+        System.out.println(list);
 
         for (int i = 0; i < list.size(); i++) {
             if (line.compareTo(list.get(i)) <= 0) {
@@ -50,8 +50,8 @@ public class E1214 {
         }
 
         try (PrintWriter output = new PrintWriter(file)) {
-            for (int i = 0; i < list.size(); i++) {
-                output.println(list.get(i));
+            for (String s : list) {
+                output.println(s);
             }
         }
 

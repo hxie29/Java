@@ -1,7 +1,7 @@
 /*(Find the largest number in an array) Write a recursive method that returns the
 largest integer in an array. Write a test program that prompts the user to enter a
 list of eight integers and displays the largest element.*/
-package com.example.recursion;
+package c18_Recursion;
 
 public class E1814 {
     public static void main(String[] args) {

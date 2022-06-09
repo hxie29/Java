@@ -32,11 +32,11 @@ public class E1216 {
             }
         }
 
-        System.out.println(list.toString());
+        System.out.println(list);
 
         try (PrintWriter output = new PrintWriter(file)) {
-            for (int i = 0; i < list.size(); i++) {
-                output.println(list.get(i));
+            for (String s : list) {
+                output.println(s);
             }
         }
     }

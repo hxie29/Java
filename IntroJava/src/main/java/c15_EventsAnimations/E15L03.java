@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -12,7 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class E15L03 extends Application {
-    private CirclePane circlePane = new CirclePane();
+    private final CirclePane circlePane = new CirclePane();
     @Override
     public void start(Stage primaryStage) {
         HBox box = new HBox(10);

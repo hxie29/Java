@@ -10,7 +10,7 @@ number of A, counts[1] the number of B, and so on. The class also contains a
 setter method for setting a new counts and displaying the histogram for the new
 counts.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -23,8 +23,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class E1611 extends Application {
-    private Histogram histogram = new Histogram();
-    private TextField tfInput = new TextField();
+    private final Histogram histogram = new Histogram();
+    private final TextField tfInput = new TextField();
 
     @Override
     public void start(Stage primaryStage) {

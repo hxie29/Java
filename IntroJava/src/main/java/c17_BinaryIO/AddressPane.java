@@ -1,3 +1,5 @@
+package c17_BinaryIO;
+
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -169,9 +171,7 @@ public class AddressPane extends BorderPane {
 
     private byte[] convertLength(byte[] origin, int n) {
         byte[] newData = new byte[n];
-        for (int i = 0; i < origin.length; i++) {
-            newData[i] = origin[i];
-        }
+        System.arraycopy(origin, 0, newData, 0, origin.length);
         return newData;
     }
 

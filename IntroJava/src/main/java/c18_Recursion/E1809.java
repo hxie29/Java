@@ -3,7 +3,7 @@ a string reversely on the console using the following header:
 public static void reverseDisplay(String value)
 For example, reverseDisplay("abcd") displays dcba. Write a test program
 that prompts the user to enter a string and displays its reversal.*/
-package com.example.recursion;
+package c18_Recursion;
 
 import java.util.Scanner;
 

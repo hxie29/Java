@@ -5,7 +5,7 @@ and display the circle and the polygon, as shown in Figure 14.51b.
 }
 */
 
-package chap14;
+package c14_JavaFX;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

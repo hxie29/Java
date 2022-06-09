@@ -7,7 +7,7 @@ seconds. The slides are displayed in order. When the last slide finishes, the fi
 slide is redisplayed, and so on. Click to pause if the presentation is currently playing.
 Click to resume if the presentation is currently paused.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -22,8 +22,8 @@ import javafx.util.Duration;
 import javafx.geometry.Insets;
 
 public class E1530 extends Application {
-    private Image[] images = new Image[25];
-    private ImageView view = new ImageView();
+    private final Image[] images = new Image[25];
+    private final ImageView view = new ImageView();
 
     @Override
     public void start(Stage primaryStage) {

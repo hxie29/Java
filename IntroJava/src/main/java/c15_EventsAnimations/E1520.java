@@ -4,7 +4,7 @@ vertices of a triangle and displays the angles dynamically as the triangle shape
 changes, as shown in Figure 15.32a. The formula to compute angles is given in
 Listing 4.1.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -14,20 +14,19 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
-import javafx.scene.Node;
 
 public class E1520 extends Application {
-    private Circle[] circles = {new Circle(100,50,10), 
+    private final Circle[] circles = {new Circle(100,50,10),
                                 new Circle (80, 150, 10),
                                 new Circle (50,50,10)};
 
-    private Pane pane = new Pane();
-    private Double[] angle = new Double[3];
+    private final Pane pane = new Pane();
+    private final Double[] angle = new Double[3];
     private Polygon p = drawPolygon(circles[0], circles[1], circles[2]);
     
-    private Text tA = new Text ();
-    private Text tB = new Text ();
-    private Text tC = new Text ();
+    private final Text tA = new Text ();
+    private final Text tB = new Text ();
+    private final Text tC = new Text ();
     
     @Override
     public void start(Stage primaryStage) {
@@ -88,9 +87,7 @@ public class E1520 extends Application {
     }
 
     private void removeline() {
-        for (Node a: pane.getChildren()) {
-            if (a instanceof Polygon) pane.getChildren().remove(a);
-        }
+        pane.getChildren().removeIf(a -> a instanceof Polygon);
     }
 
     private void resetText(Text t, Circle a, double angle) {

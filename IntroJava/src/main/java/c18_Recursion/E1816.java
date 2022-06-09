@@ -14,7 +14,7 @@ System.out.println(Arrays.toString(a));
 4 >= 2, 4 >= 1, 4 < 6, 4 < 5, 4 < 9.
 But It could also be [8, 7, 2, 1, 4, 6, 5, 9, 3, 0], or
 [8, 7, 2, 1, 4, 9, 5, 6, 3, 0] */
-package com.example.recursion;
+package c18_Recursion;
 
 import java.util.Arrays;
 

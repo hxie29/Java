@@ -3,7 +3,7 @@
 keyboard and displays it on a pane. The Enter key signals the end of a string.
 Whenever a new string is entered, it is displayed on the pane.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -36,7 +36,7 @@ public class E1510 extends Application {
                text.setText(s.toString());
                s.delete(0, s.length());
            }
-           else s.append(e.getCharacter() + "");
+           else s.append(e.getCharacter());
         });
         pane.requestFocus();
     }

@@ -1,5 +1,5 @@
 //Recursive binary search
-package com.example.recursion;
+package c18_Recursion;
 
 import static java.util.Arrays.sort;
 

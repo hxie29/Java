@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -38,15 +38,3 @@ public class E15L01 extends Application {
     
 }
 
-class OkHandler implements EventHandler<ActionEvent> {
-    @Override
-    public void handle(ActionEvent e) {
-        System.out.println("OK button clicked");
-    }
-}
-class CancelHandler implements EventHandler<ActionEvent> {
-    @Override
-    public void handle(ActionEvent e) {
-        System.out.println("Cancel button clicked");
-    }
-}

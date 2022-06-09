@@ -4,7 +4,7 @@ JavaFX around the circle, as shown in Figure 14.44b. Hint: You need to display
 each character in the right location with appropriate rotation using a loop.
  */
 
-package chap14;
+package c14_JavaFX;
 
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -28,7 +28,7 @@ public class E1405 extends Application {
         String s = " JavaFX Learning";
         for (int i = 0 ; i < s.length(); i++) {
             Text t = new Text(s.charAt(i) + "");
-            double degree =  (360 / s.length()) * i;
+            double degree =  360.0 / s.length() * i;
             t.setRotate(-90 + degree);
             t.setFont(Font.font("Times Roman", FontWeight.BOLD, FontPosture.ITALIC, 24));
             //To set text color use fill instead of stroke

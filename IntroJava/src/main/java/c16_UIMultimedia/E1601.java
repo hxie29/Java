@@ -3,7 +3,7 @@
 use buttons to move the message to the left and right and use the radio buttons to
 change the color for the message displayed.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;

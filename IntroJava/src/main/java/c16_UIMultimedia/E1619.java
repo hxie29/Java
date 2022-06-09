@@ -2,11 +2,11 @@
 (Control a group of fans) Write a program that displays three fans in a group
 with control buttons to start and stop all of them, as shown in Figure 16.44.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import chap15.FanPane;
+import c15_EventsAnimations.FanPane;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -20,9 +20,9 @@ import javafx.scene.layout.GridPane;
 
 
 public class E1619 extends Application {
-    private ControlFan[] fans = new ControlFan[3];
-    private Button btStartAll = new Button("Start All");
-    private Button btStopAll = new Button("Stop All");
+    private final ControlFan[] fans = new ControlFan[3];
+    private final Button btStartAll = new Button("Start All");
+    private final Button btStopAll = new Button("Stop All");
 
     @Override
     public void start(Stage primaryStage) {
@@ -42,14 +42,14 @@ public class E1619 extends Application {
         controlPanel.getChildren().addAll(btStartAll, btStopAll);
 
         btStartAll.setOnAction(e -> {
-            for (int i = 0; i < fans.length; i++) {
-                fans[i].play();
+            for (ControlFan fan : fans) {
+                fan.play();
             }
         });
 
         btStopAll.setOnAction(e -> {
-            for (int i = 0; i < fans.length; i++) {
-                fans[i].stop();
+            for (ControlFan fan : fans) {
+                fan.stop();
             }
         });
 
@@ -68,17 +68,17 @@ public class E1619 extends Application {
 }
 
 class ControlFan extends VBox {
-    private FanPane fan = new FanPane();
-    private Button btPause = new Button("Pause");
-    private Button btResume = new Button("Resume");
-    private Button btReverse = new Button("Reverse");
-    private Slider sld = new Slider();
+    private final FanPane fan = new FanPane();
+    private final Slider sld = new Slider();
     Timeline animation = new Timeline(new KeyFrame(Duration.millis(50), e -> fan.spinBlades()));
 
     public ControlFan() {
         setStyle("-fx-border-color: black");
         HBox topPanel = new HBox(10);
         topPanel.setAlignment(Pos.CENTER);
+        Button btReverse = new Button("Reverse");
+        Button btResume = new Button("Resume");
+        Button btPause = new Button("Pause");
         topPanel.getChildren().addAll(btPause, btResume, btReverse);
 
         setSpacing(10);

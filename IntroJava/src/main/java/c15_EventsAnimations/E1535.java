@@ -4,7 +4,7 @@ the walk step by step in an animation, as shown in Figures 15.39c and d.
 }
 */
 
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

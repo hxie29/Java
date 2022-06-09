@@ -3,7 +3,7 @@
 in Figure 15.35c. Use the Pause, Resume, Reverse buttons to pause, resume,
 and reverse fan running.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;

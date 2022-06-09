@@ -8,7 +8,7 @@ contains the word.
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.net.URL;
-public class E12L18 {
+public class E1233 {
     public static void main(String[]args) throws Exception{
         // url (uniform resource locator) is input as a string
         String urlStr = "http://cs.armstrong.edu/liang";
@@ -39,7 +39,7 @@ public class E12L18 {
         }
     }
 
-    public static ArrayList<String> getSubURL(String urlStr) throws Exception {
+    public static ArrayList<String> getSubURL(String urlStr) {
         ArrayList<String> list = new ArrayList<>();
         try {
             URL url = new URL (urlStr);

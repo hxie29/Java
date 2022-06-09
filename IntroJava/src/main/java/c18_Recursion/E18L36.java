@@ -1,6 +1,6 @@
 // (Sierpinski triangle) Write a program that lets the user to enter the order and
 //display the filled Sierpinski triangles as shown in Figure 18.18.
-package com.example.recursion;
+package c18_Recursion;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;

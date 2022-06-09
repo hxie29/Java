@@ -14,7 +14,7 @@ f1 = currentFib;
 Write a test program that prompts the user to enter an index and displays its
 Fibonacci number.*/
 
-package com.example.recursion;
+package c18_Recursion;
 import java.util.Scanner;
 
 public class E1802 {

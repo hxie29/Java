@@ -1,4 +1,4 @@
-/* (Address book) Write a program that stores, retrieves, adds, and updates addresses as
+package c17_BinaryIO;/* (Address book) Write a program that stores, retrieves, adds, and updates addresses as
 shown in Figure 17.20. Use a fixed-length string for storing each attribute in the address.
 Use random-access file for reading and writing an address. Assume the sizes of the
 name, street, city, state, and zip are 32, 32, 20, 2, and 5 bytes, respectively.
@@ -21,7 +21,7 @@ public class E1711 extends Application{
     private final TextField tfName = new TextField();
     private final TextField tfNumber = new TextField();
     private final Button btStart = new Button("Start");
-    Text reminder = new Text("If the base file is named temp.txt with three pieces, \nthe three smaller files are temp_1.txt, temp_2.txt, and temp_3.txt");
+    final Text reminder = new Text("If the base file is named temp.txt with three pieces, \nthe three smaller files are temp_1.txt, temp_2.txt, and temp_3.txt");
 
     @Override
     public void start(Stage primaryStage) {

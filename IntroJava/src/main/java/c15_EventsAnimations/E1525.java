@@ -4,7 +4,7 @@ a cosine curve, as shown in Figure 15.34. When the ball gets to the right border
 it starts over from the left. Enable the user to resume/pause the animation with
 a click on the left/right mouse button.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
@@ -23,12 +23,12 @@ import javafx.scene.text.Text;
 import javafx.collections.ObservableList;
 
 public class E1525 extends Application {
-    private Pane pane = new Pane();
+    private final Pane pane = new Pane();
     private static final double WIDTH = 1000;
     private static final double HEIGHT = 500;
     private static final double originX = WIDTH / 2;
     private static final double originY = HEIGHT / 2;
-    private int scaleFactor = 50;
+    private final int scaleFactor = 50;
 
     @Override
     public void start(Stage primaryStage) {

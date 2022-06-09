@@ -3,7 +3,7 @@ using a helper method to pass the substring high index to the method. The
 helper method header is
 public static void reverseDisplay(String value, int high)
 */
-package com.example.recursion;
+package c18_Recursion;
 
 import java.util.Scanner;
 

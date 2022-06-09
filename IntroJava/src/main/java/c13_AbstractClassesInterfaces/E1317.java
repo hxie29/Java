@@ -1,4 +1,4 @@
-/* 
+package c13_AbstractClassesInterfaces;/*
 (Math: The Complex class) A complex number is a number in the form a + bi,
 where a and b are real numbers and i is 2-1. The numbers a and b are known
 as the real part and imaginary part of the complex number, respectively. You can
@@ -39,93 +39,18 @@ Enter the second complex number: –3.5 1
 (3.5 + 5.5i) / (–3.5 + 1.0i) = –0.5094 + –1.7i
 |(3.5 + 5.5i)| = 6.519202405202649
  */
-import java.util.Scanner;
 
 public class E1317 {
     public static void main(String[] args){
         Complex c1 = new Complex(3.5,5.5);
         Complex c2 = new Complex(-3.5,1);
-        System.out.println(c1.toString());
-        System.out.println(c2.toString());
-        System.out.println(c1.toString() + " + " + c2.toString() + " = " + c1.add(c2).toString());
-        System.out.println(c1.toString() + " - " + c2.toString() + " = " + c1.subtract(c2).toString());
-        System.out.println(c1.toString() + " * " + c2.toString() + " = " + c1.multiply(c2).toString());
-        System.out.println(c1.toString() + " / " + c2.toString() + " = " + c1.divide(c2).toString());
-        System.out.println(c1.toString() + " > " + c2.toString() + " ? " + c1.compareTo(c2));
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(c1 + " + " + c2 + " = " + c1.add(c2).toString());
+        System.out.println(c1 + " - " + c2 + " = " + c1.subtract(c2).toString());
+        System.out.println(c1 + " * " + c2 + " = " + c1.multiply(c2).toString());
+        System.out.println(c1 + " / " + c2 + " = " + c1.divide(c2).toString());
+        System.out.println(c1 + " > " + c2 + " ? " + c1.compareTo(c2));
     }
 }
 
-class Complex implements Comparable<Complex>, Cloneable{
-    private double a;
-    private double b;
-
-    //Constructor
-    public Complex(){
-        this(0,0);
-    }
-
-    public Complex(double a){
-        this(a,0);
-    }
-
-    public Complex(double a, double b) {
-        this.a = a;
-        this.b = b;
-    }
-
-    //Methods
-    public double getRealPart(){
-        return a;
-    }
-
-    public double getImaginaryPart(){
-        return b;
-    }
-
-    public Complex add(Complex c) {
-        return new Complex(a + c.getRealPart(), b + c.getImaginaryPart());
-    }
-    
-    public Complex subtract(Complex c) {
-        return new Complex(a - c.getRealPart(), b - c.getImaginaryPart());
-    }
-
-    public Complex multiply(Complex c) {
-        double real = a * c.getRealPart() - b * c.getImaginaryPart();
-        double imaginary = b * c.getRealPart() + a * c.getImaginaryPart();
-        return new Complex(real, imaginary);
-    }
-
-    public Complex divide(Complex c) {
-        double real = (a * c.getRealPart() + b * c.getImaginaryPart()) / (c.getRealPart() * c.getRealPart() + c.getImaginaryPart() * c.getImaginaryPart());
-        double imaginary = (b * c.getRealPart() - a * c.getImaginaryPart()) / (c.getRealPart() * c.getRealPart() + c.getImaginaryPart() * c.getImaginaryPart());
-        return new Complex(real, imaginary);
-    }
-
-    public double abs() {
-        return Math.pow((a * a + b * b), 0.5);
-    }
-
-    //Overrude methods
-    @Override
-    public String toString() {
-        if (b == 0) return a + "";
-        else if (a == 0) return b + "i";
-        else return a + " + " + b + "i";
-    }
-
-    @Override
-    public int compareTo(Complex n) {
-        return (this.abs() > n.abs()) ? 1 : ((this.abs() < n.abs()) ? -1 : 0);
-    }
-
-    @Override
-    public Object clone() {
-        try{
-            return super.clone();
-        }
-        catch (CloneNotSupportedException ex) {
-            return null;
-        }
-    }
-}

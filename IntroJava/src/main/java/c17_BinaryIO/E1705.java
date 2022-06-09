@@ -1,4 +1,4 @@
-/* (Store objects and arrays in a file) Write a program that stores an array of the six
+package c17_BinaryIO;/* (Store objects and arrays in a file) Write a program that stores an array of the six
 int values 1, 2, 3, 4,5, and 6, a Date object for the current time, and the double
 value 10.5 into the file named Exercise17_05.dat.
 */

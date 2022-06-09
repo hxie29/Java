@@ -1,4 +1,4 @@
-/* (View bits) Write the following method that displays the bit representation for the
+package c17_BinaryIO;/* (View bits) Write the following method that displays the bit representation for the
 last byte in an integer:
 public static String getBits(int value)
 For a hint, see Programming Exercise 5.44. Write a program that prompts the user

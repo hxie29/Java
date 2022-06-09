@@ -7,7 +7,7 @@ Node’s contains method to test whether a point is inside a node.)
 }
 */
 
-package chap14;
+package c14_JavaFX;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

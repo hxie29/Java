@@ -7,7 +7,7 @@ exists. Initially, the values in the text fields are randomly filled with number
 from 0 to 9.
  */
 
-package chap16;
+package c16_UIMultimedia;
 
 import java.util.ArrayList;
 import javafx.geometry.Pos;
@@ -23,22 +23,22 @@ public class MatrixPane extends BorderPane{
     private int row = 6;
     private int column = 7;
     private int[][] matrix;
-    private ArrayList<Integer> cfIndex = new ArrayList<>();
-    private GridPane grid = new GridPane();
-    private HBox controlPanel = new HBox(10);
+    private final ArrayList<Integer> cfIndex = new ArrayList<>();
     private TextField[][] tfNumbers;
-    private Text result = new Text(" ");
-    private Button btSolve = new Button("Solve");
-    private Button btReset = new Button("Reset Numbers");
+    private final Text result = new Text(" ");
 
     public MatrixPane() {
         setTop(result);
+        HBox controlPanel = new HBox(10);
         setBottom(controlPanel);
+        GridPane grid = new GridPane();
         setCenter(grid);
         BorderPane.setAlignment(result, Pos.CENTER);
         BorderPane.setAlignment(controlPanel, Pos.CENTER);
         BorderPane.setAlignment(grid, Pos.CENTER);
 
+        Button btReset = new Button("Reset Numbers");
+        Button btSolve = new Button("Solve");
         controlPanel.getChildren().addAll(btSolve, btReset);
         controlPanel.setAlignment(Pos.CENTER);
 

@@ -6,7 +6,7 @@ can click the Solve button to highlight a sequence of four equal numbers, if it
 exists. Initially, the values in the text fields are randomly filled with numbers
 from 0 to 9.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.application.Application;
 import javafx.stage.Stage;

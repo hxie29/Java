@@ -6,14 +6,13 @@ converts it to the end-of-line brace style in (b).
 
 Your program can be invoked from the command line with the Java source-code
 file as the argument. It converts the Java source code to a new format. For example,
-the following command converts the Java source-code file Test.java to
+the following command converts the Java source-code file Turtle.java to
 the end-of-line brace style.
-java Exercise12_12 Test.java
+java Exercise12_12 Turtle.java
 
 */
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class E1213 {

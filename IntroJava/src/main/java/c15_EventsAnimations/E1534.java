@@ -10,7 +10,7 @@ Figure 15.39b. Assume the size of the lattice is 16 by 16.
 }
 */
 
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

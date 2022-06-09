@@ -6,7 +6,7 @@ shown in Figure 16.42a. The available font names can be obtained using Font
 .getFontNames(). The combo box for the font size is initialized with numbers
 from 1 to 100.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -24,11 +24,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContentDisplay;
 
 public class E1614 extends Application {
-    private Text text = new Text("This is a text.");
-    private ComboBox<String> cbFont = new ComboBox<>();
-    private ComboBox<Integer> cbFontSize = new ComboBox<>();
-    private CheckBox chkBold = new CheckBox("Bold");
-    private CheckBox chkItalic = new CheckBox("Italic");
+    private final Text text = new Text("This is a text.");
+    private final ComboBox<String> cbFont = new ComboBox<>();
+    private final ComboBox<Integer> cbFontSize = new ComboBox<>();
+    private final CheckBox chkBold = new CheckBox("Bold");
+    private final CheckBox chkItalic = new CheckBox("Italic");
 
     @Override
     public void start(Stage primaryStage) {
@@ -69,7 +69,7 @@ public class E1614 extends Application {
     private void update() {
         FontWeight weight = (chkBold.isSelected()) ? FontWeight.BOLD : FontWeight.NORMAL;
         FontPosture posture = (chkItalic.isSelected()) ? FontPosture.ITALIC : FontPosture.REGULAR;
-        text.setFont(Font.font(cbFont.getSelectionModel().getSelectedItem(), weight, posture, (int)cbFontSize.getSelectionModel().getSelectedItem()));
+        text.setFont(Font.font(cbFont.getSelectionModel().getSelectedItem(), weight, posture, cbFontSize.getSelectionModel().getSelectedItem()));
     }
 
     public static void main(String[] args ){

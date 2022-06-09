@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.animation.PathTransition;
 import javafx.application.Application;

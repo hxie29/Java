@@ -7,7 +7,7 @@ are horizontal or vertical neighbors, but not if they are diagonal neighbors.
 ■■ The path does not contain cells that form a square. The path in Figure 18.13b,
 for example, does not meet this condition. (The condition makes a path easy
 to identify on the board.)*/
-package com.example.recursion;
+package c18_Recursion;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;

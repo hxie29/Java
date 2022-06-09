@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 
 import java.util.ArrayList;
@@ -15,19 +15,18 @@ import javafx.util.Duration;
 
 public class BeanMachineV2 extends Pane {
     private int row = 7;
-    private double radius = 10;
-    private double hDis = radius * 4.5;
-    private double vDis =  hDis * Math.pow(3, 0.5) / 2;
-    private double width = 800;
-    private double height = 800;
-    private double startX = width / 2;
-    private double startY = 100;
-    private int[] slots = new int[row + 1];
-    private ArrayList<Circle> balls = new ArrayList<>();
-    private double bottomLength = vDis * 3;
-    private ArrayList<Double> circlePoints = new ArrayList<>();
-    private ArrayList<Double> linePoints = new ArrayList<>();
-    private ArrayList<PathTransition> mPathTransitions = new ArrayList<>();
+    private final double radius = 10;
+    private final double hDis = radius * 4.5;
+    private final double vDis =  hDis * Math.pow(3, 0.5) / 2;
+    private final double width = 800;
+    private final double startX = width / 2;
+    private final double startY = 100;
+    private final int[] slots = new int[row + 1];
+    private final ArrayList<Circle> balls = new ArrayList<>();
+    private final double bottomLength = vDis * 3;
+    private final ArrayList<Double> circlePoints = new ArrayList<>();
+    private final ArrayList<Double> linePoints = new ArrayList<>();
+    private final ArrayList<PathTransition> mPathTransitions = new ArrayList<>();
     private int round = 0;
 
     public BeanMachineV2() {
@@ -42,13 +41,14 @@ public class BeanMachineV2 extends Pane {
     }
 
     private void paint() {
+        double height = 800;
         setMinHeight(height);
         setMinWidth(width);
         
         Group group = new Group();
         
         //Draw all the circles and lines connected to circles at the last row
-        double x = startX;
+        double x;
         double y = startY;
         
         //First find all the points for circles and lines connected to circles

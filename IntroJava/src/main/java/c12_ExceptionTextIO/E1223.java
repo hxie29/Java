@@ -5,7 +5,6 @@ number of scores separated by spaces. Write a program that reads the scores
 from the file and displays their total and average.
 */
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Scanner;
 public class E1223 {
     public static void main(String[] args) throws Exception {

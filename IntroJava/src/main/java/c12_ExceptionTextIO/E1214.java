@@ -5,10 +5,12 @@ We assume that this file contains names of people with a name per line.
 Names (and hence lines) are listed in ascending alphabetical order in the file.
 We can not find the same line twice.
 */
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 import java.io.File;
 public class E1214 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         if (args.length != 2) {
             System.out.println("Usage: java E1214.java line filename");
             System.exit(1);
@@ -25,7 +27,7 @@ public class E1214 {
 
     }
 
-    public static int readInFile(String line, File file) {
+    public static int readInFile(String line, File file) throws FileNotFoundException {
         int count = 0;
         try (Scanner input = new Scanner(file)) {
             while (input.hasNextLine()) {

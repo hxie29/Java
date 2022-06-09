@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -11,15 +11,15 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
 
 public class MapPane extends BorderPane {
-    private Group group = new Group();
+    private final Group group = new Group();
 
     MapPane() {
         ArrayList<ArrayList<Point2D>> points = getPoint();
         //Put points into polygons
-        for (int i = 0; i < points.size(); i++) {
+        for (ArrayList<Point2D> point : points) {
             Polygon p = new Polygon();
-            for (int j = 0; j < points.get(i).size(); j++) {
-                p.getPoints().addAll(points.get(i).get(j).getX(), -1 * points.get(i).get(j).getY());
+            for (Point2D point2D : point) {
+                p.getPoints().addAll(point2D.getX(), -1 * point2D.getY());
             }
             p.setFill(Color.WHITE);
             p.setStroke(Color.BLACK);

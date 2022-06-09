@@ -1,7 +1,7 @@
 /*(Tower of Hanoi) Modify Listing 18.8, TowerOfHanoi.java, so the program finds
 the number of moves needed to move n disks from tower A to tower B. (Hint:
 Use a static variable and increment it every time the method is called.) */
-package com.example.recursion;
+package c18_Recursion;
 
 import java.util.Scanner;
 

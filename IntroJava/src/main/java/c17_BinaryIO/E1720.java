@@ -1,4 +1,4 @@
-/* (Binary editor) Write a GUI application that lets the user enter file name in
+package c17_BinaryIO;/* (Binary editor) Write a GUI application that lets the user enter file name in
 the text field and press the Enter key to display its binary representation in a text
 area. The user can also modify the binary code and save it back to the file, as
 shown in Figure 17.23a.

@@ -1,4 +1,4 @@
-/* (Combine files GUI) Rewrite Exercise 17.12 with a GUI, as shown in Figure 17.21b.*/
+package c17_BinaryIO;/* (Combine files GUI) Rewrite Exercise 17.12 with a GUI, as shown in Figure 17.21b.*/
 
 import java.io.*;
 import javafx.application.Application;
@@ -17,7 +17,7 @@ public class E1713 extends Application{
     private final TextField tfName = new TextField();
     private final TextField tfNumber = new TextField();
     private final Button btStart = new Button("Start");
-    Text reminder = new Text("If the base file is named temp.txt with three pieces, \ntemp_1.txt, temp_2.txt, and temp_3.txt are combined into temp.txt");
+    final Text reminder = new Text("If the base file is named temp.txt with three pieces, \ntemp_1.txt, temp_2.txt, and temp_3.txt are combined into temp.txt");
 
 
     @Override

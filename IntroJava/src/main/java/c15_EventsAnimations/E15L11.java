@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -9,9 +9,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class E15L11 extends Application {
-    private Circle c = new Circle(60);
-    private Rectangle r = new Rectangle(120,120);
-    private StackPane pane = new StackPane();
+    private final Circle c = new Circle(60);
+    private final Rectangle r = new Rectangle(120,120);
+    private final StackPane pane = new StackPane();
 
     @Override
     public void start(Stage primaryStage) {

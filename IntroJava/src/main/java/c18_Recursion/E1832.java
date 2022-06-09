@@ -1,4 +1,4 @@
-package com.example.recursion;
+package c18_Recursion;
 
 public class E1832 {
 }

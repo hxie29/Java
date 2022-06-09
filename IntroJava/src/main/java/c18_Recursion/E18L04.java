@@ -1,5 +1,5 @@
 //Recursive helper method
-package com.example.recursion;
+package c18_Recursion;
 
 public class E18L04 {
     public static void main(String[] args) {

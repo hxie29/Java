@@ -3,7 +3,7 @@
 and column-size properties of a text field dynamically, as shown in
 Figure 16.38a.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
@@ -49,17 +49,11 @@ public class E1606 extends Application {
         pane.setBottom(paneRbs);
         pane.setCenter(txPane);
         
-        rb1.setOnAction(e -> {
-            tf1.setAlignment(Pos.CENTER_LEFT);
-        });
+        rb1.setOnAction(e -> tf1.setAlignment(Pos.CENTER_LEFT));
         
-        rb2.setOnAction(e -> {
-           tf1.setAlignment(Pos.CENTER);
-        });
+        rb2.setOnAction(e -> tf1.setAlignment(Pos.CENTER));
 
-        rb3.setOnAction(e -> {
-            tf1.setAlignment(Pos.CENTER_RIGHT);
-        });
+        rb3.setOnAction(e -> tf1.setAlignment(Pos.CENTER_RIGHT));
 
         column.setOnAction(e -> tf1.setPrefColumnCount(Integer.parseInt(column.getText())));
         

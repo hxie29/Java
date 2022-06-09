@@ -5,7 +5,7 @@ intersect, as shown in Figure 16.39a. Enable the user to point the mouse inside 
 Rectangle and drag it. As the Rectangle is being dragged, the Rectangle’s center coordinates
 in the text fields are updated.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
@@ -23,12 +23,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
 public class E1609 extends Application {
-    private Text text = new Text();
-    private Rectangle r1 = new Rectangle();
-    private Rectangle r2 = new Rectangle();
-    private InputPaneRectangle r1Info = new InputPaneRectangle(1);
-    private InputPaneRectangle r2Info = new InputPaneRectangle(2);
-    private Pane figure = new Pane();
+    private final Text text = new Text();
+    private final Rectangle r1 = new Rectangle();
+    private final Rectangle r2 = new Rectangle();
+    private final InputPaneRectangle r1Info = new InputPaneRectangle(1);
+    private final InputPaneRectangle r2Info = new InputPaneRectangle(2);
+    private final Pane figure = new Pane();
 
     @Override
     public void start(Stage primaryStage) {
@@ -102,12 +102,12 @@ public class E1609 extends Application {
 }
 
 class InputPaneRectangle extends VBox{
-    private Label title = new Label();
-    private TextField tfX = new TextField("0");
-    private TextField tfY = new TextField("0");
-    private TextField tfWidth = new TextField("0");
-    private TextField tfHeight = new TextField("0");
-    private double[] info = new double[4];
+    private final Label title = new Label();
+    private final TextField tfX = new TextField("0");
+    private final TextField tfY = new TextField("0");
+    private final TextField tfWidth = new TextField("0");
+    private final TextField tfHeight = new TextField("0");
+    private final double[] info = new double[4];
 
     public InputPaneRectangle() {
         this(0);

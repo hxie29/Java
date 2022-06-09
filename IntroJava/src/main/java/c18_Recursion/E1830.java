@@ -2,7 +2,7 @@
 under a directory, recursively. Pass the parameters from the command line as
 follows:
 java Exercise18_30 dirName word*/
-package com.example.recursion;
+package c18_Recursion;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;

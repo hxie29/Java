@@ -1,4 +1,4 @@
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -11,9 +11,9 @@ import javafx.beans.property.DoubleProperty;
 public class BallPane extends Pane {
     public final double radius = 50;
     private double x = radius, y = radius;
-    Circle ball = new Circle(x, y, 60);
+    final Circle ball = new Circle(x, y, 60);
     private double dx =1, dy = 1;
-    private Timeline animation;
+    private final Timeline animation;
     
     public BallPane(){
         ball.setFill(Color.RED);

@@ -2,6 +2,18 @@
     "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m",
     "java.project.sourcePaths": [
         "IntroJava_Chap_9-10",
-        "IntroJava_Chap_14/HelloFX/src/hellofx"
+        "IntroToJava/src/c18_Recursion"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Library/Java/javafx-sdk-18.0.1/lib/javafx-swt.jar",
+        "/Library/Java/javafx-sdk-18.0.1/lib/javafx.base.jar",
+        "/Library/Java/javafx-sdk-18.0.1/lib/javafx.controls.jar",
+        "/Library/Java/javafx-sdk-18.0.1/lib/javafx.fxml.jar",
+        "/Library/Java/javafx-sdk-18.0.1/lib/javafx.graphics.jar",
+        "/Library/Java/javafx-sdk-18.0.1/lib/javafx.media.jar",
+        "/Library/Java/javafx-sdk-18.0.1/lib/javafx.swing.jar",
+        "/Library/Java/javafx-sdk-18.0.1/lib/javafx.web.jar",
+        "IntroToJava/lib/stdlib.jar"
     ]
 }

@@ -7,9 +7,9 @@ or “Directory already exists” if the directory already exists.
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 public class E1229 {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) {
         ArrayList<File> list = new ArrayList<>();
         addFiles(list, args);
         //System.out.println(list.size());
@@ -18,16 +18,16 @@ public class E1229 {
     }
 
     public static void addFiles(ArrayList<File> list, String[] args) {
-		for (int i = 0; i < args.length; i ++) {
-			if (!args[i].equals("Exercise12_27.java") && !args[i].equals("Exercise12_27.class")) {
-				list.add(new File(args[i]));
-			}
-		}
+        for (String arg : args) {
+            if (!arg.equals("Exercise12_27.java") && !arg.equals("Exercise12_27.class")) {
+                list.add(new File(arg));
+            }
+        }
 	}
 
     public static void pad(ArrayList<File> list) {
-        for (int i = 0; i < list.size(); i++) {
-            StringBuilder name = new StringBuilder (list.get(i).getName());
+        for (File file : list) {
+            StringBuilder name = new StringBuilder(file.getName());
             int dashIndex = name.indexOf("_");
             if (dashIndex == -1) continue;
             if (dashIndex + 2 > name.length() - 1) {
@@ -36,7 +36,7 @@ public class E1229 {
             if (!Character.isDigit(name.charAt(dashIndex + 2))) {
                 name.insert(dashIndex + 1, "0");
             }
-            list.get(i).renameTo(new File (name.toString()));
+            file.renameTo(new File(name.toString()));
         }
     }
 }

@@ -6,7 +6,7 @@ shown in Figure 16.42a. The available font names can be obtained using Font
 .getFontNames(). The combo box for the font size is initialized with numbers
 from 1 to 100.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -21,9 +21,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContentDisplay;
 
 public class E1615 extends Application {
-    private ComboBox<String> cbContentDisplay = new ComboBox<>();
-    private TextField tf = new TextField();
-    private Label content = new Label("Flag", new ImageView("http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/rainbow-flag.png"));
+    private final ComboBox<String> cbContentDisplay = new ComboBox<>();
+    private final TextField tf = new TextField();
+    private final Label content = new Label("Flag", new ImageView("http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/rainbow-flag.png"));
 
     @Override
     public void start(Stage primaryStage) {
@@ -55,12 +55,12 @@ public class E1615 extends Application {
 
     private void update() {
        String direction = cbContentDisplay.getSelectionModel().getSelectedItem();
-       switch(direction) {
-           case "Left": content.setContentDisplay(ContentDisplay.LEFT); break;
-           case "Right": content.setContentDisplay(ContentDisplay.RIGHT); break;
-           case "Top": content.setContentDisplay(ContentDisplay.TOP); break;
-           case "Bottom": content.setContentDisplay(ContentDisplay.BOTTOM); break;
-       }
+        switch (direction) {
+            case "Left" -> content.setContentDisplay(ContentDisplay.LEFT);
+            case "Right" -> content.setContentDisplay(ContentDisplay.RIGHT);
+            case "Top" -> content.setContentDisplay(ContentDisplay.TOP);
+            case "Bottom" -> content.setContentDisplay(ContentDisplay.BOTTOM);
+        }
        content.setGraphicTextGap(Double.parseDouble(tf.getText()));
     }
 

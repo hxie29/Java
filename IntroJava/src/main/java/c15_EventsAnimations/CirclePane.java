@@ -1,11 +1,11 @@
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.paint.Color;
 
 public class CirclePane extends StackPane{
-    private Circle circle = new Circle(50);
+    private final Circle circle = new Circle(50);
     
     public CirclePane() {
         getChildren().add(circle);

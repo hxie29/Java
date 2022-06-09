@@ -8,26 +8,34 @@ point on the boundary, as shown in Figure 15.39a, or ends at a dead-end point
 (i.e., surrounded by four points that have already been visited), as shown in
 Figure 15.39b. Assume the size of the lattice is 16 by 16.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 public class RandomWalkPane extends Pane{
-    private int row , column;
+    private final int row;
+    private final int column;
     private int unit = 50;
-    private int width, height;
-    private int margin = 25;
+    private final int width;
+    private final int height;
+    private final int margin = 25;
     private Color gridColor = Color.LIGHTGRAY;
-    private int startX, startY;
+    private final int startX;
+    private final int startY;
     private int currentX, currentY, nextX, nextY;
 
-    private boolean[][] walkedPoints;
-    private int startRow, startColumn, currentRow, currentColumn;
-    private ArrayList<Line> walkedLines = new ArrayList<>();
-    private boolean[] triedPath = new boolean[4]; // {UP, DOWN, LEFT, RIGHT}
+    private final boolean[][] walkedPoints;
+    private final int startRow;
+    private final int startColumn;
+    private int currentRow;
+    private int currentColumn;
+    private final ArrayList<Line> walkedLines = new ArrayList<>();
+    private final boolean[] triedPath = new boolean[4]; // {UP, DOWN, LEFT, RIGHT}
 
     public RandomWalkPane() {
         this(16,16);
@@ -121,36 +129,29 @@ public class RandomWalkPane extends Pane{
 
     private void drawStep(int direction) {
         switch (direction) {
-            case 0: {
+            case 0 -> {
                 // walk up
                 currentRow--;
                 nextX = currentX;
                 nextY = currentY - unit;
-                break;
             }
-    
-            case 1: {
+            case 1 -> {
                 // walk down
                 currentRow++;
                 nextX = currentX;
                 nextY = currentY + unit;
-                break;
             }
-    
-            case 2: {
+            case 2 -> {
                 // walk left
                 currentColumn--;
                 nextX = currentX - unit;
                 nextY = currentY;
-                break;
             }
-    
-            case 3: {
+            case 3 -> {
                 //walk right
                 currentColumn++;
                 nextX = currentX + unit;
                 nextY = currentY;
-                break;
             }
         }
 
@@ -165,23 +166,17 @@ public class RandomWalkPane extends Pane{
         currentX = nextX;
         currentY = nextY;
 
-        for (int i =0; i < triedPath.length; i++) {
-            triedPath[i] = false;
-        }
+        Arrays.fill(triedPath, false);
     }
 
     public void reset() {
         getChildren().removeAll(walkedLines);
         walkedLines.clear();
 
-        for (int i = 0; i < walkedPoints.length; i++) {
-            for (int j = 0; j < walkedPoints[i].length; j++) {
-                walkedPoints[i][j] = false;
-            }
+        for (boolean[] walkedPoint : walkedPoints) {
+            Arrays.fill(walkedPoint, false);
         }
-        for (int i =0; i < triedPath.length; i++) {
-            triedPath[i] = false;
-        }
+        Arrays.fill(triedPath, false);
         
         walkedPoints[startRow][startColumn] = true;
         currentX = startX;

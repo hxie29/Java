@@ -1,5 +1,5 @@
 // Use recursive methods to draw fractals (inherently recursive)
-package com.example.recursion;
+package c18_Recursion;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;

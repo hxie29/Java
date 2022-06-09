@@ -20,13 +20,13 @@ public class E1224 {
        try(PrintWriter output = new PrintWriter("E1224_dataset.txt")) {
            for (int i = 0; i < 1000; i++) {
                int index = (int)(Math.random() * rank.length);
-               double salary = 0;
-               switch (index) {
-                   case 0: salary = 50000 + Math.random() * 30000 ; break;
-                   case 1: salary = 60000 + Math.random() * 50000 ; break;
-                   case 2: salary = 75000 + Math.random() * 55000; break;
-               }
-               output.println("FirstName" + i + " LastNmae" + i + " " + rank[index] 
+               double salary = switch (index) {
+                   case 0 -> 50000 + Math.random() * 30000;
+                   case 1 -> 60000 + Math.random() * 50000;
+                   case 2 -> 75000 + Math.random() * 55000;
+                   default -> 0;
+               };
+               output.println("FirstName" + i + " LastNmae" + i + " " + rank[index]
                                 + " " + (int)(salary * 100) / 100.0) ;
 
            }

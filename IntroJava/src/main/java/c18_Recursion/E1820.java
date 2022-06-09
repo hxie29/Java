@@ -2,7 +2,7 @@
 Figure 18.12b. The circles are centered in the pane. The gap between two adjacent
 circles is 10 pixels, and the gap between the border of the pane and the
 largest circle is also 10.*/
-package com.example.recursion;
+package c18_Recursion;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -30,39 +30,3 @@ public class E1820 extends Application {
     }
 }
 
-class OvalPane extends StackPane {
-    public OvalPane() {
-        setHeight(400);
-        setWidth(400);
-        addShape();
-    }
-
-    private void addShape() {
-        getChildren().clear();
-        double x = getWidth() / 2 - 10;
-        double y = getHeight() / 2- 10;
-        addShape(x, y);
-    }
-    private void addShape(double x, double y) {
-        if (x > 0 && y > 0) {
-            Ellipse c = new Ellipse();
-            c.setStroke(Color.BLACK);
-            c.setFill(Color.TRANSPARENT);
-            c.setRadiusX(x);
-            c.setRadiusY(y);
-            getChildren().add(c);
-            addShape(x - 10, y - 10);
-        }
-    }
-    @Override
-    protected void setHeight(double v) {
-        super.setHeight(v);
-        addShape();
-    }
-
-    @Override
-    protected void setWidth(double v) {
-        super.setWidth(v);
-        addShape();
-    }
-}

@@ -1,5 +1,5 @@
 // Compute Fibonacci
-package com.example.recursion;
+package c18_Recursion;
 import java.util.Scanner;
 public class E18L02 {
     public static void main(String[] args){

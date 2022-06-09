@@ -1,4 +1,4 @@
-/* 
+package c17_BinaryIO;/*
 (Sum all the floating points in a binary data file) Suppose a binary data file
 named Exercise17_03.dat has been created and its data are created using
 writeDouble(double) in DataOutputStream. The file contains an unspecified

@@ -2,7 +2,7 @@
 (Create a simple calculator) Write a program to perform addition, subtraction,
 multiplication, and division, as shown in Figure 15.27a.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

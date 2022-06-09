@@ -3,7 +3,7 @@
 Figure 14.46a.
 */
 
-package chap14;
+package c14_JavaFX;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;

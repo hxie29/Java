@@ -1,3 +1,5 @@
+package c13_AbstractClassesInterfaces;
+
 import java.util.ArrayList;
 
 /*
@@ -15,7 +17,7 @@ public class E1302 {
     }
 
     public static void average(ArrayList<Integer> list) {
-        if (list.size() == 0 || list == null) {
+        if (list.size() == 0) {
             System.out.println("The list is empty.");
         }
         else {

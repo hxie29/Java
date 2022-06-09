@@ -1,5 +1,5 @@
 //Recursive selection sort
-package com.example.recursion;
+package c18_Recursion;
 
 public class E18L05 {
     public static void main(String[] args) {

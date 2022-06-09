@@ -5,7 +5,7 @@ user left-clicks the mouse (primary button), a point is created and displayed
 at the mouse point. The user can remove a point by pointing to it and rightclicking
 the mouse (secondary button).
  */
-package chap15;
+package c15_EventsAnimations;
 import java.util.ArrayList;
 
 import javafx.application.Application;
@@ -23,8 +23,8 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 public class E1517 extends Application {
-    private Pane pane = new Pane();
-    private ArrayList<Circle> circles = new ArrayList<>();
+    private final Pane pane = new Pane();
+    private final ArrayList<Circle> circles = new ArrayList<>();
 
     @Override
     public void start(Stage primaryStage) {
@@ -74,9 +74,7 @@ public class E1517 extends Application {
 
     private void removeRec() {
         ObservableList<Node> list = pane.getChildren();
-        for (Node c : list) {
-            if (c instanceof Rectangle) list.remove(c);
-        }
+        list.removeIf(c -> c instanceof Rectangle);
     }
     
     private void drawRectangle() {

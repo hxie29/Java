@@ -5,7 +5,7 @@ the two circles, as shown in Figure 15.30b. The distance between the circles
 is displayed along the line. The user can drag a circle. When that happens, the
 circle and its line are moved, and the distance between the circles is updated.
  */
-package chap15;
+package c15_EventsAnimations;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;

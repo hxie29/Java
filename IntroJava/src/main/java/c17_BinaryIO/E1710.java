@@ -1,4 +1,4 @@
-/* (Split files) Suppose you want to back up a huge file (e.g., a 10-GB AVI file) to a
+package c17_BinaryIO;/* (Split files) Suppose you want to back up a huge file (e.g., a 10-GB AVI file) to a
 CD-R. You can achieve it by splitting the file into smaller pieces and backing up
 these pieces separately. Write a utility program that splits a large file into smaller
 ones using the following command:

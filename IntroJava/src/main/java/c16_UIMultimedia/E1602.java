@@ -3,7 +3,7 @@
 in Figure 16.36b. The user selects a figure from a radio button and uses a check
 box to specify whether it is filled.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;

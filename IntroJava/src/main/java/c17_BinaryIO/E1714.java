@@ -1,4 +1,4 @@
-/* (Encrypt files) Encode the file by adding 10 to every byte in the file. Write a gram
+package c17_BinaryIO;/* (Encrypt files) Encode the file by adding 10 to every byte in the file. Write a gram
 that prompts the user to enter an input file name and an output file name and saves
 the encrypted version of the input file to the output file.
 */

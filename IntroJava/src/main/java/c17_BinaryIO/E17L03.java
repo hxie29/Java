@@ -1,4 +1,4 @@
-/* If you keep reading data at the end of an InputStream, an EOFException will occur. This
+package c17_BinaryIO;/* If you keep reading data at the end of an InputStream, an EOFException will occur. This
 exception can be used to detect the end of a file,
 */
 

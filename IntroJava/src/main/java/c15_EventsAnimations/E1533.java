@@ -5,7 +5,7 @@ after 10 balls are dropped, as shown in Figures 15.38b and c.
 }
 */
 
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

@@ -5,7 +5,7 @@ changed to Pause, as shown in Figure 16.45b. When the user clicks the Pause
 button, the button’s label is changed to Resume, as shown in Figure 16.45c. The
 Clear button resets the count to 0 and resets the button’s label to Start.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -21,10 +21,10 @@ import javafx.scene.control.Button;
 
 
 public class E1620 extends Application {
-    private StopWatch watch = new StopWatch();
-    private Button btStart = new Button("Start");
-    private Button btClear = new Button("Clear");
-    private Text text = new Text();
+    private final StopWatch watch = new StopWatch();
+    private final Button btStart = new Button("Start");
+    private final Button btClear = new Button("Clear");
+    private final Text text = new Text();
 
     @Override
     public void start(Stage primaryStage) {

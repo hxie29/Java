@@ -2,7 +2,7 @@
 (Alternate two messages) Write a program to display the text Welcome to
 java and LearningJavaFX alternately with a mouse click.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;

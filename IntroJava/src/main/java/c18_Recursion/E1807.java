@@ -1,7 +1,7 @@
 /*(Fibonacci series) Modify Listing 18.2, ComputeFibonacci.java, so that the program
 finds the number of times the fib method is called. (Hint: Use a static
 variable and increment it every time the method is called.)*/
-package com.example.recursion;
+package c18_Recursion;
 import java.util.Scanner;
 
 public class E1807 {

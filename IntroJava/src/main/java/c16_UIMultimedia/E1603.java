@@ -4,7 +4,7 @@ the user select one of three lights: red, yellow, or green. When a radio button
 is selected, the light is turned on. Only one light can be on at a time (see
 Figure 16.37a). No light is on when the program starts.
  */
-package chap16;
+package c16_UIMultimedia;
 
 import java.util.ArrayList;
 import javafx.application.Application;
@@ -61,17 +61,11 @@ public class E1603 extends Application {
         pane.setBottom(paneRbs);
         pane.setCenter(figurePane);
         
-        rb1.setOnAction(e -> {
-            paint(0);
-        });
+        rb1.setOnAction(e -> paint(0));
         
-        rb2.setOnAction(e -> {
-           paint(1);
-        });
+        rb2.setOnAction(e -> paint(1));
 
-        rb3.setOnAction(e -> {
-           paint(2);
-        });
+        rb3.setOnAction(e -> paint(2));
         
 
         Scene scene = new Scene(pane, 450, 200);

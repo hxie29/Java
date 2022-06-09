@@ -1,4 +1,4 @@
-/* A random-access file consists of a sequence of bytes. A special marker called a file pointer is
+package c17_BinaryIO;/* A random-access file consists of a sequence of bytes. A special marker called a file pointer is
 positioned at one of these bytes. A read or write operation takes place at the location of the file
 pointer. When a file is opened, the file pointer is set at the beginning of the file. When you read
 from or write data to the file, the file pointer moves forward to the next data item
@@ -25,7 +25,7 @@ public class E17L08 {
             inout.seek(0); // move the pointer to the beginning
             System.out.println("The first number is " + inout.readInt());
             
-            inout.seek(1 * 4); // move the pointer to the second int
+            inout.seek(4); // move the pointer to the second int
             System.out.println("The second number is " + inout.readInt());
 
             inout.seek(9 * 4); // move the pointer to the front of the 10 int

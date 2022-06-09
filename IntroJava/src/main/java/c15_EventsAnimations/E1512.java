@@ -4,7 +4,7 @@ at (100, 60) with radius 50. Whenever the mouse is moved, display a message
 indicating whether the mouse point is inside the circle at the mouse point or
 outside of it, as shown in Figure 15.29a.
  */
-package chap15;
+package c15_EventsAnimations;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
