@@ -1,4 +1,4 @@
-module exercise.introjava {
+module java {
     requires javafx.controls;
     requires javafx.fxml;
 
@@ -9,6 +9,9 @@ module exercise.introjava {
 
     opens c14_JavaFX to javafx.fxml;
     exports c14_JavaFX;
+
+    opens c15_EventsAnimations to javafx.fxml;
+    exports c15_EventsAnimations;
 
     opens c18_Recursion to javafx.fxml;
     exports c18_Recursion;
