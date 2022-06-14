@@ -3,7 +3,7 @@ package c13_AbstractClassesInterfaces;
 import java.util.Date;
 
 //Superclass
-abstract class GeometricObject implements Comparable<GeometricObject> {
+public abstract class GeometricObject implements Comparable<GeometricObject> {
     //Data encapsulation
     private String color = "white";
     private boolean filled;

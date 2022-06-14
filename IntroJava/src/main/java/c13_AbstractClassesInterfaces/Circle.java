@@ -1,7 +1,7 @@
 package c13_AbstractClassesInterfaces;
 
 //Subclass
-class Circle extends GeometricObject {
+public class Circle extends GeometricObject {
     //Data fields (all data fields in superclass are inherited)
     private double radius;
 

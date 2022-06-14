@@ -1,7 +1,7 @@
 package c13_AbstractClassesInterfaces;
 
 //Subclass
-class Rectangle extends GeometricObject {
+public class Rectangle extends GeometricObject {
     //data fields
     private double width = 1;
     private double height = 1;

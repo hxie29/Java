@@ -1,6 +1,6 @@
 package c13_AbstractClassesInterfaces;
 
-class Complex implements Comparable<Complex>, Cloneable {
+public class Complex implements Comparable<Complex>, Cloneable {
     private final double a;
     private final double b;
 
