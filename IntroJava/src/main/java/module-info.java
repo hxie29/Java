@@ -15,4 +15,7 @@ module java {
 
     opens c18_Recursion to javafx.fxml;
     exports c18_Recursion;
+
+    opens c20_ListStackQueue to javafx.fxml;
+    exports c20_ListStackQueue;
 }
