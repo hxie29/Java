@@ -1,3 +1,12 @@
+/*(Game: lottery) Revise Listing 3.8, Lottery.java, to generate a lottery of a three-digit
+number. The program prompts the user to enter a three-digit number and determines
+whether the user wins according to the following rules:
+1. If the user input matches the lottery number in the exact order, the award is
+$12,000.
+2. If all digits in the user input match all digits in the lottery number, the award
+is $5,000.
+3. If one digit in the user input matches a digit in the lottery number, the award
+is $2,000.*/
 package c03_Selections;
 
 import java.util.Scanner;
@@ -10,7 +19,7 @@ public class E0315 {
         int n2 = input.nextInt();
         int n3 = input.nextInt();
 
-        int lottery = (int) (Math.random() * 100);
+        int lottery = (int) (Math.random() * 1000);
         int s1 = lottery % 10;
         int s2 = (lottery / 10) % 10;
         int s3 = lottery / 100;

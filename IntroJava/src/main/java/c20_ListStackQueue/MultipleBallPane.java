@@ -48,7 +48,7 @@ public class MultipleBallPane extends Pane {
     public DoubleProperty rateProperty() {
         return animation.rateProperty();
     }
-    private void moveBall() {
+    protected void moveBall() {
         for (Node node: this.getChildren()) {
             Ball c = (Ball) node;
 
