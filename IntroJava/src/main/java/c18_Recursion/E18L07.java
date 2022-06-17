@@ -9,7 +9,7 @@ public class E18L07 {
         System.out.println(getSize(new File(directory)) + " bytes");
     }
 
-    public  static long getSize(File file) {
+    public static long getSize(File file) {
         long size = 0;
         if (file.isDirectory()) {
             File[] files = file.listFiles();
