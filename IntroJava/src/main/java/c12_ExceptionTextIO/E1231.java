@@ -29,7 +29,7 @@ public class E1231 {
         Scanner userInput = new Scanner(System.in);
         System.out.println("Enter a year:");
         int year = userInput.nextInt();
-        File file = new File("/Users/halda/Documents/GitHub/Java/IntroJava_Chap_11-12/test/babynamesranking" + year + ".txt");
+        File file = new File("/Users/halda/Documents/GitHub/Java/IntroJava/src/main/java/c12_ExceptionTextIO/test/babynamesranking" + year + ".txt");
         if (!file.exists()) {
             System.out.println("Ranking file does not exist, please download");
             System.exit(1);

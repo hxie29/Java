@@ -18,4 +18,7 @@ module java {
 
     opens c20_ListStackQueue to javafx.fxml;
     exports c20_ListStackQueue;
+
+    opens c21_SetsMaps to javafx.fxml;
+    exports c21_SetsMaps;
 }
