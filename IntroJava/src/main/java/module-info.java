@@ -21,4 +21,7 @@ module java {
 
     opens c21_SetsMaps to javafx.fxml;
     exports c21_SetsMaps;
+
+    opens c22_EfficientAlgorithms to javafx.fxml;
+    exports c22_EfficientAlgorithms;
 }
