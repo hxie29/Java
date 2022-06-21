@@ -12,5 +12,5 @@ distance min(d1, d2, d3). */
 package c22_EfficientAlgorithms;
 
 public class E22L08 {
-
+    // see E2207
 }

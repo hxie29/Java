@@ -1,4 +1,4 @@
-/* Finding a Convex Hull Using Gift Wrapping Algorithm
+/* Graham’s Algorithm
 
 * Step 1: Given a list of points S, select the rightmost lowest point and
 name it

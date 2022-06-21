@@ -1,4 +1,4 @@
-/*
+/* Finding a Convex Hull Using Gift Wrapping Algorithm
 
 Step 1: Given a list of points S, let the points in S be labeled
 s0, s1, . . . , sk. Select the rightmost lowest point S. As shown in
