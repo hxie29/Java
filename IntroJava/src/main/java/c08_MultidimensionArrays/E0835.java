@@ -106,7 +106,7 @@ public class E0835 {
         int index2 = 0;
         int max = subBlock[0][0];
         for (int i = 0; i < subBlock.length; i++) {
-            for (int j = 0; j < subBlock.length; j++) {
+            for (int j = 0; j < subBlock[i].length; j++) {
                 if (subBlock[i][j] > max) {
                     index1 = i;
                     index2 = j;

@@ -16,6 +16,14 @@ public class Pair {
         p2 = new Point2D(x2, y2);
     }
 
+    public Point2D getP1() {
+        return p1;
+    }
+
+    public Point2D getP2() {
+        return p2;
+    }
+
     public double getDistance() {
         return p1.distance(p2);
     }
