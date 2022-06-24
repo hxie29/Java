@@ -1,4 +1,20 @@
-package c07_SingleDimensionArrays;// Reads student scores, and assign grades
+/*(Assign grades) Write a program that reads student scores, gets the best score, and
+then assigns grades based on the following scheme:
+Grade is A if score is Ú best -5
+Grade is B if score is Ú best -10;
+Grade is C if score is Ú best -15;
+Grade is D if score is Ú best -20;
+Grade is F otherwise.
+The program prompts the user to enter the total number of students, and then
+prompts the user to enter all of the scores, and concludes by displaying the grades.
+Here is a sample run:
+Enter the number of students: 4
+Enter 4 scores: 40 55 70 58
+Student 0 score is 40 and grade is F
+Student 1 score is 55 and grade is C
+Student 2 score is 70 and grade is A
+Student 3 score is 58 and grade is C*/
+package c07_SingleDimensionArrays;
 import java.util.Scanner;
 
 public class E0701 {
