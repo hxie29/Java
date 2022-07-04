@@ -3,7 +3,7 @@ in the scores array in Section 8.8. Display the scores in increasing order, sepa
 by exactly one space, five numbers per line.*/
 package c30_CollectionStreams;
 
-import java.util.stream.Stream;
+import java.util.Arrays;
 
 public class E3016 {
     private static int count = 0;
@@ -17,7 +17,12 @@ public class E3016 {
                 {{8.5, 26.5}, {9.4, 52.5}, {13, 36.5}, {13, 24.5}, {16, 2.5}},
                 {{9.5, 20.5}, {9.4, 42.5}, {13, 31.5}, {12, 20.5}, {16, 6.5}}};
 
-        Stream.of(scores).toList().stream().toList().stream().distinct().sorted().forEach(e ->
+        double[][] test = new double[scores.length ][scores[0][0].length * scores[0].length];
+        for (int i = 0; i < scores.length; i++) {
+            test[i] = Arrays.stream(scores[i]).flatMapToDouble(Arrays::stream).toArray();
+        }
+
+        Arrays.stream(test).flatMapToDouble(Arrays::stream).distinct().sorted().forEach(e ->
                 System.out.print((++count % 5 == 0) ? e + "\n" : e + " "));
     }
 }
