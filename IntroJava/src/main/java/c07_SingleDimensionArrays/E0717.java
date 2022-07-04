@@ -1,7 +1,8 @@
-package c07_SingleDimensionArrays;/* Write a program that prompts the user to enter the number of students,
+/* Write a program that prompts the user to enter the number of students,
 the students’ names, and their scores and prints student names in decreasing
 order of their scores. Assume the name is a string without spaces, use the Scanner’s
 next() method to read a name. */
+package c07_SingleDimensionArrays;
 
 import java.util.Scanner;
 

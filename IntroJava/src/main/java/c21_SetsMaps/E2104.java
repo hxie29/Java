@@ -1,11 +1,8 @@
-/*(Checking whether a key exists in a set) Given a problem that is identical to the previous
-Programming Exercise 21.2, write a program that displays, in ascending order,
-the first names of those students who have attended more than one day of the course.
-If there are students with the same first name, display their first and last names.*/
+/*(Count consonants and vowels) Write a program that prompts the user to enter a
+text file name and displays the number of vowels and consonants in the file. Use
+a set to store the vowels A, E, I, O, and U.*/
 
 package c21_SetsMaps;
-
-import edu.princeton.cs.introcs.In;
 
 import java.io.File;
 import java.util.*;
