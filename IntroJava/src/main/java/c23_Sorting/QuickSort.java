@@ -26,7 +26,8 @@ public class QuickSort {
     /* To partition an array of n elements, it takes n comparisons and n moves in the worst case.
     Thus,the time required for partition is O(n).*/
     public static int partition(int[] list, int first, int last) {
-        int pivot = list[first];
+        //Improve quick sort E2304 by selecting the median among the first, middle, and the last elements in the list.
+        int pivot = Math.max(list[(first + last) / 2], Math.max(list[first], list[last]));
         int low = first + 1;
         int high = last;
 

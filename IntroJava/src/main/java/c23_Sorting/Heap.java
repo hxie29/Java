@@ -14,13 +14,13 @@
 * new element to the heap. Thus, the total time for constructing an initial heap is O(n * log(n)) for
 * an array of n elements. Since the remove method traces a path from a root to a leaf, it takes at
 * most h steps to rebuild a heap after removing the root from the heap. Since the remove method
-* is invoked n times, the total time for producing a sorted array from a heap is O(n * log(n)).
+* is invoked n times, the total time for producing a sorted array from a heap is O(n*log(n)).
 * */
 package c23_Sorting;
 import java.util.ArrayList;
 
-public class Heap<E extends Comparable<E>> {
-    private final ArrayList<E> list = new ArrayList<>();
+public class Heap<E extends Comparable<E>> implements Cloneable {
+    private ArrayList<E> list = new ArrayList<>();
 
     public Heap() {}
 
@@ -82,4 +82,19 @@ public class Heap<E extends Comparable<E>> {
         return list.size();
     }
 
+    /* E2311 (Heap clone and equals) Implement the clone and equals method in the Heap class.*/
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Heap<E> cloneHeap = new Heap<>();
+        cloneHeap.list = (ArrayList<E>) list.clone();
+        return cloneHeap;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Heap)
+            return list.equals(((Heap<?>) obj).list);
+
+        return false;
+    }
 }
