@@ -25,6 +25,9 @@ module java {
     opens c22_EfficientAlgorithms to javafx.fxml;
     exports c22_EfficientAlgorithms;
 
+    opens c23_Sorting to javafx.fxml;
+    exports c23_Sorting;
+
     exports c30_CollectionStreams;
     opens c30_CollectionStreams to javafx.fxml;
 

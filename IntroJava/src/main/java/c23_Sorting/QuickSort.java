@@ -1,5 +1,7 @@
 package c23_Sorting;
 
+import java.util.Stack;
+
 public class QuickSort {
     /*
     * In the best case, the pivot divides the array each time into two parts of about the same size.
@@ -14,6 +16,7 @@ public class QuickSort {
     public static void quickSort(int[] list) {
         quickSort(list, 0, list.length - 1);
     }
+
 
     public static void quickSort(int[] list, int first, int last) {
         if (last > first) {
@@ -56,5 +59,22 @@ public class QuickSort {
             return high;
         }
         else return first;
+    }
+
+    public static void quickSortIterative(int[] list) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(0);
+        stack.push(list.length-1);
+        while (!stack.isEmpty()) {
+            int end = stack.pop();
+            int start = stack.pop();
+            if (end - start > 0) {
+                int pivot = partition(list, start, end);
+                stack.push(start);
+                stack.push(pivot -1);
+                stack.push(pivot +1);
+                stack.push(end);
+            }
+        }
     }
 }

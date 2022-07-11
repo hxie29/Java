@@ -58,7 +58,7 @@ public class MergeSort {
     }
 
     public static <E extends Comparable<E>> void mergeSort(E[] list, int beginIndex, int endIndex) {
-        if (endIndex - beginIndex >= 2) {
+        if (endIndex - beginIndex > 1) {
             int midIndex = (endIndex + beginIndex) / 2;
             mergeSort(list, beginIndex, midIndex);
             mergeSort(list, midIndex, endIndex);
@@ -75,7 +75,7 @@ public class MergeSort {
             }
         }
 
-        else {
+        else if (endIndex - beginIndex > 1){
             int current1 = beginIndex;
             int midIndex = (beginIndex + endIndex) /2;
             int current2 = midIndex;
@@ -127,7 +127,7 @@ public class MergeSort {
             }
         }
 
-        else {
+        else if (endIndex - beginIndex > 1){
             int current1 = beginIndex;
             int midIndex = (beginIndex + endIndex) / 2;
             int current2 = midIndex;

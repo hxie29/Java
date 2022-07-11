@@ -30,6 +30,10 @@ public class Heap<E extends Comparable<E>> implements Cloneable {
         }
     }
 
+    public ArrayList<E> getList() {
+        return list;
+    }
+
     public void add(E object) {
         list.add(object);
         int currentIndex = list.size() -1;
@@ -50,32 +54,42 @@ public class Heap<E extends Comparable<E>> implements Cloneable {
         if (list.size() == 0) return null;
 
         E removedObject = list.get(0);
-        list.set(0, list.get(list.size() -1));
-        //cannot combine these two lines, IndexOutOfBound
-        list.remove(list.size() -1);
+        remove(removedObject);
 
-        int currentIndex = 0;
-        while (currentIndex < list.size()) {
-            int leftChildIndex = 2 * currentIndex +1;
-            int rightChildIndex = 2 * currentIndex +2;
-
-            if (leftChildIndex >= list.size()) break;
-
-            int maxIndex = leftChildIndex;
-            if (rightChildIndex < list.size()) {
-                if (list.get(maxIndex).compareTo(list.get(rightChildIndex)) < 0)
-                    maxIndex = rightChildIndex;
-            }
-
-            if (list.get(currentIndex).compareTo(list.get(maxIndex)) < 0) {
-                E temp = list.get(currentIndex);
-                list.set(currentIndex, list.get(maxIndex));
-                list.set(maxIndex, temp);
-                currentIndex = maxIndex;
-            }
-            else break;
-        }
         return removedObject;
+    }
+
+    public int remove(E key) {
+        if (list.contains(key)) {
+            int index = list.indexOf(key);
+            list.set(index, list.get(list.size() -1));
+            list.remove(list.size() -1);
+
+            int currentIndex = 0;
+            while (currentIndex < list.size()) {
+                int leftChildIndex = 2 * currentIndex +1;
+                int rightChildIndex = 2 * currentIndex +2;
+
+                if (leftChildIndex >= list.size()) break;
+
+                int maxIndex = leftChildIndex;
+                if (rightChildIndex < list.size()) {
+                    if (list.get(maxIndex).compareTo(list.get(rightChildIndex)) < 0)
+                        maxIndex = rightChildIndex;
+                }
+
+                if (list.get(currentIndex).compareTo(list.get(maxIndex)) < 0) {
+                    E temp = list.get(currentIndex);
+                    list.set(currentIndex, list.get(maxIndex));
+                    list.set(maxIndex, temp);
+                    currentIndex = maxIndex;
+                }
+                else break;
+            }
+            return index;
+        }
+        else
+            return -1;
     }
 
     public int getSize() {
