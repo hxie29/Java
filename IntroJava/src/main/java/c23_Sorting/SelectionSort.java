@@ -12,9 +12,8 @@ public class SelectionSort {
                 }
             }
             if (minIndex != i) {
-                int temp = list[i];
+                list[minIndex] = list[i];
                 list[i] = min;
-                list[minIndex] = temp;
             }
         }
     }

@@ -2,6 +2,7 @@ package c23_Sorting;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class RadixSort {
     public static void main(String[] args) {
@@ -37,11 +38,6 @@ public class RadixSort {
     }
 
     private static int getMax(int[] list) {
-        int max = list[0];
-        for (int i = 1; i < list.length; i++) {
-            if (max < list[i])
-                max = list[i];
-        }
-        return max;
+        return IntStream.of(list).max().getAsInt();
     }
 }
