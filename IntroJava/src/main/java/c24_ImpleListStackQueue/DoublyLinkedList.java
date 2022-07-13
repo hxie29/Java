@@ -1,15 +1,14 @@
 package c24_ImpleListStackQueue;
 
-
 import java.util.Iterator;
 
-public class MyLinkedList<E> implements MyList<E>{
+public class DoublyLinkedList<E> implements MyList<E>{
     private Node<E> head, tail;
     private int size;
 
-    public MyLinkedList(){}
+    public DoublyLinkedList(){}
 
-    public MyLinkedList(E[] objects) {
+    public DoublyLinkedList(E[] objects) {
         for (E e: objects)
             add(e);
     }
@@ -17,6 +16,7 @@ public class MyLinkedList<E> implements MyList<E>{
     public void addFirst(E e) {
         Node<E> newNode = new Node<>(e);
         newNode.next = head;
+        head.previous = newNode;
         head = newNode;
         size++;
 
@@ -31,7 +31,8 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         else {
             tail.next = newNode;
-            tail = tail.next;
+            newNode.previous = tail;
+            tail = newNode;
         }
         size++;
     }
@@ -46,8 +47,11 @@ public class MyLinkedList<E> implements MyList<E>{
                 current = current.next;
             }
             Node<E> temp = current.next;
-            current.next = new Node<>(e);
-            (current.next).next = temp;
+            Node<E> newNode = new Node<>(e);
+            current.next = newNode;
+            newNode.previous = current;
+            newNode.next = temp;
+            temp.previous = newNode;
             size++;
         }
     }
@@ -80,23 +84,21 @@ public class MyLinkedList<E> implements MyList<E>{
 
         Node<E> temp = head;
         head = head.next;
+        temp.next = null;
         size--;
         if (head == null) tail = null;
+        else head.previous = null;
         return temp.element;
     }
 
     public E removeLast() {
         if (size <= 1) return removeFirst();
 
-        Node<E> current = head;
-        Node<E> removedElement = tail;
-        for (int i = 1; i <= size - 2; i++) {
-            current = current.next;
-        }
-        tail = current;
-        tail.next = null;
+        Node<E> temp = tail;
+        tail = temp.previous;
+        temp.next = temp.previous = null;
         size--;
-        return removedElement.element;
+        return temp.element;
     }
 
     @Override
@@ -111,6 +113,8 @@ public class MyLinkedList<E> implements MyList<E>{
         }
         Node<E> current = previous.next;
         previous.next = current.next;
+        current.next.previous = previous;
+        current.next = current.previous = null;
         size--;
         return current.element;
     }
@@ -152,15 +156,13 @@ public class MyLinkedList<E> implements MyList<E>{
 
     @Override
     public int lastIndexOf(E e) {
-        Node<E> current = head;
-        if (head != null) {
-            int index = 0;
-            for (int i = 1; i < size; i++) {
-                current = current.next;
+        Node<E> current = tail;
+        if (tail != null) {
+            for (int i = size - 1; i >= 0; i--) {
                 if (current.element.equals(e))
-                    index = i;
+                    return i;
+                current = current.previous;
             }
-            return index;
         }
         return -1;
     }
@@ -169,10 +171,10 @@ public class MyLinkedList<E> implements MyList<E>{
     public int indexOf(Object e) {
         Node<E> current = head;
         if (head != null) {
-            for (int i = 1; i < size; i++) {
-                current = current.next;
+            for (int i = 0; i < size; i++) {
                 if (current.element.equals(e))
                     return i;
+                current = current.next;
             }
         }
         return -1;
@@ -202,16 +204,40 @@ public class MyLinkedList<E> implements MyList<E>{
     }
 
     @Override
-    public Iterator<E> iterator() {
-        return new LinkedListIterator();
+    public int size() {
+        return size;
     }
 
-    private class LinkedListIterator implements Iterator<E> {
+    @Override
+    public Iterator<E> iterator() {
+        return new DoublyLinkedListIterator();
+    }
+
+    private class DoublyLinkedListIterator implements Iterator<E> {
         private Node<E> current = head;
+
+        public DoublyLinkedListIterator(){};
+
+        public DoublyLinkedListIterator(int index){
+            setCurrent(index);
+        }
+
+        private void setCurrent(int index) {
+            if (index == size -1)
+                current = tail;
+            else if (index >= 0 && index < size - 1) {
+                for (int i = 1; i < index; i++)
+                    current = current.next;
+            }
+        }
 
         @Override
         public boolean hasNext() {
             return current != null;
+        }
+
+        public boolean hasPrevious() {
+            return current.previous != null;
         }
 
         @Override
@@ -221,15 +247,19 @@ public class MyLinkedList<E> implements MyList<E>{
             return temp;
         }
 
+        public E previous() {
+            E temp = current.previous.element;
+            current = current.previous;
+            return temp;
+        }
+
         @Override
         public void remove() {
-            MyLinkedList.this.remove(indexOf(current));
-            size--;
+            Node<E> after = current.next;
+            after.previous = current.previous;
+            current.previous.next = after;
+            current.previous = current.next = null;
+            current = after;
         }
-    }
-
-    @Override
-    public int size() {
-        return size;
     }
 }

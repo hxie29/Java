@@ -28,6 +28,9 @@ module java {
     opens c23_Sorting to javafx.fxml;
     exports c23_Sorting;
 
+    opens c24_ImpleListStackQueue to javafx.fxml;
+    exports c24_ImpleListStackQueue;
+
     exports c30_CollectionStreams;
     opens c30_CollectionStreams to javafx.fxml;
 

@@ -34,6 +34,10 @@ public class MyArrayList<E> implements MyList<E> {
         }
     }
 
+    public int getCapacity() {
+        return data.length;
+    }
+
     @Override
     public void clear() {
         data = (E[]) new Object[INITIAL_CAPACITY];
@@ -80,7 +84,7 @@ public class MyArrayList<E> implements MyList<E> {
         checkIndex(index);
 
         E e = data[index];
-        if (size - index >= 0) System.arraycopy(data, index + 1, data, index, size - index);
+        if (size - index >= 0) System.arraycopy(data, index + 1, data, index, size - index - 1);
         data[size-1] = null;
         size--;
         return e;
@@ -107,7 +111,7 @@ public class MyArrayList<E> implements MyList<E> {
     public void trimToSize() {
         if (size != data.length) {
             E[] newData = (E[]) new Object[size];
-            System.arraycopy(data, 0, newData, 0, data.length);
+            System.arraycopy(data, 0, newData, 0, size);
             data = newData;
         }
     }
