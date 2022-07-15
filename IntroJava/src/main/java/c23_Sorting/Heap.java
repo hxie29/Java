@@ -20,7 +20,7 @@ package c23_Sorting;
 import java.util.ArrayList;
 
 public class Heap<E extends Comparable<E>> implements Cloneable {
-    private ArrayList<E> list = new ArrayList<>();
+    protected ArrayList<E> list = new ArrayList<>();
 
     public Heap() {}
 
@@ -34,12 +34,22 @@ public class Heap<E extends Comparable<E>> implements Cloneable {
         return list;
     }
 
+    public int getParentIndex(int index) {
+        return (index > 0) ? (index -1) / 2 : -1;
+    }
+
+    public int leftChildIndex(int index) {
+        return index * 2 + 1;
+    }
+
+    public int rightChildIndex(int index) {return index * 2 + 2;}
+
     public void add(E object) {
         list.add(object);
         int currentIndex = list.size() -1;
 
         while (currentIndex > 0) {
-            int parentIndex = (currentIndex - 1) /2;
+            int parentIndex = getParentIndex(currentIndex);
             if (list.get(parentIndex).compareTo(list.get(currentIndex)) < 0) {
                 list.set(currentIndex, list.get(parentIndex));
                 list.set(parentIndex, object);
@@ -67,8 +77,8 @@ public class Heap<E extends Comparable<E>> implements Cloneable {
 
             int currentIndex = 0;
             while (currentIndex < list.size()) {
-                int leftChildIndex = 2 * currentIndex +1;
-                int rightChildIndex = 2 * currentIndex +2;
+                int leftChildIndex = leftChildIndex(currentIndex);
+                int rightChildIndex = rightChildIndex(currentIndex);
 
                 if (leftChildIndex >= list.size()) break;
 

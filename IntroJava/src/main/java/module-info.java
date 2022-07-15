@@ -31,6 +31,9 @@ module java {
     opens c24_ImpleListStackQueue to javafx.fxml;
     exports c24_ImpleListStackQueue;
 
+    opens c25_BST to javafx.fxml;
+    exports c25_BST;
+
     exports c30_CollectionStreams;
     opens c30_CollectionStreams to javafx.fxml;
 

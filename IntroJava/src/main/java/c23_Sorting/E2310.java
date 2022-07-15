@@ -42,7 +42,7 @@ public class E2310 extends Application {
         btInsert.setOnAction(e -> heapPane.insert(Integer.parseInt(tfInput.getText())));
         btRemove.setOnAction(e -> heapPane.remove(Integer.parseInt(tfInput.getText())));
 
-        Scene scene = new Scene(pane);
+        Scene scene = new Scene(pane, 500, 250);
         stage.setTitle("Heap visualization");
         stage.setScene(scene);
         stage.show();
