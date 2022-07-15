@@ -113,11 +113,27 @@ public class BST<E extends Comparable<E>> implements Tree<E>, Cloneable{
             System.out.print(iterator.next() + " ");
     }
 
+    public List<E> inorderList() {
+        Iterator<E> iterator = new InOrderIteratorEfficient();
+        ArrayList<E> list = new ArrayList<>();
+        while (iterator.hasNext())
+            list.add(iterator.next());
+        return list;
+    }
+
     @Override
     public void postorder() {
         Iterator<E> iterator = new PostOrderIteratorEfficient();
         while (iterator.hasNext())
             System.out.print(iterator.next() + " ");
+    }
+
+    public List<E> postorderList() {
+        Iterator<E> iterator = new PostOrderIteratorEfficient();
+        ArrayList<E> list = new ArrayList<>();
+        while (iterator.hasNext())
+            list.add(iterator.next());
+        return list;
     }
 
     @Override
@@ -127,6 +143,13 @@ public class BST<E extends Comparable<E>> implements Tree<E>, Cloneable{
             System.out.print(iterator.next() + " ");
     }
 
+    public List<E> preorderList() {
+        Iterator<E> iterator = new PostOrderIteratorEfficient();
+        ArrayList<E> list = new ArrayList<>();
+        while (iterator.hasNext())
+            list.add(iterator.next());
+        return list;
+    }
     public void breadthFirstTraversal(){
         if (root != null) {
             LinkedList<TreeNode<E>> roots = new LinkedList<>();

@@ -1,4 +1,8 @@
-//BST animation
+/*(Add new buttons in BSTAnimation) Modify Listing 25.8, BSTAnimation.java,
+to add three new buttons—Show Inorder, Show Preorder, and Show Postorder—
+to display the result in a label, as shown in Figure 25.20. You need also to modify
+Listing 25.4, BST.java to implement the inorderList(), preorderList(),
+and postorderList() methods so each of these metho*/
 package c25_BST;
 
 import javafx.application.Application;
@@ -67,20 +71,9 @@ public class E2513 extends Application {
             }
         });
 
-        btInorder.setOnAction(e -> {
-            Iterator<Integer> iterator = tree.inorderIterator();
-            tShowOrder.setText("Inorder: " + iterator);
-        });
-
-        btPreorder.setOnAction(e -> {
-            Iterator<Integer> iterator = tree.preorderIterator();
-            tShowOrder.setText("Preorder: " + iterator);
-        });
-
-        btPostorder.setOnAction(e -> {
-            Iterator<Integer> iterator = tree.postorderIterator();
-            tShowOrder.setText("Postorder: " + iterator);
-        });
+        btInorder.setOnAction(e -> tShowOrder.setText("Inorder: " + tree.inorderList()));
+        btPreorder.setOnAction(e -> tShowOrder.setText("Preorder: " + tree.preorderList()));
+        btPostorder.setOnAction(e -> tShowOrder.setText("Postorder: " + tree.postorderList()));
 
         Scene scene = new Scene(pane, 450, 250);
         stage.setTitle("Binary tree visualization");
