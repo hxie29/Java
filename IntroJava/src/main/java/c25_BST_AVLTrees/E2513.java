@@ -3,7 +3,7 @@ to add three new buttons—Show Inorder, Show Preorder, and Show Postorder—
 to display the result in a label, as shown in Figure 25.20. You need also to modify
 Listing 25.4, BST.java to implement the inorderList(), preorderList(),
 and postorderList() methods so each of these metho*/
-package c25_BST;
+package c25_BST_AVLTrees;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;

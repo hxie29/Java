@@ -19,7 +19,7 @@ Enter 10 integers: 45 54 67 56 50 45 23 59 23 67
 [50, 54, 23]
 [59, 56, 67, 54, 23] */
 
-package c25_BST;
+package c25_BST_AVLTrees;
 
 import java.util.ArrayList;
 import java.util.Iterator;

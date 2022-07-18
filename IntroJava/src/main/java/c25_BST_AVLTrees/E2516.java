@@ -1,7 +1,7 @@
 /*(Data compression: Huffman coding) Write a program that prompts the user to
 enter a file name, then displays the frequency table of the characters in the file
 and the Huffman code for each character.*/
-package c25_BST;
+package c25_BST_AVLTrees;
 
 import java.io.File;
 import java.io.IOException;

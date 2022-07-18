@@ -2,7 +2,7 @@
 iterator for traversing the elements in a BST in preorder.
 /** Return an iterator for traversing the elements in preorder
 java.util.Iterator<E> preorderIterator()*/
-package c25_BST;
+package c25_BST_AVLTrees;
 
 import java.util.Iterator;
 

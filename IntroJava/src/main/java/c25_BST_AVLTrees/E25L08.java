@@ -1,5 +1,5 @@
 //BST animation
-package c25_BST;
+package c25_BST_AVLTrees;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;

@@ -1,4 +1,4 @@
-package c25_BST;
+package c25_BST_AVLTrees;
 
 public class HuffmanTree implements Comparable<HuffmanTree>{
     HuffmanNode root;

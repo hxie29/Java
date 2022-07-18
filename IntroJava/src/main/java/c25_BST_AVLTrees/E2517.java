@@ -4,7 +4,7 @@ shown in Figure 25.21a. Display the weight of the subtree inside the subtree’s
 root circle. Display each leaf node’s character. Display the encoded bits for
 the text in a label. When the user clicks the Decode Text button, a bit string is
 decoded into text displayed in the label, as shown in Figure 25.21b.*/
-package c25_BST;
+package c25_BST_AVLTrees;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -14,7 +14,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;

@@ -2,7 +2,7 @@
 nonleaves as follows:
 /** Return the number of nonleaf nodes
 public int getNumberofNonLeaves()*/
-package c25_BST;
+package c25_BST_AVLTrees;
 
 public class E2507 {
     public static void main(String[] args) {

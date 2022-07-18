@@ -1,7 +1,7 @@
 /*(Tree clone and equals) Implement the clone and equals methods in the
 BST class. Two BST trees are equal if they contain the same elements. The clone
 method returns an identical copy of a BST.*/
-package c25_BST;
+package c25_BST_AVLTrees;
 
 public class E2509 {
     public static void main(String[] args) {

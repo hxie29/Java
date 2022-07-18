@@ -1,10 +1,11 @@
-package c25_BST;
+package c25_BST_AVLTrees;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
+import c25_BST_AVLTrees.BST.TreeNode;
 
 public class BTView extends Pane {
     private final BST<Integer> tree;

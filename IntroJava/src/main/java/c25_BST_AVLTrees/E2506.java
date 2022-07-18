@@ -2,7 +2,7 @@
 leaves as follows:
 * Return the number of leaf nodes
 public int getNumberOfLeaves()*/
-package c25_BST;
+package c25_BST_AVLTrees;
 
 public class E2506 {
     public static void main(String[] args) {

@@ -4,7 +4,7 @@ public void breadthFirstTraversal()
 * Return the height of this binary tree
 public int height()*/
 
-package c25_BST;
+package c25_BST_AVLTrees;
 
 public class E2501 {
     // see BST class

@@ -6,7 +6,7 @@ tree is 2height - 1)
 * Returns true if the tree is a perfect binary tree
 boolean isPerfectBST()*/
 
-package c25_BST;
+package c25_BST_AVLTrees;
 
 public class E2502 {
     // see BST class

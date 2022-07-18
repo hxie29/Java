@@ -1,5 +1,5 @@
 //Testing BST deletion
-package c25_BST;
+package c25_BST_AVLTrees;
 
 public class E25L07 {
     public static void main(String[] args) {

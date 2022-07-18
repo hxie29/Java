@@ -2,7 +2,7 @@
 iterator for traversing the elements in a BST in inorder.
 /** Returns an iterator for traversing the elements in inorder
 java.util.Iterator<E> inorderIterator()*/
-package c25_BST;
+package c25_BST_AVLTrees;
 
 import java.util.Iterator;
 

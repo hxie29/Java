@@ -1,4 +1,4 @@
-package c25_BST;
+package c25_BST_AVLTrees;
 
 import c23_Sorting.MinHeap;
 

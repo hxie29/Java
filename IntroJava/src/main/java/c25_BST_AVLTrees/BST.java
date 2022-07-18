@@ -1,18 +1,66 @@
-package c25_BST;
+package c25_BST_AVLTrees;
 
 import java.util.*;
 
-public class BSTComparator<E> implements Tree<E>, Cloneable{
+public class BST<E extends Comparable<E>> implements Tree<E>, Cloneable{
     protected TreeNode<E> root;
     protected int size = 0;
-    protected Comparator<? super E> c;
 
-    public BSTComparator(){
-        c = (Comparator<? super E>)Comparator.naturalOrder();
+    public BST(){}
+
+    public BST(E[] objects) {
+        for (E e: objects)
+            insert(e);
     }
 
-    public BSTComparator(Comparator<E> c) {
-        this.c = c;
+    protected TreeNode<E> createNewNode(E e){
+        return new TreeNode<>(e);
+    }
+
+    @Override
+    public boolean search(E e) {
+        TreeNode<E> current = root;
+        while (current != null) {
+            if (e.compareTo(current.element) < 0)
+                current = current.left;
+            else if (e.compareTo(current.element) > 0)
+                current = current.right;
+            else
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean insert(E e) {
+        if (root == null)
+            root = createNewNode(e);
+        else{
+            TreeNode<E> parent = null;
+            TreeNode<E> current = root;
+            while (current != null) {
+                if (e.compareTo(current.element) < 0) {
+                    parent = current;
+                    current = current.left;
+                }
+                else if (e.compareTo(current.element) > 0) {
+                    parent = current;
+                    current = current.right;
+                }
+                else
+                    return false;
+            }
+            if (e.compareTo(parent.element) < 0) {
+                parent.left = new TreeNode<>(e);
+                parent.left.parent = parent;
+            }
+            else {
+                parent.right = new TreeNode<>(e);
+                parent.right.parent = parent;
+            }
+        }
+        size++;
+        return true;
     }
 
     public int height() {
@@ -64,48 +112,6 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
 
     public int getNumberOfNonLeaves() {
         return size - getNumberOfLeaves();
-    }
-
-    @Override
-    public boolean search(E e) {
-        TreeNode<E> current = root;
-        while (current != null) {
-            if (c.compare(e, current.element) < 0)
-                current = current.left;
-            else if (c.compare(e, current.element) > 0)
-                current = current.right;
-            else
-                return true;
-        }
-        return false;
-    }
-
-    @Override
-    public boolean insert(E e) {
-        if (root == null)
-            root = new TreeNode<>(e);
-        else{
-            TreeNode<E> parent = null;
-            TreeNode<E> current = root;
-            while (current != null) {
-                if (c.compare(e, current.element) < 0) {
-                    parent = current;
-                    current = current.left;
-                }
-                else if (c.compare(e, current.element) > 0) {
-                    parent = current;
-                    current = current.right;
-                }
-                else
-                    return false;
-            }
-            if (c.compare(e, parent.element)  < 0)
-                parent.left = new TreeNode<>(e);
-            else
-                parent.right = new TreeNode<>(e);
-        }
-        size++;
-        return true;
     }
 
     @Override
@@ -171,7 +177,6 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
         }
     }
 
-
     @Override
     public int getSize() {
         return size;
@@ -184,9 +189,9 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
         TreeNode<E> current = root;
         while (current != null) {
             list.add(current);
-            if (c.compare(e, current.element) < 0)
+            if (e.compareTo(current.element) < 0)
                 current = current.left;
-            else if (c.compare(e, current.element) > 0)
+            else if (e.compareTo(current.element) > 0)
                 current = current.right;
             else
                 break;
@@ -194,17 +199,33 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
         return list;
     }
 
+    /** Return the path of elements from the specified element
+     * to the root in an array list. */
+    public ArrayList<E> getPath(E e) {
+        ArrayList<E> list = new ArrayList<>();
+        TreeNode<E> current = root;
+        while (current != null) {
+            list.add(current.element);
+            if (e.compareTo(current.element) < 0)
+                current = current.left;
+            else if (e.compareTo(current.element) > 0)
+                current = current.right;
+            else
+                break;
+        }
+        return list;
+    }
     @Override
     public boolean delete(E e) {
         TreeNode<E> parent = null;
         TreeNode<E> current = root;
 
         while (current != null) {
-            if (c.compare(e, current.element)  < 0) {
+            if (e.compareTo(current.element) < 0) {
                 parent = current;
                 current = current.left;
             }
-            else if (c.compare(e, current.element) > 0) {
+            else if (e.compareTo(current.element) > 0) {
                 parent = current;
                 current = current.right;
             }
@@ -214,14 +235,22 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
         if (current == null) return false;
         // the node does not have left child, then connect the right child to parent
         if (current.left == null) {
-            if (parent == null)
+            if (parent == null) {
                 root = current.right;
+                root.parent = null;
+            }
             else {
                 // check the node is left child or right child
-                if (c.compare(e, parent.element) < 0)
+                if (e.compareTo(parent.element) < 0) {
                     parent.left = current.right;
-                else
+                    if (current.right != null)
+                        parent.left.parent = parent;
+                }
+                else {
                     parent.right = current.right;
+                    if (current.right != null)
+                        parent.right.parent = parent;
+                }
             }
         }
         else {
@@ -239,22 +268,26 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
             current.element = rightMost.element;
 
             //delete the right most element
-            if (parentRightMost.right == rightMost)
+            if (parentRightMost.right == rightMost) {
                 parentRightMost.right = rightMost.left;
+                if (rightMost.left != null)
+                    parentRightMost.right.parent = parentRightMost;
+            }
             // if the right most is the current left, and the parent is current,
-            else
+            else{
                 parentRightMost.left = rightMost.left;
+                if (rightMost.left != null)
+                    parentRightMost.left.parent = parentRightMost;
+            }
         }
         size--;
         return true;
     }
-
     @Override
     public void clear() {
         root = null;
         size = 0;
     }
-
     @Override
     public Iterator<E> iterator() {
         return new InorderIterator();
@@ -272,15 +305,13 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
     public Iterator<E> postrderIteratorEfficient() {
         return new PostOrderIteratorEfficient();
     }
-
     @Override
-    public BSTComparator<E> clone() {
-        BSTComparator<E> tree = new BSTComparator<>();
+    public BST<E> clone() {
+        BST<E> tree = new BST<>();
         return clone(tree, root);
     }
-
     // Recursively adding nodes from sub nodes to main tree
-    private BSTComparator<E> clone(BSTComparator<E> parentTree, TreeNode<E> root) {
+    private BST<E> clone(BST<E> parentTree, TreeNode<E> root) {
         if (root != null){
             parentTree.insert(root.element);
             parentTree =clone(parentTree,root.left);
@@ -288,8 +319,7 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
         }
         return parentTree;
     }
-
-    public boolean equals(BSTComparator<E> tree) {
+    public boolean equals(BST<E> tree) {
         if (size == tree.size()) {
             if (root != null)
                 return equals(root, tree.getRoot());
@@ -298,7 +328,6 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
         }
         return false;
     }
-
     protected boolean equals(TreeNode<E> root1, TreeNode<E> root2) {
         if (root1 != null && root2 != null) {
             if (root1.element == root2.element)
@@ -307,7 +336,26 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
         }
         else return root1 == null && root2 == null;
     }
-
+    /** Return the node for the specified element.
+     * Return null if the element is not in the tree. */
+    protected TreeNode<E> getNode(E e) {
+        TreeNode<E> current = root;
+        while (current != null) {
+            if (e.compareTo(current.element) < 0)
+                current = current.left;
+            else if (e.compareTo(current.element) > 0)
+                current = current.right;
+            else
+                return current;
+        }
+        return null;
+    }
+    /** Return true if the node for the element is a leaf */
+    protected boolean isLeaf(E e) {
+        TreeNode<E> node = getNode(e);
+        return node != null && node.left == null && node.right == null;
+    }
+/*Iterator classes */
     private class InorderIterator implements Iterator<E> {
         private final ArrayList<E> list = new ArrayList<>();
         private int current = 0;
@@ -349,7 +397,6 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
             return list.toString();
         }
     }
-
     private class InOrderIteratorEfficient implements Iterator<E> {
         private final Stack<E> stack = new Stack<>();
         protected InOrderIteratorEfficient() {
@@ -381,7 +428,6 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
             throw new UnsupportedOperationException("Removing an element from the iterator is not supported.");
         }
     }
-
     private class PreorderIterator implements Iterator<E> {
         private final ArrayList<E> list = new ArrayList<>();
         private int current = 0;
@@ -423,7 +469,6 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
             return list.toString();
         }
     }
-
     private class PreOrderIteratorEfficient implements Iterator<E> {
         private final Stack<E> stack = new Stack<>();
         protected PreOrderIteratorEfficient() {
@@ -456,7 +501,6 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
             throw new UnsupportedOperationException("Removing an element from the iterator is not supported.");
         }
     }
-
     private class PostorderIterator implements Iterator<E> {
         private final ArrayList<E> list = new ArrayList<>();
         private int current = 0;
@@ -498,7 +542,6 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
             return list.toString();
         }
     }
-
     private class PostOrderIteratorEfficient implements Iterator<E> {
         private final Stack<E> stack = new Stack<>();
         protected PostOrderIteratorEfficient() {
@@ -529,6 +572,16 @@ public class BSTComparator<E> implements Tree<E>, Cloneable{
         @Override
         public void remove() {
             throw new UnsupportedOperationException("Removing an element from the iterator is not supported.");
+        }
+    }
+    public static class TreeNode<E> {
+        protected E element;
+        protected TreeNode<E> left;
+        protected TreeNode<E> right;
+        protected TreeNode<E> parent;
+
+        public TreeNode(E e) {
+            element = e;
         }
     }
 }

@@ -1,5 +1,5 @@
 // Test iterators in BST
-package c25_BST;
+package c25_BST_AVLTrees;
 
 import java.util.Iterator;
 

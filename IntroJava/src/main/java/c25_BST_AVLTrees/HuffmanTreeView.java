@@ -5,7 +5,7 @@ root circle. Display each leaf node’s character. Display the encoded bits for
 the text in a label. When the user clicks the Decode Text button, a bit string is
 decoded into text displayed in the label, as shown in Figure 25.21b.*/
 
-package c25_BST;
+package c25_BST_AVLTrees;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;

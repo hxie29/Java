@@ -1,5 +1,6 @@
 // Test BST class
-package c25_BST;
+package c25_BST_AVLTrees;
+import c25_BST_AVLTrees.BST.TreeNode;
 
 import java.util.ArrayList;
 

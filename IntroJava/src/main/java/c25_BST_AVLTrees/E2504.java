@@ -2,9 +2,10 @@
 preorder method in BST using a stack instead of recursion. Write a test program
 that prompts the user to enter 15 integers, stores them in a BST, and
 invokes the preorder method to display the elements.*/
-package c25_BST;
+package c25_BST_AVLTrees;
 
 import java.util.Stack;
+import c25_BST_AVLTrees.BST.TreeNode;
 
 public class E2504 {
     public static void main(String[] args) {
