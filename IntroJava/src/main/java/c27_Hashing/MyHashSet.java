@@ -107,6 +107,10 @@ public class MyHashSet<E> implements Collection<E> {
         return list;
     }
 
+    public static <E> ArrayList<E> setToList(Set<E> s) {
+        return new ArrayList<>(s);
+    }
+
     @Override
     public String toString() {
         ArrayList<E> list = setToList();
