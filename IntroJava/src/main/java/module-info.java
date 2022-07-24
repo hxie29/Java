@@ -34,6 +34,9 @@ module java {
     opens c25_BST_AVLTrees to javafx.fxml;
     exports c25_BST_AVLTrees;
 
+    opens c28_Graphs to javafx.fxml;
+    exports c28_Graphs;
+
     exports c30_CollectionStreams;
     opens c30_CollectionStreams to javafx.fxml;
 

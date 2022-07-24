@@ -1,6 +1,10 @@
 package c28_Graphs;
 
+import edu.princeton.cs.introcs.In;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class UnweightedGraph<V> implements Graph<V> {
@@ -104,9 +108,9 @@ public class UnweightedGraph<V> implements Graph<V> {
     @Override
     public void printEdges() {
         for (int i = 0; i < neighbors.size(); i++) {
-            System.out.print(getVertex(i) + " (" + i + "): ");
+            System.out.print("\n" + getVertex(i) + " (" + i + "): ");
             for (Edge e: neighbors.get(i))
-                System.out.print("(" + i + ", " + getVertex(e.v) + ") ");
+                System.out.print("(" + i + ", " + e.v + ") ");
         }
         System.out.println();
     }
@@ -137,12 +141,46 @@ public class UnweightedGraph<V> implements Graph<V> {
 
     @Override
     public SearchTree dfs(int v) {
-        return null;
+        ArrayList<Integer> searchOrder = new ArrayList<>();
+        int[] parent = new int[vertices.size()];
+        Arrays.fill(parent, -1);
+        boolean[] isVisited = new boolean[vertices.size()];
+        dfs(v, parent, searchOrder, isVisited);
+        return new SearchTree(v, parent, searchOrder);
+    }
+
+    private void dfs(int v, int[] parent, List<Integer> searchOrder, boolean[] isVisited) {
+        searchOrder.add(v);
+        isVisited[v] = true;
+        for (Edge e: neighbors.get(v)) {
+            if (!isVisited[e.v]) {
+                parent[e.v] = v;
+                dfs(e.v,parent,searchOrder,isVisited);
+            }
+        }
     }
 
     @Override
     public SearchTree bfs(int v) {
-        return null;
+        LinkedList<Integer> queue = new LinkedList<>();
+        ArrayList<Integer> searchOrder = new ArrayList<>();
+        boolean[] isVisited = new boolean[vertices.size()];
+        int[] parent = new int[vertices.size()];
+        Arrays.fill(parent, -1);
+        queue.offer(v);
+        isVisited[v] = true;
+        while (!queue.isEmpty()) {
+            int u = queue.poll();
+            searchOrder.add(u);
+            for (Edge e: neighbors.get(u)) {
+                if (!isVisited[e.v]) {
+                    queue.add(e.v);
+                    parent[e.v] = u;
+                    isVisited[e.v] = true;
+                }
+            }
+        }
+        return new SearchTree(v,parent,searchOrder);
     }
 
     public class SearchTree {
