@@ -1,11 +1,6 @@
 package c28_Graphs;
 
-import edu.princeton.cs.introcs.In;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class UnweightedGraph<V> implements Graph<V> {
     protected List<V> vertices = new ArrayList<>();
@@ -181,6 +176,30 @@ public class UnweightedGraph<V> implements Graph<V> {
             }
         }
         return new SearchTree(v,parent,searchOrder);
+    }
+
+    public List<List<Integer>> getConnectedComponents() {
+        List<List<Integer>> paths = new ArrayList<>();
+        ArrayList<V> remaining = new ArrayList<>(getVertices());
+        while (remaining.size() > 0) {
+            List<Integer> list = this.dfs(getIndex(remaining.get(0))).getSearchOrder();
+            Collections.sort(list);
+            paths.add(list);
+            list.forEach(e -> remaining.remove(getVertex(e)));
+        }
+        return paths;
+    }
+
+    public boolean isBipartite() {
+        return this.getConnectedComponents().size() == 2;
+    }
+
+    public List<List<Integer>> getBipartite() {
+        return (this.isBipartite()) ? getConnectedComponents() : null;
+    }
+
+    public boolean isCyclic() {
+        return false;
     }
 
     public class SearchTree {
