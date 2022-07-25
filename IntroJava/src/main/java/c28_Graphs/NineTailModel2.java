@@ -1,13 +1,17 @@
+/*(Variation of the nine tails problem) In the nine tails problem, when you flip a
+coin, the horizontal and vertical neighboring cells are also flipped. Rewrite the
+program, assuming all neighboring cells including the diagonal neighbors are
+also flipped.*/
 package c28_Graphs;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NineTailModel {
+public class NineTailModel2{
     public final static int NUMBER_OF_NODES = 512;
     protected UnweightedGraph<Integer>.SearchTree tree;
 
-    public NineTailModel(){
+    public NineTailModel2(){
         List<Edge> edges = getEdges();
         UnweightedGraph<Integer> graph = new UnweightedGraph<>(edges, NUMBER_OF_NODES);
         tree = graph.bfs(511);
@@ -31,13 +35,18 @@ public class NineTailModel {
         int row = position /3;
         int column = position % 3;
         flipACell(node, row, column);
+        //diagonal flip
+        flipACell(node, row-1, column-1);
+        flipACell(node, row+1, column-1);
+        flipACell(node, row-1, column+1);
+        flipACell(node, row+1, column+1);
+        //direct flip
         flipACell(node, row, column + 1);
         flipACell(node, row, column -1);
         flipACell(node, row -1, column);
         flipACell(node, row + 1, column);
         return getIndex(node);
     }
-
     public static void flipACell(char[] node, int row, int column) {
         if (row >= 0 && row <= 2 && column >= 0 && column <= 2) {
             if (node[row * 3 + column] == 'H')

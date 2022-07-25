@@ -117,11 +117,14 @@ public class UnweightedGraph<V> implements Graph<V> {
             vertices.remove(index);
             neighbors.remove(index);
             for (List<Edge> list: neighbors) {
-                for (Edge e: list) {
-                    if (e.v > index)
-                        e.v--;
-                    else if (e.v == index)
-                        list.remove(e);
+                for (int i = 0; i < list.size(); i++) {
+                    if (list.get(i).v > index) {
+                        list.get(i).v--;
+                        i--;
+                    }
+                    else if (list.get(i).v == index) {
+                        list.remove(list.get(i));
+                    }
                 }
             }
             return true;
