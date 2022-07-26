@@ -1,13 +1,17 @@
 package c28_Graphs;
 
 public class Edge {
-    int u;
-    int v;
+    protected int u;
+    protected int v;
 
     public Edge(int u, int v) {
         this.u = u;
         this.v = v;
     }
+
+    public int getU(){return u;}
+
+    public int getV(){return v;}
 
     @Override
     public boolean equals(Object o) {

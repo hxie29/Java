@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NineTailModel {
-    public final static int NUMBER_OF_NODES = 512;
+    protected final static int NUMBER_OF_NODES = 512;
     protected UnweightedGraph<Integer>.SearchTree tree;
 
     public NineTailModel(){

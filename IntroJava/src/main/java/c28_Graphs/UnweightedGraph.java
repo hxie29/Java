@@ -88,7 +88,7 @@ public class UnweightedGraph<V> implements Graph<V> {
         return addEdge(new Edge(u, v));
     }
 
-    private boolean addEdge(Edge edge) {
+    public boolean addEdge(Edge edge) {
         if (edge.u < 0 || edge.u > getSize() -1)
             throw new IllegalArgumentException("No such index: " + edge.u);
         if (edge.v < 0 || edge.v > getSize() -1)

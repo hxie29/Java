@@ -1,40 +1,40 @@
 package c28_Graphs;
 
-import javafx.geometry.Point2D;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class CirclePane extends Pane {
-    public CirclePane() {
+public class RectanglePane extends Pane {
+    public RectanglePane() {
         this.setOnMouseClicked(e -> {
-            if (!isInsideCircle(e.getX(), e.getY())) {
-                getChildren().add(new Circle(e.getX(), e.getY(), 20));
+            if (!isInsideRec(e.getX(), e.getY())) {
+                getChildren().add(new Rectangle(e.getX()-25, e.getY()-25, 50,50));
                 colorIfConnected();
             }
             //Remove a circle if click on the circle
             else {
-                getChildren().remove(getCircle(e.getX(),e.getY()));
+                getChildren().remove(getRec(e.getX(),e.getY()));
                 colorIfConnected();
             }
         });
-        //Allow circle to be dragged
+        //Allow rectangles to be dragged
         this.setOnMouseDragged(e -> {
-            if (isInsideCircle(e.getX(), e.getY())) {
-                Circle c = (Circle)getCircle(e.getX(), e.getY());
+            if (isInsideRec(e.getX(), e.getY())) {
+                Rectangle c = (Rectangle) getRec(e.getX(), e.getY());
                 if (c != null) {
-                    c.setCenterX(e.getX());
-                    c.setCenterY(e.getY());
+                    c.setX(e.getX()-25);
+                    c.setY(e.getY()-25);
                 }
                 colorIfConnected();
             }
         });
     }
 
-    private boolean isInsideCircle(double x, double y) {
+    private boolean isInsideRec(double x, double y) {
         for (Node node: getChildren()) {
             if (node.contains(x, y))
                 return true;
@@ -42,7 +42,7 @@ public class CirclePane extends Pane {
         return false;
     }
 
-    private Node getCircle(double x, double y) {
+    private Node getRec(double x, double y) {
         for (Node node: getChildren()) {
             if (node.contains(x, y))
                 return node;
@@ -55,7 +55,7 @@ public class CirclePane extends Pane {
             List<Edge> edges = new ArrayList<>();
             for (int i = 0; i < getChildren().size(); i++)
                 for (int j = i + 1; j < getChildren().size(); j++) {
-                    if (overlaps((Circle)(getChildren().get(i)), (Circle) (getChildren().get(j)))) {
+                    if (overlaps((Rectangle)(getChildren().get(i)), (Rectangle) (getChildren().get(j)))) {
                         edges.add(new Edge(i, j));
                         edges.add(new Edge(j, i));
                     }
@@ -64,21 +64,19 @@ public class CirclePane extends Pane {
             UnweightedGraph<Node>.SearchTree tree = graph.dfs(0);
             if (getChildren().size() == tree.getNumberOfVerticesFound()) {
                 for (Node node: getChildren()) {
-                    ((Circle)node).setFill(Color.RED);
-                    ((Circle)node).setStroke(Color.TRANSPARENT);
+                    ((Rectangle)node).setFill(Color.RED);
+                    ((Rectangle)node).setStroke(Color.TRANSPARENT);
                 }
             }
             else
                 for (Node node: getChildren()) {
-                    ((Circle)node).setFill(Color.WHITE);
-                    ((Circle)node).setStroke(Color.BLACK);
+                    ((Rectangle)node).setFill(Color.WHITE);
+                    ((Rectangle)node).setStroke(Color.BLACK);
                 }
         }
     }
 
-    private boolean overlaps(Circle circle1, Circle circle2) {
-        return new Point2D(circle1.getCenterX(), circle1.getCenterY()).
-                distance(circle2.getCenterX(), circle2.getCenterY()) <=
-                circle1.getRadius() + circle2.getRadius();
+    private boolean overlaps(Rectangle rec1, Rectangle rec2) {
+        return Math.abs(rec1.getX() - rec2.getX()) < 50 && Math.abs(rec1.getY() - rec2.getY()) < 50;
     }
 }
