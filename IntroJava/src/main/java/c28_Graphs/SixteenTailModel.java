@@ -4,10 +4,11 @@ Note it is possible that a solution may not exist for a starting pattern. If so,
 report that no solution exists.*/
 package c28_Graphs;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SixteenTailModel {
+public class SixteenTailModel implements Serializable {
     public final static int NUMBER_OF_NODES = (int)Math.pow(2, 16);
     protected UnweightedGraph<Integer>.SearchTree tree;
 

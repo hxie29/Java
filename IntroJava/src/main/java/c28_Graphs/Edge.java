@@ -1,6 +1,8 @@
 package c28_Graphs;
 
-public class Edge {
+import java.io.Serializable;
+
+public class Edge implements Serializable {
     protected int u;
     protected int v;
 

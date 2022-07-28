@@ -1,7 +1,6 @@
 module java {
     requires javafx.controls;
     requires javafx.fxml;
-
     requires org.controlsfx.controls;
     requires java.desktop;
     requires javafx.media;
@@ -37,9 +36,15 @@ module java {
     opens c28_Graphs to javafx.fxml;
     exports c28_Graphs;
 
+    opens c29_WeightedGraphs to javafx.fxml;
+    exports c29_WeightedGraphs;
+    
     exports c30_CollectionStreams;
     opens c30_CollectionStreams to javafx.fxml;
 
     exports c32_Muiltithreading;
     opens c32_Muiltithreading to javafx.fxml;
+
+    exports c31_AdvJavaFXFXML;
+    opens c31_AdvJavaFXFXML to javafx.fxml;
 }

@@ -1,8 +1,9 @@
 package c28_Graphs;
 
+import java.io.Serializable;
 import java.util.List;
 
-public interface Graph<V> {
+public interface Graph<V> extends Serializable {
     int getSize();
 
     List<V> getVertices();

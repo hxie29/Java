@@ -2,7 +2,7 @@ package c29_WeightedGraphs;
 
 import c28_Graphs.Edge;
 
-public class WeightedEdge extends Edge implements Comparable<WeightedEdge> {
+public class WeightedEdge extends Edge implements Comparable<WeightedEdge>{
     private double weight;
 
     public WeightedEdge(int u, int v, double weight) {

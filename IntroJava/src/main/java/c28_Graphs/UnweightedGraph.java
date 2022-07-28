@@ -1,5 +1,6 @@
 package c28_Graphs;
 
+import java.io.Serializable;
 import java.util.*;
 
 public class UnweightedGraph<V> implements Graph<V> {
@@ -205,7 +206,7 @@ public class UnweightedGraph<V> implements Graph<V> {
         return false;
     }
 
-    public class SearchTree {
+    public class SearchTree implements Serializable {
         private final int root;
         private final int[] parent;
         private final List<Integer> searchOrder;

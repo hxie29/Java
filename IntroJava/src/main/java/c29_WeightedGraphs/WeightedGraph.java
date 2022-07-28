@@ -2,11 +2,13 @@ package c29_WeightedGraphs;
 
 import c28_Graphs.Edge;
 import c28_Graphs.UnweightedGraph;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class WeightedGraph<V> extends UnweightedGraph<V> {
+public class WeightedGraph<V> extends UnweightedGraph<V> implements Serializable {
 
     public WeightedGraph(){}
     public WeightedGraph(V[] vertices, int[][]edges) {
