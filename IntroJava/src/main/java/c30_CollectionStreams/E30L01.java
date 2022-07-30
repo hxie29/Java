@@ -26,5 +26,8 @@ public class E30L01 {
         System.out.println("\nSkip 4 and get any element in this stream:" + Stream.of(names).skip(4).findAny().get());
         Object[] namesInLowerCase = Stream.of(names).map(String:: toLowerCase).toArray();
         System.out.println(Arrays.toString(namesInLowerCase));
+        System.out.println("String print this string: " );
+        System.out.println("Link see below: String print his string  ");
+
     }
 }
