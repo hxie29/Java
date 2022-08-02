@@ -42,9 +42,12 @@ module java {
     exports c30_CollectionStreams;
     opens c30_CollectionStreams to javafx.fxml;
 
+    exports c31_AdvJavaFXFXML;
+    opens c31_AdvJavaFXFXML to javafx.fxml;
+
     exports c32_Muiltithreading;
     opens c32_Muiltithreading to javafx.fxml;
 
-    exports c31_AdvJavaFXFXML;
-    opens c31_AdvJavaFXFXML to javafx.fxml;
+    exports c33_Networking;
+    opens c33_Networking to javafx.fxml;
 }
