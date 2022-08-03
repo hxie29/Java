@@ -16,21 +16,15 @@ import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Enumeration;
-import java.util.Hashtable;
-import java.util.concurrent.locks.Lock;
+import java.util.*;
 
 public class E3310_Server extends Application {
     private final TextArea taServer = new TextArea();
@@ -82,20 +76,16 @@ public class E3310_Server extends Application {
 
     private void sendToAll(String msg) {
         // Go through hashtable and send message to each output stream
-        for (Enumeration<DataOutputStream> e = getOutputStreams(); e.hasMoreElements();){
-            DataOutputStream out = e.nextElement();
+        for (DataOutputStream out : outputStreams.values()) {
             try {
                 out.writeUTF(msg);
-            } catch (IOException ex) {
+            }
+            catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
     }
 
-    // Used to get the output streams
-    Enumeration<DataOutputStream> getOutputStreams(){
-        return outputStreams.elements();
-    }
     static class ServerThread extends Thread {
         private final Socket socket;
         private final E3310_Server server;
