@@ -40,7 +40,7 @@ public class AddressBook implements Serializable {
         this.city = city;
     }
 
-    public String getCit() {
+    public String getCity() {
         return city;
     }
     

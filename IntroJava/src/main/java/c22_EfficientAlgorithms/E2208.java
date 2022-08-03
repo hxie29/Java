@@ -22,17 +22,19 @@ import java.io.*;
 public class E2208 {
 
     public static void main(String[] args){
-        long count = 1;
+        long count = 0;
         long limit = 10000;
         long prime;
 
         try (RandomAccessFile file = new RandomAccessFile("PrimeNumbers.dat", "rw")){
             file.writeLong(2);
+            count++;
             file.seek(0);
             for (long i = 3; i < limit; i++) {
                 file.seek(0);
                 boolean isPrime = true;
-                while ((prime = file.readLong()) !=-1) {
+                while (file.getFilePointer() < file.length()) {
+                    prime = file.readLong();
                     if (i % prime == 0) {
                         isPrime = false;
                         break;
@@ -40,6 +42,7 @@ public class E2208 {
                 }
 
                 if (isPrime) {
+                    file.seek(file.length());
                     file.writeLong(2);
                     count++;
                 }
