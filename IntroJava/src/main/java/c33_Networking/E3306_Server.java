@@ -20,6 +20,8 @@ public class E3306_Server extends Application implements E3306_Constants{
     private final TextArea ta = new TextArea();
     private int clientNo = 0;
 
+    private ServerSocket server;
+
     @Override
     public void start(Stage stage) throws Exception {
         Scene scene = new Scene(new ScrollPane(ta));
@@ -27,10 +29,16 @@ public class E3306_Server extends Application implements E3306_Constants{
         stage.setTitle("Address book server");
         stage.show();
 
+        try {
+            server = new ServerSocket(PORT);
+            ta.appendText("Multi thread address book server start at " + new Date() + "\n");
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
         new Thread(() -> {
             try {
-                ServerSocket server = new ServerSocket(PORT);
-                ta.appendText("Multi thread address book server start at " + new Date() + "\n");
                 while (true) {
                     Socket socket = server.accept();
                     clientNo++;

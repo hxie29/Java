@@ -65,7 +65,14 @@ public class E3306_Client extends Application implements E3306_Constants{
         stage.setScene(scene);
         stage.show();
 
-        connectServer();
+        try {
+            Socket socket = new Socket(HOSTNAME, PORT);
+            fromServer = new ObjectInputStream(socket.getInputStream());
+            toServer = new ObjectOutputStream(socket.getOutputStream());
+        }
+        catch(IOException ex) {
+            ex.printStackTrace();
+        }
 
         btAdd.setOnAction(e -> addAddress());
 
@@ -76,17 +83,6 @@ public class E3306_Client extends Application implements E3306_Constants{
         btPrevious.setOnAction(e -> previous());
 
         btLast.setOnAction(e -> last());
-    }
-
-    private void connectServer(){
-        try {
-            Socket socket = new Socket(HOSTNAME, PORT);
-            fromServer = new ObjectInputStream(socket.getInputStream());
-            toServer = new ObjectOutputStream(socket.getOutputStream());
-        }
-        catch(IOException ex) {
-            ex.printStackTrace();
-        }
     }
 
     private void addAddress() {

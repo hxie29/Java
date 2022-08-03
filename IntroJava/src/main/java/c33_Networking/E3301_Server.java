@@ -36,7 +36,6 @@ public class E3301_Server extends Application {
         stage.setTitle("Loan calculation Server");
         stage.setScene(scene);
         stage.show();
-
         new Thread(() -> {
             try {
                 ServerSocket serverSocket = new ServerSocket(7832);
