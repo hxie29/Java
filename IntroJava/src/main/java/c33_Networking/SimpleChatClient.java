@@ -41,7 +41,7 @@ public class SimpleChatClient {
 
         JFrame frame = new JFrame("Ludicrously Simple Chat Client");
         frame.getContentPane().add(BorderLayout.CENTER, mainPanel);
-        frame.setSize(400,100);
+        frame.setSize(400,500);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
