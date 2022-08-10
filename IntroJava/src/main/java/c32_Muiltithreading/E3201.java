@@ -12,16 +12,31 @@ public class E3201 extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        TextPane pane = new TextPane();
-        pane.print();
+        int times = 100;
+        TextArea ta = new TextArea();
+        ScrollPane pane = new ScrollPane(ta);
         new Thread(() -> {
-            while (true) {
-                try {
-                    Platform.runLater(pane::display);
-                    Thread.sleep(200);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+            for (int i = 0; i < times; i++) {
+                Platform.runLater(() -> ta.appendText("a"));
+            }
+        }).start();
+
+        new Thread(() -> {
+            for (int i = 0; i < times; i++) {
+                Platform.runLater(() -> ta.appendText("b"));
+            }
+        }).start();
+
+        new Thread(() -> {
+            for (int i = 0; i < times; i++) {
+                Platform.runLater(() -> ta.appendText("c"));
+            }
+        }).start();
+
+        new Thread(() -> {
+            for (int i = 0; i < times; i++) {
+                int num = i+1;
+                Platform.runLater(() -> ta.appendText(num +""));
             }
         }).start();
 
@@ -35,44 +50,5 @@ public class E3201 extends Application {
         Application.launch(args);
     }
 
-    private static class TextPane extends ScrollPane{
-        private static final TextArea ta = new TextArea();
-        private static final StringBuilder str = new StringBuilder();
-
-        public TextPane() {
-            this.setContent(ta);
-            ta.setText(str.toString());
-        }
-
-        public void print() {
-            new Thread(() -> {
-                int count = 0;
-                while (count < 1000) {
-                    str.append('a');
-                    count++;
-                }
-            }).start();
-
-            new Thread(() -> {
-                int count = 0;
-                while (count < 1000) {
-                    str.append('b');
-                    count++;
-                }
-            }).start();
-
-            new Thread(() -> {
-                int count = 1;
-                while (count <= 1000) {
-                    str.append(" ").append(count);
-                    count++;
-                }
-            }).start();
-        }
-
-        public void display() {
-            ta.setText(str.toString());
-        }
-    }
 }
 

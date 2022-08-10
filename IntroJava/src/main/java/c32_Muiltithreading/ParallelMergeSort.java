@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
 
-public class E32L10 {
+public class ParallelMergeSort {
     public static void main(String[] args) {
         final int SIZE = 1000000;
         int[] list1 = new int[SIZE];
@@ -31,6 +31,12 @@ public class E32L10 {
 
     public static void parallelMergeSort(int[] list) {
         RecursiveAction mainTask = new SortTask(list);
+        ForkJoinPool pool = new ForkJoinPool();
+        pool.invoke(mainTask);
+    }
+
+    public static <E extends Comparable<E>> void parallelMergeSort(E[] list) {
+        GenericSortTask<E> mainTask = new GenericSortTask<>(list);
         ForkJoinPool pool = new ForkJoinPool();
         pool.invoke(mainTask);
     }

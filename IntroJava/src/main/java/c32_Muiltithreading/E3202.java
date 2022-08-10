@@ -1,26 +1,20 @@
-/* 
-(Racing car) Write a program that simulates car racing, as shown in
-Figure 15.36a. The car moves from left to right. When it hits the right end, it
-restarts from the left and continues the same process. You can use a timer to
-control animation. Redraw the car with new base coordinates (x, y), as shown
-in Figure 15.36b. Also let the user pause/resume the animation with a button
-press/release and increase/decrease the car speed by pressing the up and down
-arrow keys.
- */
-package c15_EventsAnimations;
+/*(Racing cars) Rewrite Programming Exercise 15.29 using a thread to control car
+racing. Compare the program with Programming Exercise 15.29 by setting the
+delay time to 10 in both the programs. Which one runs the animation faster?*/
 
+package c32_Muiltithreading;
+
+import c15_EventsAnimations.CarPane;
 import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
-
-public class E1529 extends Application {
-
+public class E3202 extends Application {
     @Override
     public void start(Stage primaryStage) {
         VBox pane = new VBox();
@@ -39,7 +33,7 @@ public class E1529 extends Application {
         CarPane car = new CarPane();
         car.play();
         pane.getChildren().addAll(car, controlPanel);
-        
+
         pause.setOnAction(e -> car.pause());
         resume.setOnAction(e -> car.play());
         speedUp.setOnAction(e -> car.setSpeed(car.getSpeed() + 1));
@@ -54,7 +48,6 @@ public class E1529 extends Application {
         primaryStage.show();
     }
 
-    
     public static void main(String[] args ){
         launch(args);
     }

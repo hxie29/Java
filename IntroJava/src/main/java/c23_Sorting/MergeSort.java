@@ -66,7 +66,7 @@ public class MergeSort {
         merge(list, beginIndex, endIndex);
     }
 
-    private static <E extends Comparable<E>> void merge(E[] list, int beginIndex, int endIndex) {
+    public static <E extends Comparable<E>> void merge(E[] list, int beginIndex, int endIndex) {
         if (endIndex - beginIndex == 1) {
             if (list[beginIndex].compareTo(list[endIndex]) > 0) {
                 E temp = list[beginIndex];

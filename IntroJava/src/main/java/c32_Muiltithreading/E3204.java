@@ -4,8 +4,6 @@ each thread. In order to pass it by reference, define an Integer wrapper object 
 hold sum. Run the program with and without synchronization to see its effect.*/
 package c32_Muiltithreading;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -13,19 +11,16 @@ public class E3204 {
     private static Integer sum = 0;
     private static final Lock lock = new ReentrantLock();
 
-    public static void main(String[] args) {
-        ExecutorService executor = Executors.newFixedThreadPool(1000);
+    public static void main(String[] args) throws InterruptedException {
         for (int i = 0; i < 1000; i++) {
-            executor.execute(new AddOne());
+            new SumThread().start();
+            Thread.sleep(1);
         }
-        executor.shutdown();
-        while (!executor.isTerminated()) {}
 
         System.out.println("Sum is " + sum);
     }
 
-    private static class AddOne implements Runnable {
-
+    private static class SumThread extends Thread {
         @Override
         public void run() {
             lock.lock();

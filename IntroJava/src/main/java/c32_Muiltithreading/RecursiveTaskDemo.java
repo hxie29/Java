@@ -4,7 +4,7 @@ package c32_Muiltithreading;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
-public class E32L11 {
+public class RecursiveTaskDemo {
     public static void main(String[] args) {
         //Create a list
         final int N = 1000000;
@@ -30,8 +30,8 @@ public class E32L11 {
     private static class MaxTask extends RecursiveTask<Integer> {
         private final static int THRESHOLD = 1000;
         private final int[] list;
-        private int low;
-        private int high;
+        private final int low;
+        private final int high;
 
         public MaxTask(int[] list, int low, int high) {
             this.list = list;

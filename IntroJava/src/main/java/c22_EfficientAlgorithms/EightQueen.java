@@ -56,4 +56,5 @@ public class EightQueen {
         }
         return true;
     }
+
 }

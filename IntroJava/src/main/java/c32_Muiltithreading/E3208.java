@@ -9,10 +9,12 @@ public class E3208 {
     private static final Account account = new Account();
 
     public static void main(String[] args) {
-        ExecutorService executor = Executors.newFixedThreadPool(2);
+        ExecutorService executor = Executors.newFixedThreadPool(10);
 
-        executor.execute(new AddAPennyTask());
-        executor.execute(new WithdrawAPennyTask());
+        for (int i = 0; i< 10; i++) {
+            executor.execute(new AddAPennyTask());
+            executor.execute(new WithdrawAPennyTask());
+        }
 
         executor.shutdown();
 
@@ -24,7 +26,6 @@ public class E3208 {
     private static class AddAPennyTask implements Runnable {
         @Override
         public void run() {
-            for (int i = 0; i < 10; i ++)
                 account.deposit(1);
         }
     }
@@ -32,7 +33,6 @@ public class E3208 {
     private static class WithdrawAPennyTask implements Runnable {
         @Override
         public void run() {
-            for (int i = 0; i < 10; i ++)
                 account.withdraw(1);
         }
     }
@@ -59,9 +59,8 @@ public class E3208 {
             catch (InterruptedException ex) {
                 ex.printStackTrace();
             }
-
             balance -= amount;
-            System.out.println("Deposit " + amount + "\t\t\t\t" + getBalance());
+            System.out.println("Withdraw " + amount + "\t\t\t\t" + getBalance());
         }
     }
 }

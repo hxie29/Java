@@ -1,2 +1,2 @@
-E3201
-    not showing concurrently
+E3202 - 03
+    using thread to do animation, what's the point? thread suspend and resume is deprecated
