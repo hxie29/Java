@@ -1,3 +1,5 @@
+/*(Display pyramid) Write a program that prompts the user to enter an integer from
+1 to 15 and displays a pyramid, as shown in the following sample run: */
 package c05_Loops;
 
 import java.util.Scanner;
@@ -19,12 +21,6 @@ public class E0517 {
                 System.out.print(figure + " ");
                 figure ++;
             }
-            /* System.out.print("print the next line or stop (1 or 0)\n");
-            int stop = input.nextInt();
-            if (stop == 0) {
-                break;
-            }
-            else */
             number--;
             figure = number;
             System.out.println();

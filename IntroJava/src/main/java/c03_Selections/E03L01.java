@@ -17,7 +17,6 @@ public class E03L01 {
             }
         else {
             System.out.println("Incorrect.");
-    
         }
         
         input.close();
