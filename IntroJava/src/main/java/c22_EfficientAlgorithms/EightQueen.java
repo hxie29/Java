@@ -41,7 +41,6 @@ public class EightQueen {
     private static int findPosition(int row) {
         // queens[k] start is now -1
         int start = queens[row] + 1;
-
         for (int j = start; j < SIZE; j++) {
             if (isValid(row,j))
                 return j;

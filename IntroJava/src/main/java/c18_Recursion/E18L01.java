@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class E18L01 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter a nonnegative integer:");
+        System.out.println("Enter a non negative integer:");
         int n = input.nextInt();
 
         System.out.printf("Factorial of %d is %d", n, factorial(n));
