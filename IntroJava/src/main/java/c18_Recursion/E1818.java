@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class E1818 {
     private static int moves = 0;
-
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter number of disks:");

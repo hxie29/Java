@@ -21,7 +21,8 @@ public class MyArrayList<E> implements MyList<E> {
             throw new IndexOutOfBoundsException("Index: " + index + " , Size: " + size);
 
         ensureCapacity();
-        if (size - index >= 0) System.arraycopy(data, index, data, index + 1, size - index);
+        if (size - index >= 0)
+                System.arraycopy(data, index, data, index + 1, size - index);
         data[index] = e;
         size++;
     }
@@ -46,10 +47,7 @@ public class MyArrayList<E> implements MyList<E> {
 
     @Override
     public boolean contains(Object o) {
-        for (int i = 0; i < size; i++) {
-            if (o.equals(data[i])) return true;
-        }
-        return false;
+        return indexOf(o) > -1;
     }
 
     @Override
@@ -82,9 +80,10 @@ public class MyArrayList<E> implements MyList<E> {
     @Override
     public E remove(int index) {
         checkIndex(index);
-
         E e = data[index];
-        if (size - index >= 0) System.arraycopy(data, index + 1, data, index, size - index - 1);
+        // shift left operation using array copy
+        if (size - index >= 0)
+            System.arraycopy(data, index + 1, data, index, size - index - 1);
         data[size-1] = null;
         size--;
         return e;
@@ -121,6 +120,10 @@ public class MyArrayList<E> implements MyList<E> {
         return new ArrayListIterator();
     }
 
+    /**
+     * Nonstatic inner class,
+     * the generic type is passed from the ArrayList instance to its iterator
+     */
     private class ArrayListIterator implements Iterator<E>{
         private int current = 0;
 
